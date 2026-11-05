@@ -1,0 +1,15 @@
+{
+  "name": "cart-compare",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kosher grocery price comparison for Lakewood, NJ and nearby areas",
+  "scripts": {
+    "scrape": "node scraper/run.js",
+    "merge": "node scraper/run.js --merge-only",
+    "test": "node test/run-test.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "playwright": "1.47.2"
+  }
+}

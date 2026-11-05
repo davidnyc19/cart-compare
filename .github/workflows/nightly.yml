@@ -1,0 +1,51 @@
+name: Nightly prices
+
+on:
+  schedule:
+    - cron: "17 7 * * *"   # every night around 2–3 am New York time
+  workflow_dispatch: {}     # "Run workflow" button for a manual refresh
+  push:
+    branches: [main]
+    paths: ["site/**", "stores.json"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency: { group: nightly, cancel-in-progress: false }
+
+jobs:
+  scrape:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Check every store's prices
+        run: node scraper/run.js
+      - name: Save today's prices
+        run: |
+          git config user.name "price-robot"
+          git config user.email "price-robot@users.noreply.github.com"
+          git add site/data
+          git commit -m "Prices $(date -u +%F)" || echo "No changes"
+          git push
+
+  deploy:
+    needs: [scrape]
+    if: always() && (needs.scrape.result == 'success' || needs.scrape.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+      - id: d
+        uses: actions/deploy-pages@v4
