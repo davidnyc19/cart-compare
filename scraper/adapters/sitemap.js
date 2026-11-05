@@ -56,8 +56,8 @@ function fromLd(p, url) {
 
 let browser = null;
 async function rendered(url) {
-  if (!browser) { const { chromium } = require("playwright"); browser = await chromium.launch(); }
-  const page = await browser.newPage({ userAgent: require("../lib/http").UA });
+  if (!browser) { const { chromium } = require("playwright"); browser = chromium.launch(); }
+  const page = await (await browser).newPage({ userAgent: require("../lib/http").UA });
   try { await page.goto(url, { waitUntil: "networkidle", timeout: 45000 }); return await page.content(); }
   finally { await page.close(); }
 }
@@ -67,12 +67,13 @@ async function detect(origin) {
   return urls.length > 0;
 }
 
-async function scrape(origin, { maxProducts = 5000, log = () => {} } = {}) {
+async function scrape(origin, { maxProducts = 5000, deadline = Infinity, log = () => {} } = {}) {
   const urls = await productUrls(origin, maxProducts);
   log(`  ${urls.length} product pages found in sitemap`);
   const items = [];
   let useBrowser = false, misses = 0;
   for (const [i, url] of urls.entries()) {
+    if (Date.now() > deadline) { log(`  time limit reached after ${i} pages; saving ${items.length} prices`); break; }
     try {
       if (!(await allowed(url))) { misses++; continue; }
       let html = useBrowser ? await rendered(url) : await getText(url);
@@ -87,6 +88,6 @@ async function scrape(origin, { maxProducts = 5000, log = () => {} } = {}) {
   return { items, checkout: "product-links" };
 }
 
-async function close() { if (browser) { await browser.close(); browser = null; } }
+async function close() { if (browser) { await (await browser).close(); browser = null; } }
 
 module.exports = { name: "sitemap", detect, scrape, close, _test: { jsonLdProducts, fromLd } };

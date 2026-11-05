@@ -15,6 +15,8 @@ const OUT = process.env.OUT_DIR || path.join(ROOT, "site", "data");
 const RAW = path.join(OUT, "raw");
 const args = Object.fromEntries(process.argv.slice(2).map(a => { const [k, v] = a.replace(/^--/, "").split("="); return [k, v ?? true]; }));
 const MAX = Number(args.max || 5000);
+const PER_SITE_MIN = Number(process.env.PER_SITE_MINUTES || 60);
+const PARALLEL = Number(process.env.PARALLEL_SITES || 5);
 const ADAPTERS = { shopify, sitemap };
 
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
@@ -43,24 +45,27 @@ async function main() {
   }
 
   if (!args["merge-only"]) {
-    for (const site of sites.values()) {
-      if (args.only && args.only !== site.id) continue;
-      log(`▶ ${site.id}`);
+    const todo = [...sites.values()].filter(site => !args.only || args.only === site.id);
+    const one = async site => {
+      const L = (...a) => log(`[${site.id}]`, ...a);
+      L("starting");
       const st = status[site.id] = { ...(status[site.id] || {}), lastAttempt: new Date().toISOString() };
       try {
         const ad = await pickAdapter(site.origin, site.adapter);
         if (!ad) throw new Error("No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only.");
-        log(`  using ${ad.name} adapter`);
-        const res = await ad.scrape(site.origin, { maxPages: Math.ceil(MAX / 250), maxProducts: MAX, log });
+        L(`using ${ad.name} adapter`);
+        const res = await ad.scrape(site.origin, { maxPages: Math.ceil(MAX / 250), maxProducts: MAX, deadline: Date.now() + PER_SITE_MIN * 60000, log: L });
         if (!res.items.length) throw new Error("Scrape finished but found 0 prices.");
         fs.writeFileSync(path.join(RAW, fileOf(site.id)), JSON.stringify({ siteId: site.id, origin: site.origin, adapter: ad.name, checkout: res.checkout, checkedAt: new Date().toISOString(), items: res.items }));
         Object.assign(st, { ok: true, adapter: ad.name, items: res.items.length, checkedAt: new Date().toISOString(), error: null });
-        log(`  ✓ ${res.items.length} prices`);
+        L(`✓ ${res.items.length} prices`);
       } catch (e) {
         Object.assign(st, { ok: false, error: e.message });
-        log(`  ✗ ${e.message}`);
+        L(`✗ ${e.message}`);
       }
-    }
+    };
+    const workers = Array.from({ length: Math.min(PARALLEL, todo.length) }, async () => { while (todo.length) await one(todo.shift()); });
+    await Promise.all(workers);
     await sitemap.close();
   }
 

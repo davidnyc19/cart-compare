@@ -3,16 +3,18 @@ const UA = process.env.SCRAPER_UA || "CartCompareBot/1.0 (kosher price compariso
 const DELAY_MS = Number(process.env.SCRAPER_DELAY_MS || 1200);
 
 const robotsCache = new Map();
-let last = 0;
+const lastByHost = new Map(); // politeness delay is per store website
 
-async function wait() {
-  const gap = Date.now() - last;
-  if (gap < DELAY_MS) await new Promise(r => setTimeout(r, DELAY_MS - gap));
-  last = Date.now();
+async function wait(url) {
+  const host = new URL(url).host;
+  const next = Math.max(Date.now(), (lastByHost.get(host) || 0) + DELAY_MS);
+  lastByHost.set(host, next);
+  const ms = next - Date.now();
+  if (ms > 0) await new Promise(r => setTimeout(r, ms));
 }
 
 async function rawGet(url, accept) {
-  await wait();
+  await wait(url);
   const res = await fetch(url, {
     headers: { "User-Agent": UA, Accept: accept || "*/*" },
     redirect: "follow",

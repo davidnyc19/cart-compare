@@ -9,9 +9,9 @@ async function detect(origin) {
   } catch { return false; }
 }
 
-async function scrape(origin, { maxPages = 100, log = () => {} } = {}) {
+async function scrape(origin, { maxPages = 100, deadline = Infinity, log = () => {} } = {}) {
   const out = [];
-  for (let page = 1; page <= maxPages; page++) {
+  for (let page = 1; page <= maxPages && Date.now() < deadline; page++) {
     const j = await getJson(`${origin}/products.json?limit=250&page=${page}`);
     if (!j.products || !j.products.length) break;
     for (const p of j.products) {
