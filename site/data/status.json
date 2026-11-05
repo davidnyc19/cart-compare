@@ -8,12 +8,12 @@
     "checkedAt": "2026-11-05T22:26:50.323Z"
   },
   "koshervillage.com": {
-    "lastAttempt": "2026-11-05T22:32:49.957Z",
+    "lastAttempt": "2026-11-05T22:48:58.474Z",
     "ok": true,
     "error": null,
     "adapter": "koshervillage",
-    "items": 19913,
-    "checkedAt": "2026-11-05T22:36:50.415Z"
+    "items": 10000,
+    "checkedAt": "2026-11-05T22:50:59.905Z"
   },
   "gourmetglatt.com": {
     "lastAttempt": "2026-11-05T21:11:17.379Z",

@@ -262,6 +262,12 @@
    "checkedAt": "2026-11-05T22:24:42.544Z",
    "items": 6697
   },
+  "koshervillage.com": {
+   "origin": "https://www.koshervillage.com",
+   "checkout": "product-links",
+   "checkedAt": "2026-11-05T22:50:59.881Z",
+   "items": 10000
+  },
   "kosherwest.com": {
    "origin": "https://www.kosherwest.com",
    "checkout": "product-links",
