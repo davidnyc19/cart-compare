@@ -1,13 +1,19 @@
 {
   "seasonskosher.com": {
-    "lastAttempt": "2026-11-05T22:00:08.178Z",
-    "ok": false,
-    "error": "Scrape finished but found 0 prices."
+    "lastAttempt": "2026-11-05T22:18:06.858Z",
+    "ok": true,
+    "error": null,
+    "adapter": "mycloudgrocer",
+    "items": 10627,
+    "checkedAt": "2026-11-05T22:26:50.323Z"
   },
   "koshervillage.com": {
-    "lastAttempt": "2026-11-05T22:00:08.178Z",
-    "ok": false,
-    "error": "HTTP 500 https://www.koshervillage.com/api/services/supplier-ms/public/api/v1/groceries/_search?tenantId=2252&size=100&sort=originalId%2Cdesc&page=100"
+    "lastAttempt": "2026-11-05T22:18:06.858Z",
+    "ok": true,
+    "error": null,
+    "adapter": "koshervillage",
+    "items": 1114,
+    "checkedAt": "2026-11-05T22:20:08.145Z"
   },
   "gourmetglatt.com": {
     "lastAttempt": "2026-11-05T21:11:17.379Z",
@@ -20,14 +26,20 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "aisle9market.com": {
-    "lastAttempt": "2026-11-05T22:00:08.178Z",
-    "ok": false,
-    "error": "Scrape finished but found 0 prices."
+    "lastAttempt": "2026-11-05T22:18:06.858Z",
+    "ok": true,
+    "error": null,
+    "adapter": "mycloudgrocer",
+    "items": 6697,
+    "checkedAt": "2026-11-05T22:24:42.557Z"
   },
   "nutmegkoshermarket.com": {
-    "lastAttempt": "2026-11-05T22:00:08.178Z",
-    "ok": false,
-    "error": "Scrape finished but found 0 prices."
+    "lastAttempt": "2026-11-05T22:18:06.858Z",
+    "ok": true,
+    "error": null,
+    "adapter": "mycloudgrocer",
+    "items": 9685,
+    "checkedAt": "2026-11-05T22:27:25.395Z"
   },
   "shopevergreenkosher.com": {
     "lastAttempt": "2026-11-05T21:11:21.004Z",
@@ -40,9 +52,12 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "kosherwest.com": {
-    "lastAttempt": "2026-11-05T22:16:13.899Z",
-    "ok": false,
-    "error": "Scrape finished but found 0 prices."
+    "lastAttempt": "2026-11-05T22:18:06.858Z",
+    "ok": true,
+    "error": null,
+    "adapter": "mycloudgrocer",
+    "items": 10272,
+    "checkedAt": "2026-11-05T22:26:06.305Z"
   },
   "bingowholesale.com": {
     "lastAttempt": "2026-11-05T21:11:21.047Z",
