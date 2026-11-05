@@ -1,35 +1,59 @@
 {
  "https://kosherwest.com/Lakewood-NJ": {
   "url": "https://kosherwest.com/Lakewood-NJ",
-  "error": "location is not defined",
+  "robots": "User-agent: *\nAllow: /\n\nUser-agent: Baiduspider\nDisallow: /\n\nUser-agent: Yandex\nDisallow: /\r\n",
+  "links": [
+   " => https://kosherwest.com/Lakewood-NJ",
+   "DEPARTMENTS => https://kosherwest.com/Lakewood-NJ?scrollTo=departments",
+   "RECIPES => https://kosherwest.com/recipes",
+   "MY ITEMS => https://kosherwest.com/login?redirect=/Lakewood-NJ/category/favorites",
+   "SPECIALS => https://kosherwest.com/Lakewood-NJ/category/specials",
+   "EXPRESS REORDER => https://kosherwest.com/login?redirect=/Lakewood-NJ",
+   "STORE LOCATION => https://kosherwest.com/store-location",
+   " => https://kosherwest.com/Lakewood-NJ/category/395/meat",
+   " => https://kosherwest.com/Lakewood-NJ",
+   " => https://kosherwest.com/Lakewood-NJ",
+   " => https://kosherwest.com/Lakewood-NJ",
+   "Meat => https://kosherwest.com/Lakewood-NJ/category/395/meat",
+   "Fish => https://kosherwest.com/Lakewood-NJ/category/444/fish",
+   "Deli => https://kosherwest.com/Lakewood-NJ/category/612/deli",
+   "Produce => https://kosherwest.com/Lakewood-NJ/category/364/produce",
+   "Grocery => https://kosherwest.com/Lakewood-NJ/category/387/grocery",
+   "Beverages => https://kosherwest.com/Lakewood-NJ/category/384/beverages",
+   "Dairy => https://kosherwest.com/Lakewood-NJ/category/438/dairy",
+   "Bakery => https://kosherwest.com/Lakewood-NJ/category/379/bakery",
+   "Sushi => https://kosherwest.com/Lakewood-NJ/category/519/sushi",
+   "Candy & Sweets => https://kosherwest.com/Lakewood-NJ/category/432/candy-sweets",
+   "Dried Fruits & Nuts => https://kosherwest.com/Lakewood-NJ/category/904/dried-fruits-nuts",
+   "Frozen => https://kosherwest.com/Lakewood-NJ/category/450/frozen",
+   "Household => https://kosherwest.com/Lakewood-NJ/category/397/household",
+   "Health & Beauty => https://kosherwest.com/Lakewood-NJ/category/526/health-beauty",
+   "Baby Care => https://kosherwest.com/Lakewood-NJ/category/374/baby-care",
+   "Media => https://kosherwest.com/Lakewood-NJ/category/5725/media",
+   "Stern's 100% Whole Wheat Bread => https://kosherwest.com/Lakewood-NJ/category/466/bread/13579/stern-s-100-whole-wheat-bread-mezonos-16-oz",
+   "Plastic House Deli Containers, => https://kosherwest.com/Lakewood-NJ/category/586/containers/23/plastic-house-deli-containers-32-oz-15-ct",
+   "SPECIAL\n\nHerr's Potato Chips H => https://kosherwest.com/Lakewood-NJ/category/626/chips/6059/herr-s-potato-chips-honey-bbq-1-oz",
+   "Dining Collection Plastic Cups => https://kosherwest.com/Lakewood-NJ/category/588/cups/2592/dining-collection-plastic-cups-7-oz-100-pk",
+   "Jolly Rancher Ropes Watermelon => https://kosherwest.com/Lakewood-NJ/category/5571/chewy-candy/21258/jolly-rancher-ropes-watermelon-green-apple-candy-10-oz",
+   "Salad Mate Caesar Light Dressi => https://kosherwest.com/Lakewood-NJ/category/373/dressings/12674/salad-mate-caesar-light-dressing-12-oz",
+   "DagYam Fish Sticks Minced 48 C => https://kosherwest.com/Lakewood-NJ/category/454/fish/2521/dagyam-fish-sticks-minced-48-ct-24-oz",
+   "SPECIAL\n\nPolar Black Cherry Se => https://kosherwest.com/Lakewood-NJ/category/392/seltzer/11791/polar-black-cherry-seltzer-338-oz",
+   "Local Pepper Red Lb\n\n$3.99 / l => https://kosherwest.com/Lakewood-NJ/category/4895/pepper/8474/local-pepper-red-lb",
+   "Lieber's Honey Bbq Potato Chip => https://kosherwest.com/Lakewood-NJ/category/626/chips/8238/lieber-s-honey-bbq-potato-chips-075-oz",
+   "Yitzy's Pancake Batter (Dairy) => https://kosherwest.com/Lakewood-NJ/category/5530/pancakes-waffles/15112/yitzy-s-pancake-batter-dairy-32-oz",
+   "Haolam Slims Muenster Cheesee  => https://kosherwest.com/Lakewood-NJ/category/5520/sliced-cheese/5925/haolam-slims-muenster-cheesee-slices-6-oz",
+   "NuGo Dark Chocolate Pretzel Ba => https://kosherwest.com/Lakewood-NJ/category/581/snack-bars/10184/nugo-dark-chocolate-pretzel-bars-6-ct"
+  ],
+  "clicked": "Produce",
+  "afterClickUrl": "https://kosherwest.com/Lakewood-NJ/category/364/produce",
+  "newRequests": 5,
   "data": [
-   {
-    "method": "GET",
-    "url": "https://kosherwest.com/proxy-api/multistore/StoresDialogJSON",
-    "post": "",
-    "status": 200,
-    "body": "{\"SelectedStoreId\":1,\"SelectedStoreIdNoDefault\":null,\"HasActivePickupAreasForSelectedStore\":true,\"StoresList\":[{\"StoreName\":\"Kosher West\",\"StoreSystemName\":\"Kosher West\",\"SeoLocation\":\"Lakewood-NJ\",\"IsClosed\":false,\"IsDiscontinued\":false,\"IsHidden\":false,\"IsPermanentlyClosed\":false,\"EnableStoreForRoleId\":0,\"PictureSrc\":null,\"AddressObj\":{\"FirstName\":\"Default Name\",\"LastName\":\"Default LastName\",\"Email\":\"orders@kosherwest.com\",\"Company\":\"MCG\",\"CountryEnabled\":false,\"CountryId\":1,\"CountryName\":\"United States\",\"StateProvinceId\":38,\"StateProvinceName\":\"New Jersey\",\"City\":\"Lakewood\",\"Address1\":\"136 Hillside Blvd\",\"Address2\":null,\"ZipPostalCode\":\"08701\",\"PhoneNumber\":\"(732) 886-9378\",\"FaxNumber\":\"(732) 886-9371\",\"AdvanceDays\":null,\"AvailableCountries\":[],\"AvailableStates\":[],\"LatLng\":\"40.0871199200113, -74.25482134233039\",\"StateProvinceAbbreviation\":\"NJ\",\"IsValid\":true,\"ValidatedOnUtc\":\"\\/Date(1630527903740)\\/\",\"ValidationMessage\":null,\"IsSelected\":false,\"IsCoopAddress\":false,\"ServiceAreaId\":-1,\"Place_Id\":null,\"SMSConsent\":null,\"ServiceAreaName\":null,\"IsDefault\":false,\"Id\":2},\"WorkingHours\":{\"Sunday\":\"08:00 AM - 11:00 PM\",\"Monday\":\"07:30 AM - 11:00 PM\",\"Tuesday\":\"07:30 AM - 11:00 PM\",\"Wednesday\":\"07:30 AM - 11:00 PM\",\"Thursday\":\"07:30 AM - 12:00 AM\",\"Friday\":\"07:30 AM - 2 hours before Shabbos\",\"Saturday\":\"Closed\"},\"InStorePickupServiceAreaId\":-2,\"ShippingServiceAreaId\":null,\"ShippingServiceAreaForPerishableId\":null,\"PickerPhone\":\"(732) 886-9378\",\"FacebookLink\":null,\"TwitterLink\":nul"
-   },
-   {
-    "method": "GET",
-    "url": "https://kosherwest.com/proxy-api/Common/GetSiteConfigPublicValues",
-    "post": "",
-    "status": 200,
-    "body": "{\"siteGeneral\":{\"CaptchaSettingsReCaptchaPublicKey\":\"6LcNTMcrAAAAALkotChSdwzFmDt3gRbUjthJuKWZ\",\"GoogleCloudProjectId\":\"decisive-post-459017-k5\",\"CheckoutPickupAddress\":\"Pickup Information\",\"CollectPhoneInsteadOfEmail\":null,\"CouponCodeExpiredByDeliveryDate\":\"This promo code expires before the chosen delivery/pickup date. Please choose an earlier date and then re-apply the code\",\"NotServicedMessageMultiple\":\"We do not deliver to your area at the moment. Please use the \\\"Pickup\\\" button to select one of our pickup locations - there may be one near you!\",\"NotServicedMessageSingle\":\"We do not deliver to your area at the moment. You are welcome to use the \\\"Pickup\\\" option!\",\"StoreInformationSettingsStoreName\":\"Kosher West\",\"StoreInformationSettingsStoreURL\":\"https://kosherwest.com/api/\",\"StoreInformationSettingsSupermarketName\":\"Kosher West\",\"CalendarPopupDeliveryButtonText\":\"DELIVERY\",\"CalendarPopupNoScheduledDeliveries\":\"There are no scheduled deliveries for you area. Please select another address or choose the in-store pickup option\",\"CalendarPopupPickupButtonText\":\"PICKUP OPTIONS\",\"DeliveryPopupTitle\":null,\"DeliveryTimeSlotConfirmFutureWeek\":\"You have selected NEXT WEEK {0} date.\\u003cbr/\\u003eWould you like to proceed with your selection?\",\"DeliveryTimeSlotConfirmNextWeek\":\"You have selected NEXT WEEK {0} date.\\u003cbr/\\u003eWould you like to proceed with your selection?\",\"DeliveryTimeSlotPickUpAddressMessage\":\"Orders will need to be picked up from the selected address\",\"Deli"
-   },
-   {
-    "method": "POST",
-    "url": "https://kosherwest.com/proxy-api/Common/HeaderLinksJSON?_ts=1793914060124",
-    "post": "",
-    "status": 200,
-    "body": "{\"IsCustomerImpersonated\":false,\"IsEmployee\":false,\"DisplayHiddenProductLink\":false,\"DisplayApprovedProduct\":false,\"ShoppingCartEnabled\":false,\"ShoppingCartItems\":0,\"WishlistEnabled\":false,\"WishlistItems\":0,\"AllowPrivateMessages\":false,\"UnreadPrivateMessages\":\"\",\"AlertMessage\":\"\",\"StoreURL\":\"https://kosherwest.com/api/\",\"CustomerDeliveryOnInfo\":null,\"CustomerDeliveryOnInfoServiceArea\":null,\"DefautDeliveryActionTitle\":\"Deliver\",\"DisplayMissingSpaLink\":false,\"DisplayEditOn\":false,\"DisplayMissingBrandsLink\":false,\"DisplayMissingWeightsLink\":false,\"DisplayMissingCategoriesLink\":false,\"DisplayMissingApprovalLink\":false,\"DisplayReadyForReviewLink\":false,\"DisplayPrivacyPolicy\":true,\"HasFavorites\":false,\"ShowSpecials\":true,\"ShowFAQ\":true,\"IsAddButtonEnabled\":false,\"ShowRecipes\":true,\"ShowAboutUs\":true,\"GoogleId\":\"G-GLR7NK2NF7\",\"TagManagerId\":\"GTM-PW4P9BLV\",\"GoogleAnalyticsId\":\"UA-40695092-1\",\"TrackInventory\":false,\"PrimeProductName\":null,\"StoreIsClosed\":false,\"HasLandingPage\":false,\"IsCustomersPageEdit\":false,\"IsCustomersRolePageEdit\":false,\"IsLogViewPageEdit\":false,\"IsOrderItemsPageEdit\":false,\"IsCashierItemsPageEdit\":false,\"IsDeliMenuEdit\":false,\"IsCircularMenuEdit\":false,\"IsCircularMenuView\":false,\"IsFeaturedProducts\":false,\"DisplaySwitchLocationLink\":false,\"ShowPassover\":false,\"ForcePassoverStore\":false,\"PassoverByDefault\":false,\"CustomerId\":0,\"IsStoreAccountMenuEdit\":false,\"IsLanguageMenuEdit\":false,\"IsCaptchaEnabled\":true,\"IsEmailValidationRequired\":false,\"isCustomerHaveStoreCl"
-   },
    {
     "method": "POST",
     "url": "https://kosherwest.com/proxy-api/CarouselData/ByLocations",
     "post": "platform=0&carouselLocations[0][locationName]=HomePageCarousel1",
     "status": 200,
-    "body": "{\"Carousels\":[{\"Title\":\"Featured Products\",\"LocationName\":\"HomePageCarousel1\",\"Data\":\"[{\\\"Id\\\":13579,\\\"SPId\\\":13579,\\\"N\\\":\\\"Stern\\u0027s 100% Whole Wheat Bread Mezonos, 16 Oz\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0251583_sterns-stern-100-ww-bread-mezonos_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$4.29\\\",\\\"O\\\":\\\"\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":0,\\\"PN\\\":1,\\\"SP\\\":false,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":false,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":4.29,\\\"CC\\\":1,\\\"CN\\\":\\\"Bread\\\",\\\"StcQ\\\":8257,\\\"Cat\\\":\\\"c/379-0/c/466-379\\\",\\\"SKU\\\":\\\"033454002023\\\",\\\"PbU\\\":\\\"\\\",\\\"PbM\\\":0,\\\"PbD\\\":\\\"\\\",\\\"EBT\\\":false,\\\"ShowEBT\\\":false,\\\"COTM\\\":\\\"\\\",\\\"Active\\\":\\\"True\\\",\\\"Approved\\\":\\\"\\\",\\\"AprBy\\\":\\\"\\\",\\\"ReadyForReview\\\":\\\"False\\\",\\\"ReadyFRBy\\\":\\\"\\\",\\\"PASSOVER\\\":0,\\\"KITNIYOT\\\":0,\\\"RN\\\":0,\\\"NoShipping\\\":0,\\\"CSL\\\":false,\\\"IsHidden\\\":true,\\\"iId\\\":251583,\\\"IsPb\\\":true,\\\"CatId\\\":466,\\\"BOGO_OfferId\\\":\\\"\\\",\\\"BOGO_BuyQty\\\":\\\"\\\",\\\"BOGO_GetQty\\\":\\\"\\\",\\\"BOGO_OfferPercentage\\\":\\\"\\\",\\\"BOGO_ValidFrom\\\":\\\"\\\",\\\"BOGO_ValidBy\\\":\\\"\\\",\\\"WO\\\":false,\\\"CholovYisroel\\\":0},{\\\"Id\\\":23,\\\"SPId\\\":23,\\\"N\\\":\\\"Plastic House Deli Containers, 32 Oz 15 Ct\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0273869_plastic-house-deli-containers-32-oz-15-ct_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$4.49\\\",\\\"O\\\":\\\"\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":0,\\\"PN\\\":1,\\\"SP\\\":false,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":false,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":4.49,\\\"CC\\\":16,\\\"CN\\\":\\\"Containers\\\",\\\"StcQ\\\":622"
+    "body": "{\"Carousels\":[{\"Title\":\"Featured Products\",\"LocationName\":\"HomePageCarousel1\",\"Data\":\"[{\\\"Id\\\":13579,\\\"SPId\\\":13579,\\\"N\\\":\\\"Stern\\u0027s 100% Whole Wheat Bread Mezonos, 16 Oz\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0251583_sterns-stern-100-ww-bread-mezonos_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$4.29\\\",\\\"O\\\":\\\"\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":0,\\\"PN\\\":1,\\\"SP\\\":false,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":false,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":4.29,\\\"CC\\\":1,\\\"CN\\\":\\\"Bread\\\",\\\"StcQ\\\":8257,\\\"Cat\\\":\\\"c/379-0/c/466-379\\\",\\\"SKU\\\":\\\"033454002023\\\",\\\"PbU\\\":\\\"\\\",\\\"PbM\\\":0,\\\"PbD\\\":\\\"\\\",\\\"EBT\\\":false,\\\"ShowEBT\\\":false,\\\"COTM\\\":\\\"\\\",\\\"Active\\\":\\\"True\\\",\\\"Approved\\\":\\\"\\\",\\\"AprBy\\\":\\\"\\\",\\\"ReadyForReview\\\":\\\"False\\\",\\\"ReadyFRBy\\\":\\\"\\\",\\\"PASSOVER\\\":0,\\\"KITNIYOT\\\":0,\\\"RN\\\":0,\\\"NoShipping\\\":0,\\\"CSL\\\":false,\\\"IsHidden\\\":true,\\\"iId\\\":251583,\\\"IsPb\\\":true,\\\"CatId\\\":466,\\\"BOGO_OfferId\\\":\\\"\\\",\\\"BOGO_BuyQty\\\":\\\"\\\",\\\"BOGO_GetQty\\\":\\\"\\\",\\\"BOGO_OfferPercentage\\\":\\\"\\\",\\\"BOGO_ValidFrom\\\":\\\"\\\",\\\"BOGO_ValidBy\\\":\\\"\\\",\\\"WO\\\":false,\\\"CholovYisroel\\\":0},{\\\"Id\\\":23,\\\"SPId\\\":23,\\\"N\\\":\\\"Plastic House Deli Containers, 32 Oz 15 Ct\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0273869_plastic-house-deli"
    },
    {
     "method": "POST",
@@ -40,57 +64,202 @@
    },
    {
     "method": "POST",
-    "url": "https://kosherwest.com/proxy-api/CarouselData/ByLocations",
-    "post": "platform=0&carouselLocations[0][locationName]=HomePageCarousel3&isRecipes=true",
+    "url": "https://kosherwest.com/proxy-api/session/reissue",
+    "post": "",
+    "status": 401,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-6b014bca892e14f879642bf57f8886d2-730205e00074cf4e-00\"}"
+   },
+   {
+    "method": "GET",
+    "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+    "post": "",
     "status": 200,
-    "body": "{\"Carousels\":[{\"Title\":\"Shoppable Recipes\",\"LocationName\":\"HomePageCarousel3\",\"Data\":\"[]\",\"CarouselType\":\"Recipes\",\"DataType\":\"recipe\",\"AllowCache\":false,\"PictureURLTemplate\":\"https://recipes.kosherfamily.com/api/content/images/thumbs/\",\"NavigateURLTemplate\":\"/recipes/#/hb/v/recipeDetails/r/[RECIPE-ID]/he\",\"TemplateCarouselHolder\":\"\",\"TemplateCarouselItem\":\"\",\"DisplayItemsNumber\":6,\"LoadPagesNumber\":4,\"PreloadPagesNumber\":4,\"ScrollItemsNumber\":1}]}"
+    "body": "{}\n"
+   },
+   {
+    "method": "POST",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-GLR7NK2NF7&gtm=45je6b40v9223323424za20ozb9223310190zd9223310190xf1&_p=1793914192468&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1292502331.1793914193&frm=0&ngs=1&pscdl=noapi&rcb=8&sr=1280x720&uaa=x64&uab=64&uafvl=HeadlessChrome%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0%7CChromium%3B129.0.6668.29&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115616985~115938465~115938469~118897920~118897930~120213116~120385422~120412528~120420416~1",
+    "post": "",
+    "status": 204,
+    "body": ""
+   },
+   {
+    "method": "POST",
+    "url": "https://kosherwest.com/proxy-api/CarouselData/ByLocations",
+    "post": "platform=0&carouselLocations[0][locationName]=ProductsListCarousel1",
+    "status": 200,
+    "body": "{\"Carousels\":[{\"Title\":\"Quick Shop\",\"LocationName\":\"ProductsListCarousel1\",\"Data\":\"[{\\\"Id\\\":444,\\\"SPId\\\":444,\\\"N\\\":\\\"Avocado\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0234940_avocado_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$1.99 / each\\\",\\\"O\\\":\\\"\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":0,\\\"PN\\\":1,\\\"SP\\\":false,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":true,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":1.99,\\\"CC\\\":48,\\\"CN\\\":\\\"Avocado\\\",\\\"StcQ\\\":55336,\\\"Cat\\\":\\\"c/364-0/c/366-364/c/4892-366\\\",\\\"SKU\\\":\\\"4225\\\",\\\"PbU\\\":\\\"\\\",\\\"PbM\\\":0,\\\"PbD\\\":\\\"\\\",\\\"EBT\\\":false,\\\"ShowEBT\\\":false,\\\"COTM\\\":\\\"\\\",\\\"Active\\\":\\\"True\\\",\\\"Approved\\\":\\\"\\\",\\\"AprBy\\\":\\\"\\\",\\\"ReadyForReview\\\":\\\"False\\\",\\\"ReadyFRBy\\\":\\\"\\\",\\\"PASSOVER\\\":1,\\\"KITNIYOT\\\":0,\\\"RN\\\":20,\\\"NoShipping\\\":0,\\\"CSL\\\":true,\\\"IsHidden\\\":true,\\\"iId\\\":234940,\\\"IsPb\\\":true,\\\"CatId\\\":4892,\\\"BOGO_OfferId\\\":\\\"\\\",\\\"BOGO_BuyQty\\\":\\\"\\\",\\\"BOGO_GetQty\\\":\\\"\\\",\\\"BOGO_OfferPercentage\\\":\\\"\\\",\\\"BOGO_ValidFrom\\\":\\\"\\\",\\\"BOGO_ValidBy\\\":\\\"\\\"},{\\\"Id\\\":13643,\\\"SPId\\\":13643,\\\"N\\\":\\\"Driscoll\\u0027s Strawberry, 1 Lb\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0262112_driscolls-strawberry-1-lb_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$6.99 / "
+   },
+   {
+    "method": "POST",
+    "url": "https://kosherwest.com/proxy-api/AjaxFilter/BrandsJSON?filterMode=00000000",
+    "post": "[{\"FilterType\":0,\"Value1\":\"364\",\"Value2\":null,\"categoryId\":\"0\"}]",
+    "status": 200,
+    "body": "{\"Model\":{\"ScrollItemsNumber\":0,\"List\":[],\"Selected\":[]},\"Templates\":{\"holder\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003e\\n        Brands  \\n    \\u003c/h2\\u003e\\n    \\u003cdiv class=\\\"brandsClearAll\\\" style=\\\"display:none;\\\"\\u003e\\n        \\u003ca href=\\\"javascript:void(0);\\\" onclick=\\\"objFilterAjax.ClearBrands();\\\"\\u003eClear all\\u003c/a\\u003e\\n    \\u003c/div\\u003e\\n    \\u003cdiv class=\\\"info\\\"\\u003e\\n        \\u003cspan class=\\\"content-position\\\"\\u003e\\u003c/span\\u003e\\n        \\u003cspan class=\\\"dragger-position\\\"\\u003e\\u003c/span\\u003e\\n        \\u003cspan class=\\\"scroll-pct\\\"\\u003e\\u003c/span\\u003e\\n    \\u003c/div\\u003e\\n    \\u003cdiv id=\\\"BrandList\\\" style=\\\"display: block;\\\"\\u003e\\n        \\u003cul class=\\\"ajax-filter-items-list\\\"\\u003e\\n            [ITEMS]\\n        \\u003c/ul\\u003e\\n    \\u003c/div\\u003e\\n\\u003c/div\\u003e\",\"item\":\"\\u003cli class=\\\"brand-li\\\"\\u003e\\u003ca href=\\\"[BRAND-URL]\\\" data-brd=\\\"[BRAND-ID]\\\" onclick=\\\"return objFilterAjax.ChangeBrandState(this, [BRAND-ID]);\\\" class=\\\"[CSS-CLASS]\\\" aria-label=\\\"Brand\\\"\\u003e[TITLE]\\u003c/a\\u003e\\u003c/li\\u003e\"},\"HasSelected\":false}"
+   },
+   {
+    "method": "POST",
+    "url": "https://kosherwest.com/proxy-api/AjaxFilter/SpecificationAttributesJSON?filterMode=00000000",
+    "post": "[{\"FilterType\":0,\"Value1\":\"364\",\"Value2\":null,\"categoryId\":\"0\"}]",
+    "status": 200,
+    "body": "{\"Model\":{\"List\":[],\"ScrollItemsNumber\":15},\"Templates\":{\"holder\":\"[CONTAINERS]\",\"container\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003e\\n        [NAME]\\n    \\u003c/h2\\u003e\\n    \\u003cul class=\\\"ajax-filter-items-list SPAList\\\"\\u003e\\n        [ITEMS]\\n    \\u003c/ul\\u003e\\n\\u003c/div\\u003e\\n\",\"item\":\"\\u003cli\\u003e\\u003ca href=\\\"[SPA-OPTION-URL]\\\" onclick=\\\"return objFilterAjax.ChangeSpAttributeState(this, [SPA-OPTION-ID]);\\\" class=\\\"[CSS-CLASS]\\\"\\u003e[TITLE]\\u003c/a\\u003e\\u003c/li\\u003e\"},\"HasSelected\":false}"
+   },
+   {
+    "method": "POST",
+    "url": "https://kosherwest.com/proxy-api/AjaxFilter/PriceRangesJSON?filterMode=00000000",
+    "post": "[{\"FilterType\":0,\"Value1\":\"364\",\"Value2\":null,\"categoryId\":\"0\"}]",
+    "status": 200,
+    "body": "{\"Model\":{\"List\":[],\"Selected\":[],\"ScrollItemsNumber\":0},\"Templates\":{\"holder\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003ePrice\\u003c/h2\\u003e\\n    \\u003cul class=\\\"ajax-filter-items-list\\\" id=\\\"PriceList\\\"\\u003e\\n        [ITEMS]\\n    \\u003c/ul\\u003e\\n\\u003c/div\\u003e\\n\",\"item\":\"\\n\\u003cli class=\\\"pr-li\\\"\\u003e\\u003ca href=\\\"javascript:void(0)\\\" onclick=\\\"return objFilterAjax.ChangePriceRangeState(this, [FROM], [BY])\\\" class=\\\"[CSS-CLASS]\\\"\\u003e[TEXT]\\u003c/a\\u003e\\u003c/li\\u003e\"}}"
+   },
+   {
+    "method": "POST",
+    "url": "https://kosherwest.com/proxy-api/AjaxFilter/JsonProductsList?filterMode=00000000",
+    "post": "[{\"FilterType\":0,\"Value1\":364,\"Value2\":null,\"categoryId\":\"0\"}]",
+    "status": 200,
+    "body": "{\"parentCategory\":{\"Id\":0,\"pId\":0,\"N\":\"error\",\"tI\":null,\"aT\":null,\"D\":null,\"nU\":null,\"cOT\":0,\"iU\":null,\"iS\":0,\"cM\":false},\"childMultiselect\":false,\"hasChild\":true,\"subCategories\":[{\"Id\":395,\"pId\":0,\"N\":\"Meat\",\"tI\":\"Kosher Meat\",\"aT\":\"Shop for Kosher Meat\",\"D\":\"\\u003c!DOCTYPE html\\u003e\\u003chtml\\u003e\\u003chead\\u003e\\u003c/head\\u003e\\u003cbody\\u003e\\n\\n\\u003c/body\\u003e\\u003c/html\\u003e\",\"nU\":null,\"cOT\":0,\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0254004_300.jpeg\",\"iS\":300,\"cM\":false},{\"Id\":444,\"pId\":0,\"N\":\"Fish\",\"tI\":\"Kosher Fish\",\"aT\":\"Shop for Kosher Fish\",\"D\":\"\\u003c!DOCTYPE html\\u003e\\u003chtml\\u003e\\u003chead\\u003e\\u003c/head\\u003e\\u003cbody\\u003e\\n\\n\\u003c/body\\u003e\\u003c/html\\u003e\",\"nU\":null,\"cOT\":0,\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0254020_300.jpeg\",\"iS\":300,\"cM\":false},{\"Id\":612,\"pId\":0,\"N\":\"Deli\",\"tI\":\"Kosher Deli\",\"aT\":\"Shop for Kosher Deli\",\"D\":\"\\u003c!DOCTYPE html\\u003e\\u003chtml\\u003e\\u003chead\\u003e\\u003c/head\\u003e\\u003cbody\\u003e\\n\\n\\u003c/body\\u003e\\u003c/html\\u003e\",\"nU\":null,\"cOT\":0,\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0254016_300.jpeg\",\"iS\":300,\"cM\":false},{\"Id\":364,\"pId\":0,\"N\":\"Produce\",\"tI\":\"Kosher Produc"
    }
   ]
  },
- "https://seasonskosher.com/": {
-  "url": "https://seasonskosher.com/",
-  "error": "location is not defined",
+ "https://seasonskosher.com/Lakewood": {
+  "url": "https://seasonskosher.com/Lakewood",
+  "robots": "User-agent: *\nAllow: /\n\nUser-agent: Baiduspider\nDisallow: /\n\nUser-agent: Yandex\nDisallow: /\r\n",
+  "links": [
+   " => https://seasonskosher.com/Lakewood",
+   "SHOPPING TIPS => https://seasonskosher.com/shopping-tips",
+   "STORE LOCATION => https://seasonskosher.com/store-location",
+   "RECIPES => https://seasonskosher.com/recipes",
+   "MY ITEMS => https://seasonskosher.com/login?redirect=/Lakewood/category/favorites",
+   "SPECIALS => https://seasonskosher.com/Lakewood/circular/",
+   "EXPRESS REORDER => https://seasonskosher.com/login?redirect=/Lakewood",
+   " => https://seasonskosher.com/Lakewood/category/10612/deli",
+   " => https://seasonskosher.com/Lakewood/category/10444/fish",
+   " => https://seasonskosher.com/delivery",
+   " => https://seasonskosher.com/proxy-api/content/images/uploads/slider/linkedFiles/1470BE3D-A6B4-41E5-B533-9F00CC88A5FA_SIGN%20-%20shabbos%20delivered%202026.pdf",
+   " => https://seasonskosher.com/Lakewood/category/11680/fresh-organic-vegetables",
+   " => https://seasonskosher.com/Lakewood/category/10519/sushi",
+   " => https://seasonskosher.com/proxy-api/content/images/uploads/slider/linkedFiles/945205FE-DC6B-41EB-BEBD-32CCBAABB5AE.pdf",
+   "Platters => https://seasonskosher.com/Lakewood/category/11581/platters",
+   "Fruit => https://seasonskosher.com/Lakewood/category/11001/fruit",
+   "Vegetables => https://seasonskosher.com/Lakewood/category/11002/vegetables",
+   "Bakery => https://seasonskosher.com/Lakewood/category/10379/bakery",
+   "Meat => https://seasonskosher.com/Lakewood/category/10395/meat",
+   "Fish => https://seasonskosher.com/Lakewood/category/10444/fish",
+   "Sushi => https://seasonskosher.com/Lakewood/category/10519/sushi",
+   "Deli => https://seasonskosher.com/Lakewood/category/10612/deli",
+   "Provisions => https://seasonskosher.com/Lakewood/category/11152/provisions",
+   "Flowers => https://seasonskosher.com/Lakewood/category/11575/flowers",
+   "BBQ Essentials => https://seasonskosher.com/Lakewood/category/11597/bbq-essentials",
+   "Grocery => https://seasonskosher.com/Lakewood/category/10387/grocery",
+   "Catering => https://seasonskosher.com/Lakewood/category/11556/catering",
+   "Dairy => https://seasonskosher.com/Lakewood/category/10438/dairy",
+   "Frozen => https://seasonskosher.com/Lakewood/category/10450/frozen",
+   "Household => https://seasonskosher.com/Lakewood/category/10397/household",
+   "Media => https://seasonskosher.com/Lakewood/category/10555/media",
+   "Back To School => https://seasonskosher.com/Lakewood/category/11611/back-to-school",
+   "SPECIAL\n\nFranks Red Hot Sauce, => https://seasonskosher.com/Lakewood/category/10515/sauce/423899/franks-red-hot-sauce-12-oz",
+   "SPECIAL\n\nExtra Large Eggs- Pug => https://seasonskosher.com/Lakewood/category/10617/eggs/402878/extra-large-eggs-puglisi-27-oz",
+   "SPECIAL\n\nGlick's All Purpose F => https://seasonskosher.com/Lakewood/category/10491/flour/344312/glick-s-all-purpose-flour-5-lb",
+   "SPECIAL\n\nGefen Kosher Dill Ghe => https://seasonskosher.com/Lakewood/category/10509/canned-pickles/423293/gefen-kosher-dill-gherkins",
+   "SPECIAL\n\nUngers Soft Pretzels, => https://seasonskosher.com/Lakewood/category/10579/pretzels/423333/ungers-soft-pretzels-17-oz",
+   "SPECIAL\n\nMeal Mart Dry Rub Pas => https://seasonskosher.com/Lakewood/category/11116/cold-cuts/344831/meal-mart-dry-rub-pastrami",
+   "SPECIAL\n\nGushers Mixed Family  => https://seasonskosher.com/Lakewood/category/10567/candy/415825/gushers-mixed-family-pack-16-oz",
+   "SPECIAL\n\nTuscanini Sauce Pizza => https://seasonskosher.com/Lakewood/category/11117/canned-tomato-products/343910/tuscanini-sauce-pizza-traditional-243-oz"
+  ],
+  "clicked": "Dairy",
+  "afterClickUrl": "https://seasonskosher.com/Lakewood",
+  "newRequests": 0,
   "data": [
    {
     "method": "POST",
-    "url": "https://seasonskosher.com/proxy-api/Common/HeaderLinksJSON?_ts=1793914063763",
+    "url": "https://seasonskosher.com/proxy-api/session/invalidate",
     "post": "",
-    "status": 200,
-    "body": "{\"IsCustomerImpersonated\":false,\"IsEmployee\":false,\"DisplayHiddenProductLink\":false,\"DisplayApprovedProduct\":false,\"ShoppingCartEnabled\":false,\"ShoppingCartItems\":0,\"WishlistEnabled\":false,\"WishlistItems\":0,\"AllowPrivateMessages\":false,\"UnreadPrivateMessages\":\"\",\"AlertMessage\":\"\",\"StoreURL\":\"https://seasonskosher.com/api/\",\"CustomerDeliveryOnInfo\":null,\"CustomerDeliveryOnInfoServiceArea\":null,\"DefautDeliveryActionTitle\":\"Deliver\",\"DisplayMissingSpaLink\":false,\"DisplayEditOn\":false,\"DisplayMissingBrandsLink\":false,\"DisplayMissingWeightsLink\":false,\"DisplayMissingCategoriesLink\":false,\"DisplayMissingApprovalLink\":false,\"DisplayReadyForReviewLink\":false,\"DisplayPrivacyPolicy\":true,\"HasFavorites\":false,\"ShowSpecials\":true,\"ShowFAQ\":false,\"IsAddButtonEnabled\":false,\"ShowRecipes\":true,\"ShowAboutUs\":true,\"GoogleId\":\"G-PT8S839ZHF\",\"TagManagerId\":\"GTM-5GFSC9VJ\",\"GoogleAnalyticsId\":\"UA-63598223-1\",\"TrackInventory\":false,\"PrimeProductName\":null,\"StoreIsClosed\":false,\"HasLandingPage\":true,\"IsCustomersPageEdit\":false,\"IsCustomersRolePageEdit\":false,\"IsLogViewPageEdit\":false,\"IsOrderItemsPageEdit\":false,\"IsCashierItemsPageEdit\":false,\"IsDeliMenuEdit\":false,\"IsCircularMenuEdit\":false,\"IsCircularMenuView\":true,\"IsFeaturedProducts\":false,\"DisplaySwitchLocationLink\":true,\"ShowPassover\":false,\"ForcePassoverStore\":false,\"PassoverByDefault\":false,\"CustomerId\":0,\"IsStoreAccountMenuEdit\":false,\"IsLanguageMenuEdit\":false,\"IsCaptchaEnabled\":true,\"IsEmailValidationRequired\":false,\"isCustomerHaveStoreC"
+    "status": 401,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-017dbe6024ea2851d77824cb1f937a0d-53b2da92c9339f78-00\"}"
    },
    {
     "method": "GET",
-    "url": "https://seasonskosher.com/proxy-api/multistore/StoresDialogJSON",
+    "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
     "post": "",
     "status": 200,
-    "body": "{\"SelectedStoreId\":1,\"SelectedStoreIdNoDefault\":null,\"HasActivePickupAreasForSelectedStore\":true,\"StoresList\":[{\"StoreName\":\"Seasons Queens\",\"StoreSystemName\":\"Queens\",\"SeoLocation\":\"Queens\",\"IsClosed\":false,\"IsDiscontinued\":false,\"IsHidden\":false,\"IsPermanentlyClosed\":false,\"EnableStoreForRoleId\":0,\"PictureSrc\":\"/Content/Images/sk-store-ico-1.png\",\"AddressObj\":{\"FirstName\":\"SeasonsQueensStoreAddress\",\"LastName\":\"\",\"Email\":\"queens@seasonskosher.com\",\"Company\":\"\",\"CountryEnabled\":false,\"CountryId\":1,\"CountryName\":\"United States\",\"StateProvinceId\":40,\"StateProvinceName\":\"New York\",\"City\":\"Queens\",\"Address1\":\"68-18 Main Street\",\"Address2\":\"\",\"ZipPostalCode\":\"11367\",\"PhoneNumber\":\"(718) 268-6469\",\"FaxNumber\":\"718-268-6430\",\"AdvanceDays\":null,\"AvailableCountries\":[],\"AvailableStates\":[],\"LatLng\":\"40.7326516;-73.8254265\",\"StateProvinceAbbreviation\":\"NY\",\"IsValid\":true,\"ValidatedOnUtc\":null,\"ValidationMessage\":null,\"IsSelected\":false,\"IsCoopAddress\":false,\"ServiceAreaId\":-1,\"Place_Id\":null,\"SMSConsent\":null,\"ServiceAreaName\":null,\"IsDefault\":false,\"Id\":25011},\"WorkingHours\":{\"Saturday\":\"Closed\",\"Friday\":\"6:00 AM - 1.5 hours before Shabbos\",\"Thursday\":\"7:00 AM - 11:00 PM\",\"Wednesday\":\"7:00 AM - 10:00 PM\",\"Tuesday\":\"07:00 AM - 9:00 PM\",\"Monday\":\"07:00 AM - 9:00 PM\",\"Sunday\":\"07:00 AM - 9:00 PM\"},\"InStorePickupServiceAreaId\":2038,\"ShippingServiceAreaId\":null,\"ShippingServiceAreaForPerishableId\":null,\"PickerPhone\":\"(718) 268-6469\",\"FacebookLink\":null,\"TwitterLink\":null,\"GooglePlusLink\":"
+    "body": "{}\n"
    },
    {
     "method": "GET",
-    "url": "https://seasonskosher.com/proxy-api/Common/GetSiteConfigPublicValues",
+    "url": "https://seasonskosher.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=ReactHomeSlider",
     "post": "",
     "status": 200,
-    "body": "{\"siteGeneral\":{\"CaptchaSettingsReCaptchaPublicKey\":\"6LcNTMcrAAAAALkotChSdwzFmDt3gRbUjthJuKWZ\",\"GoogleCloudProjectId\":\"decisive-post-459017-k5\",\"CheckoutPickupAddress\":\"Pickup Information\",\"CollectPhoneInsteadOfEmail\":null,\"CouponCodeExpiredByDeliveryDate\":\"This promo code expires before the chosen delivery/pickup date. Please choose an earlier date and then re-apply the code\",\"NotServicedMessageMultiple\":\"We do not deliver to your area at the moment. Please use the \\\"Pickup\\\" button to select one of our pickup locations - there may be one near you!\",\"NotServicedMessageSingle\":\"We do not deliver to your area at the moment. You are welcome to use the \\\"Pickup\\\" option!\",\"StoreInformationSettingsStoreName\":\"SeasonsKosher.com\",\"StoreInformationSettingsStoreURL\":\"https://seasonskosher.com/api/\",\"StoreInformationSettingsSupermarketName\":\"Seasons\",\"CalendarPopupDeliveryButtonText\":\"DELIVERY\",\"CalendarPopupNoScheduledDeliveries\":\"There are no scheduled deliveries for you area. Please select another address\",\"CalendarPopupPickupButtonText\":\"PICKUP\",\"DeliveryPopupTitle\":null,\"DeliveryTimeSlotConfirmFutureWeek\":\"You have selected NEXT WEEK {0} date.\\u003cbr/\\u003eWould you like to proceed with your selection?\",\"DeliveryTimeSlotConfirmNextWeek\":\"The date you selected is not this week.\\u003cbr/\\u003ePlease confirm if that is correct and you are placing your order for next week or beyond.\",\"DeliveryTimeSlotPickUpAddressMessage\":\"Orders will need to be picked up from the selected address\","
+    "body": "{\"model\":{\"bannerHome\":null,\"imageBanners\":[{\"ImageUrl\":\"content/images/uploads/30F7A6EA-9E08-40B4-B05F-8F9B8B9EFC5A_WEB - banners - winner winner chicken dinner - lakweood toms river_1800x400.jpg\",\"TargetHref\":\"category/10612/deli\",\"AltText\":\"chicken dinner\",\"StartDate\":\"\\/Date(1761192000000)\\/\",\"EndDate\":\"\\/Date(3339028800000)\\/\",\"Priority\":0,\"AdvertiserId\":1,\"Advertiser\":null,\"BannerGroupId\":17,\"IsActive\":true,\"StoreId\":4,\"FreezeFrom\":null,\"FreezeTo\":null,\"IsFrozen\":null,\"Id\":1706},{\"ImageUrl\":\"content/images/uploads/E3C8CE01-E8B2-4C4C-9BA3-10AA33ED8C63.jpg\",\"TargetHref\":\"https://seasonskosher.com/Lakewood/category/10444/fish\",\"AltText\":\"fish\",\"StartDate\":\"\\/Date(1792555200000)\\/\",\"EndDate\":\"\\/Date(3370478400000)\\/\",\"Priority\":1,\"AdvertiserId\":1,\"Advertiser\":null,\"BannerGroupId\":17,\"IsActive\":true,\"StoreId\":4,\"FreezeFrom\":null,\"FreezeTo\":null,\"IsFrozen\":null,\"Id\":1953},{\"ImageUrl\":\"content/images/uploads/1356314C-420C-4298-9BD1-582D03C644CA_WEB - beep beep your order is here summer delivery_1800x400.jpg\",\"TargetHref\":\"https://seasonskosher.com/delivery\",\"AltText\":\"delivery\",\"StartDate\":\"\\/Date(1780977600000)\\/\",\"EndDate\":\"\\/Date(3358900800000)\\/\",\"Priority\":22,\"AdvertiserId\":1,\""
+   },
+   {
+    "method": "GET",
+    "url": "https://seasonskosher.com/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=4",
+    "post": "",
+    "status": 200,
+    "body": "[{\"Id\":11581,\"pId\":0,\"N\":\"Platters\",\"iU\":\"https://seasonskosher.com/api/content/images/thumbs/0469223_300.jpeg\",\"List\":[{\"Id\":11582,\"pId\":11581,\"N\":\"Fruit Platters\",\"iU\":\"https://seasonskosher.com/api/content/images/thumbs/0469259_300.jpeg\",\"List\":[],\"nU\":null,\"mPU\":null,\"mC\":null,\"CurrentCategoryDesc\":\"\\u003c!DOCTYPE html\\u003e\\n\\u003chtml\\u003e\\n\\u003chead\\u003e\\n\\u003c/head\\u003e\\n\\u003cbody\\u003e\\n\\n\\u003c/body\\u003e\\n\\u003c/html\\u003e\",\"CurrentCutoffTime\":0,\"CutoffTimeEnough\":true,\"MaxAvailableTime\":null,\"DisplayOrder\":0},{\"Id\":11583,\"pId\":11581,\"N\":\"Deli Platters\",\"iU\":\"https://seasonskosher.com/api/content/images/thumbs/0469195_300.jpeg\",\"List\":[],\"nU\":null,\"mPU\":null,\"mC\":null,\"CurrentCategoryDesc\":\"\\u003c!DOCTYPE html\\u003e\\n\\u003chtml\\u003e\\n\\u003chead\\u003e\\n\\u003c/head\\u003e\\n\\u003cbody\\u003e\\n\\n\\u003c/body\\u003e\\n\\u003c/html\\u003e\",\"CurrentCutoffTime\":null,\"CutoffTimeEnough\":true,\"MaxAvailableTime\":null,\"DisplayOrder\":0},{\"Id\":11584,\"pId\":11581,\"N\":\"Sushi Platters\",\"iU\":\"https://seasonskosher.com/api/content/images/thumbs/0469196_300.jpeg\",\"List\":[],\"nU\":null,\"mPU\":null,\"mC\":null,\"CurrentCategoryDesc\":\"\\u003c!DOCTYPE html\\u003e\\n\\u003chtml\\u003e\\n\\u003chead\\u003e\\n\\u00"
+   },
+   {
+    "method": "POST",
+    "url": "https://seasonskosher.com/proxy-api/CarouselData/ByLocations",
+    "post": "platform=0&carouselLocations[0][locationName]=HomePageCarousel4",
+    "status": 200,
+    "body": "{\"Carousels\":[{\"Title\":\"Weekly Specials\",\"LocationName\":\"HomePageCarousel4\",\"Data\":\"[{\\\"Id\\\":344312,\\\"SPId\\\":484109,\\\"N\\\":\\\"Glick\\u0027s All Purpose Flour, 5 Lb, ,\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0440315_glicks-flour-all-purpose-5-lb_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$7.00\\\",\\\"O\\\":\\\"$3.99\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":2,\\\"PN\\\":1,\\\"SP\\\":true,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":false,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":7.00,\\\"CC\\\":8,\\\"CN\\\":\\\"Flour\\\",\\\"StcQ\\\":0,\\\"Cat\\\":\\\"c/10387-0/c/10483-10387/c/10491-10483\\\",\\\"SKU\\\":\\\"840762001200\\\",\\\"PbU\\\":\\\"\\\",\\\"PbM\\\":0,\\\"PbD\\\":\\\"\\\",\\\"EBT\\\":false,\\\"ShowEBT\\\":false,\\\"COTM\\\":\\\"\\\",\\\"Active\\\":\\\"True\\\",\\\"Approved\\\":\\\"\\\",\\\"AprBy\\\":\\\"\\\",\\\"ReadyForReview\\\":\\\"False\\\",\\\"ReadyFRBy\\\":\\\"\\\",\\\"PASSOVER\\\":0,\\\"KITNIYOT\\\":0,\\\"RN\\\":0,\\\"NoShipping\\\":0,\\\"CSL\\\":false,\\\"IsHidden\\\":true,\\\"iId\\\":440315,\\\"IsPb\\\":true,\\\"CatId\\\":10491,\\\"BOGO_OfferId\\\":\\\"\\\",\\\"BOGO_BuyQty\\\":\\\"\\\",\\\"BOGO_GetQty\\\":\\\"\\\",\\\"BOGO_OfferPercentage\\\":\\\"\\\",\\\"BOGO_ValidFrom\\\":\\\"\\\",\\\"BOGO_ValidBy\\\":\\\"\\\",\\\"WO\\\":false,\\\"CholovYisroel\\\":0},{\\\"Id\\\":343548,\\\"SPId\\\":483203,\\\"N\\\":\\\"Snapple, Peach Tea, 64 Oz\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0446582_snapple-peach-iced-"
+   },
+   {
+    "method": "POST",
+    "url": "https://seasonskosher.com/proxy-api/CarouselData/ByLocations",
+    "post": "platform=0&carouselLocations[0][locationName]=HomePageCarousel5",
+    "status": 200,
+    "body": "{\"Carousels\":[{\"Title\":\"Popular Picks\",\"LocationName\":\"HomePageCarousel5\",\"Data\":\"[{\\\"Id\\\":407516,\\\"SPId\\\":3050282,\\\"N\\\":\\\"Kosher Taste Cilantro, 1.25 Oz\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"1475599_kosher-taste-cilantro_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$4.99\\\",\\\"O\\\":\\\"\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":0,\\\"PN\\\":1,\\\"SP\\\":false,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":false,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":4.99,\\\"CC\\\":1,\\\"CN\\\":\\\"Herbs\\\",\\\"StcQ\\\":0,\\\"Cat\\\":\\\"c/11002-0/c/11056-11002\\\",\\\"SKU\\\":\\\"880879006033\\\",\\\"PbU\\\":\\\"\\\",\\\"PbM\\\":0,\\\"PbD\\\":\\\"\\\",\\\"EBT\\\":false,\\\"ShowEBT\\\":false,\\\"COTM\\\":\\\"\\\",\\\"Active\\\":\\\"True\\\",\\\"Approved\\\":\\\"\\\",\\\"AprBy\\\":\\\"\\\",\\\"ReadyForReview\\\":\\\"False\\\",\\\"ReadyFRBy\\\":\\\"\\\",\\\"PASSOVER\\\":0,\\\"KITNIYOT\\\":0,\\\"RN\\\":1,\\\"NoShipping\\\":0,\\\"CSL\\\":false,\\\"IsHidden\\\":true,\\\"iId\\\":1475599,\\\"IsPb\\\":true,\\\"CatId\\\":11056,\\\"BOGO_OfferId\\\":\\\"\\\",\\\"BOGO_BuyQty\\\":\\\"\\\",\\\"BOGO_GetQty\\\":\\\"\\\",\\\"BOGO_OfferPercentage\\\":\\\"\\\",\\\"BOGO_ValidFrom\\\":\\\"\\\",\\\"BOGO_ValidBy\\\":\\\"\\\",\\\"WO\\\":false,\\\"CholovYisroel\\\":0},{\\\"Id\\\":391143,\\\"SPId\\\":1084446,\\\"N\\\":\\\"Seasons Fruit Fiesta, LG 48 Oz - please change\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"1492773_seasons-fruit-fiesta-lg-48-oz-pl"
+   },
+   {
+    "method": "GET",
+    "url": "https://seasonskosher.com/proxy-api/Circular/GetCircularViewJSON",
+    "post": "",
+    "status": 200,
+    "body": "{\"success\":true,\"message\":null,\"data\":{\"IsClose\":false,\"IsEnabled\":true,\"ImageWidth\":1100,\"CircularPages\":[{\"PageNumber\":1,\"PictureId\":1512671,\"PictureWidth\":1100,\"PictureHeight\":1424,\"PictureUrl\":\"https://seasonskosher.com/api/content/images/thumbs/1512671.jpeg\",\"Offers\":[]},{\"PageNumber\":2,\"PictureId\":1512672,\"PictureWidth\":1100,\"PictureHeight\":1424,\"PictureUrl\":\"https://seasonskosher.com/api/content/images/thumbs/1512672.jpeg\",\"Offers\":[]}]}}"
+   },
+   {
+    "method": "POST",
+    "url": "https://seasonskosher.com/proxy-api/session/reissue",
+    "post": "",
+    "status": 401,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-4ce7c3206d762e571fc870cc1db7f167-5ef984bf12d01568-00\"}"
+   },
+   {
+    "method": "GET",
+    "url": "https://seasonskosher.com/proxy-api/DeliMenu/MenuListJSON",
+    "post": "",
+    "status": 200,
+    "body": "{\"success\":true,\"message\":null,\"data\":[]}"
+   },
+   {
+    "method": "POST",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-PT8S839ZHF&gtm=45je6b40v9223323028za20ozb9223315290zd9223315290xf1&_p=1793914208529&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=512593636.1793914210&frm=0&ngs=1&pscdl=noapi&rcb=6&sr=1280x720&uaa=x64&uab=64&uafvl=HeadlessChrome%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0%7CChromium%3B129.0.6668.29&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120412526~120420414~120469145~12",
+    "post": "",
+    "status": 204,
+    "body": ""
    }
   ]
  },
- "https://www.koshervillage.com/products/produce": {
-  "url": "https://www.koshervillage.com/products/produce",
-  "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.koshervillage.com/products/produce\", waiting until \"networkidle\"\n",
+ "https://www.koshervillage.com/products/dairy-eggs": {
+  "url": "https://www.koshervillage.com/products/dairy-eggs",
+  "robots": "User-agent: GPTBot\nDisallow: /\n",
+  "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.koshervillage.com/products/dairy-eggs\", waiting until \"load\"\n",
   "data": []
  },
  "https://gourmetglatt.com/": {
   "url": "https://gourmetglatt.com/",
-  "links": [],
-  "finalUrl": "https://gourmetglatt.com/",
   "robots": "User-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /secret-ai-demo/\nDisallow: /secret-announcements-preview/\nDisallow: /location-picker-showcase/\nDisallow: /private/\n\nHost: https://gourmetglatt.com\nSitemap: https://gourmetglatt.com/sitemap.xml\n",
+  "links": [],
+  "afterClickUrl": "https://gourmetglatt.com/",
+  "newRequests": 0,
   "data": [
    {
     "method": "GET",
     "url": "https://gourmetglatt.com/strapi-proxy/stores?populate[city][populate][socialMediaConnect][populate][0]=socialIcon&populate[storeFrontImage]=true&populate[phoneContact]=true&populate[emailContact]=true&populate[whatsAppContact]=true&populate[announcement]=true",
     "post": "",
     "status": 200,
-    "body": "{\"data\":[{\"id\":118,\"documentId\":\"eexp38s4418au8rficrar9r3\",\"name\":\"Gourmet Glatt South\",\"slug\":\"gourmet-glatt-south\",\"address\":\"1328 River Ave, Lakewood, NJ 08701\",\"latitude\":40.05,\"longitude\":-74.22,\"createdAt\":\"2025-08-25T13:42:48.497Z\",\"updatedAt\":\"2025-09-10T17:48:19.275Z\",\"publishedAt\":\"2025-09-10T17:48:19.897Z\",\"directionLinks\":\"https://www.google.com/maps/dir//Gourmet+Glatt+South,+1328+River+Ave,+Lakewood,+NJ+08701/@40.0511635,-74.2265232,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c1790602c532bb:0x747bcb81443dd371!2m2!1d-74.2239483!2d40.0511594!3e0?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D\",\"optionalTag\":null,\"storeFrontImage\":{\"id\":46,\"documentId\":\"yoxecseyh2xx4vq2383szihj\",\"name\":\"WhatsApp Image 2025-09-09 at 5.12.05 PM.jpeg\",\"alternativeText\":null,\"caption\":null,\"width\":1599,\"height\":899,\"formats\":{\"large\":{\"ext\":\".jpeg\",\"url\":\"https://original-spirit-21301a9357.media.strapiapp.com/large_Whats_App_Image_2025_09_09_at_5_12_05_PM_80fc98302d.jpeg\",\"hash\":\"large_Whats_App_Image_2025_09_09_at_5_12_05_PM_80fc98302d\",\"mime\":\"image/jpeg\",\"name\":\"large_WhatsApp Image 2025-09-09 at 5.12.05 PM.jpeg\",\"path\":null,\"size\":80.43,\"width\":1000,\"height\":562,\"sizeInBytes\":80434},\"small\":{\"ext\":\".jpeg\",\"url\":\"https://original-spirit-21301a9357.media.strapiapp.com/small_Whats_App_Image_2025_09_09_at_5_12_05_PM_80fc98302d.jpeg\",\"hash\":\"small_Whats_App_Image_2025_09_09_at_5_12_05_PM_80fc98302d\",\"mime\":\"image/jpeg\",\"name\":\"small_WhatsApp Image 2025-09-09 at 5.12.05 PM.jpeg\",\"path\":null,\""
+    "body": "{\"data\":[{\"id\":118,\"documentId\":\"eexp38s4418au8rficrar9r3\",\"name\":\"Gourmet Glatt South\",\"slug\":\"gourmet-glatt-south\",\"address\":\"1328 River Ave, Lakewood, NJ 08701\",\"latitude\":40.05,\"longitude\":-74.22,\"createdAt\":\"2025-08-25T13:42:48.497Z\",\"updatedAt\":\"2025-09-10T17:48:19.275Z\",\"publishedAt\":\"2025-09-10T17:48:19.897Z\",\"directionLinks\":\"https://www.google.com/maps/dir//Gourmet+Glatt+South,+1328+River+Ave,+Lakewood,+NJ+08701/@40.0511635,-74.2265232,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c1790602c532bb:0x747bcb81443dd371!2m2!1d-74.2239483!2d40.0511594!3e0?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D\",\"optionalTag\":null,\"storeFrontImage\":{\"id\":46,\"documentId\":\"yoxecseyh2xx4vq2383szihj\",\"name\":\"WhatsApp Image 2025-09-09 at 5.12.05 PM.jpeg\",\"alternativeText\":null,\"caption\":null,\"width\":1599,\"height\":899,\"formats\":{\"large\":{\"ext\":\".jpeg\",\"url\":\"https://original-spirit-21301a9357.media.strapiapp.com/large_Whats_App_Image_2025_09_09_at_5_12_05_PM_80fc98302d.jpeg\",\"hash\":\"large_Whats_App_Image_2025_09_09_at_5_12_05_PM_80fc98302d\",\"mime\":\"image/jpeg\",\"name\":\"large_WhatsApp Image 2025-09-09 at 5.12.05 PM.jpeg\",\"path\":null,\"size\":80.43,\"width\":1000,\"height\":562,\"sizeInBytes\":80434},\"small\":{"
    }
   ]
  }
