@@ -29,10 +29,11 @@ function merge(sites) {
       if (!it.name || !(it.price > 0)) continue;
       const g = normGtin(it.gtin);
       const nk = normName((it.brand && !it.name.toLowerCase().includes(it.brand.toLowerCase()) ? it.brand + " " : "") + it.name + " " + (it.name.includes(it.size) ? "" : it.size || ""));
-      let key = (g && gtinKey.get(g)) || (byKey.has(nk) ? nk : null) || (g ? "g:" + g : nk);
+      // barcode wins; names only join items that have no barcode (or a row that has none yet)
+      let key = g ? (gtinKey.get(g) || (byKey.has(nk) && !byKey.get(nk)._g ? nk : "g:" + g)) : nk;
       let row = byKey.get(key);
       if (!row) { row = { k: key, n: it.name, b: it.brand || "", img: it.image || "", c: guessCat(it.name, it.category), o: {} }; byKey.set(key, row); }
-      if (g) gtinKey.set(g, key);
+      if (g) { gtinKey.set(g, key); row._g = true; }
       if (!row.img && it.image) row.img = it.image;
       const prev = row.o[siteId];
       if (!prev || it.price < prev[0]) row.o[siteId] = [Math.round(it.price * 100) / 100, it.url || "", it.variantId || "", it.inStock === false ? 0 : 1];
@@ -48,7 +49,8 @@ function merge(sites) {
     });
     bad.forEach(id => delete row.o[id]);
   }
-  return [...byKey.values()];
+  for (const row of byKey.values()) delete row._g;
+  return [...byKey.values()].filter(r => Object.keys(r.o).length);
 }
 
 module.exports = { merge, normName, normGtin, guessCat };

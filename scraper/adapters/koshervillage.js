@@ -8,7 +8,7 @@ const pick = (o, ...ks) => { for (const k of ks) { const v = k.split(".").reduce
 async function scrape(origin, { deadline = Infinity, log = () => {} } = {}) {
   const items = [], ids = new Set();
   for (const dir of ["desc", "asc"]) {
-  const base = `${origin}/api/services/supplier-ms/public/api/v1/groceries/_search?tenantId=${TENANT}&size=100&sort=originalId%2C${dir}`;
+  const base = `${origin}/api/services/supplier-ms/public/api/v1/groceries/_search?supplierId=${TENANT}&size=100&sort=originalId%2C${dir}`;
   let freshInPass = 0;
   for (let page = 0; page < 100 && Date.now() < deadline; page++) {
     let j; try { j = await getJson(`${base}&page=${page}`); } catch (e) { log(`  stopped at page ${page}: ${e.message.slice(0, 80)}`); break; }
@@ -17,6 +17,8 @@ async function scrape(origin, { deadline = Infinity, log = () => {} } = {}) {
     if (!list || !list.length) break;
     let fresh = 0;
     for (const g of list) {
+      const tid = g.tenant && (g.tenant.id ?? g.tenant.tenantId ?? g.tenant);
+      if (tid != null && typeof tid !== "object" && String(tid) !== String(TENANT)) continue; // only Kosher Village's own products
       if (ids.has(g.id)) continue; ids.add(g.id); fresh++; freshInPass++;
       const gp = g.groceryPrice || {}, sp = g.searchPrice || {};
       const onSale = gp.specialPrice > 0 && gp.specialTo && gp.specialTo >= new Date().toISOString().slice(0, 10);
