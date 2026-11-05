@@ -1,13 +1,13 @@
 {
   "seasonskosher.com": {
-    "lastAttempt": "2026-11-05T21:11:17.379Z",
+    "lastAttempt": "2026-11-05T22:00:08.178Z",
     "ok": false,
-    "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
+    "error": "Scrape finished but found 0 prices."
   },
   "koshervillage.com": {
-    "lastAttempt": "2026-11-05T21:11:17.379Z",
+    "lastAttempt": "2026-11-05T22:00:08.178Z",
     "ok": false,
-    "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
+    "error": "HTTP 500 https://www.koshervillage.com/api/services/supplier-ms/public/api/v1/groceries/_search?tenantId=2252&size=100&sort=originalId%2Cdesc&page=100"
   },
   "gourmetglatt.com": {
     "lastAttempt": "2026-11-05T21:11:17.379Z",
@@ -20,14 +20,14 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "aisle9market.com": {
-    "lastAttempt": "2026-11-05T21:11:17.379Z",
+    "lastAttempt": "2026-11-05T22:00:08.178Z",
     "ok": false,
-    "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
+    "error": "Scrape finished but found 0 prices."
   },
   "nutmegkoshermarket.com": {
-    "lastAttempt": "2026-11-05T21:11:19.833Z",
+    "lastAttempt": "2026-11-05T22:00:08.178Z",
     "ok": false,
-    "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
+    "error": "Scrape finished but found 0 prices."
   },
   "shopevergreenkosher.com": {
     "lastAttempt": "2026-11-05T21:11:21.004Z",
@@ -40,7 +40,7 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "kosherwest.com": {
-    "lastAttempt": "2026-11-05T21:58:21.350Z",
+    "lastAttempt": "2026-11-05T22:00:08.178Z",
     "ok": false,
     "error": "Scrape finished but found 0 prices."
   },
