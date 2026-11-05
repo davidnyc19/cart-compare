@@ -27,6 +27,12 @@ async function scrape(origin, { seo = "", deadline = Infinity, log = () => {} } 
       const r = await fetch(p, b ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(b) } : {});
       return r.ok ? r.json() : { __status: r.status };
     }, [path, body || null]);
+    if (process.env.MCG_DEBUG) {
+      page.on("request", r => { if (/JsonProductsList|Products/i.test(r.url())) log("  DEBUG REQ " + r.method() + " " + r.url().slice(0, 200) + " BODY " + (r.postData() || "").slice(0, 400)); });
+      page.on("response", async r => { if (/JsonProductsList/i.test(r.url())) { try { const j = await r.json(); log("  DEBUG RES count=" + j.productsCount + " json=" + String(j.productsJson).slice(0, 700)); } catch {} } });
+      await page.goto(`${origin}/${seo}/category/4892/avocado`, { waitUntil: "load", timeout: 60000 }); await page.waitForTimeout(8000);
+      await page.goto(`${origin}/${seo}/category/366/fruits`, { waitUntil: "load", timeout: 60000 }); await page.waitForTimeout(8000);
+    }
     const stores = await api("/proxy-api/multistore/StoresDialogJSON");
     const storeId = stores && stores.SelectedStoreId;
     log(`  branch: ${(stores.StoresList || []).find(s => s.Id === storeId || s.StoreId === storeId)?.StoreName || storeId}`);
