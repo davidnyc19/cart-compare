@@ -40,7 +40,7 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "kosherwest.com": {
-    "lastAttempt": "2026-11-05T22:00:08.178Z",
+    "lastAttempt": "2026-11-05T22:16:13.899Z",
     "ok": false,
     "error": "Scrape finished but found 0 prices."
   },
