@@ -40,9 +40,9 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "kosherwest.com": {
-    "lastAttempt": "2026-11-05T21:11:21.014Z",
+    "lastAttempt": "2026-11-05T21:36:36.655Z",
     "ok": false,
-    "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
+    "error": "Scrape finished but found 0 prices."
   },
   "bingowholesale.com": {
     "lastAttempt": "2026-11-05T21:11:21.047Z",

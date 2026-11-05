@@ -23,12 +23,13 @@
    "address": "711 Cedar Bridge Ave",
    "zip": "08701",
    "website": "https://seasonskosher.com",
-   "adapter": "auto",
+   "adapter": "mycloudgrocer",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "seo": "Lakewood",
    "siteId": "seasonskosher.com"
   },
   {
@@ -38,7 +39,7 @@
    "address": "911 E County Line Rd #108",
    "zip": "08701",
    "website": "https://www.koshervillage.com",
-   "adapter": "auto",
+   "adapter": "koshervillage",
    "delivery": {
     "fee": null,
     "freeOver": null,
@@ -53,12 +54,13 @@
    "address": "1700 Madison Ave",
    "zip": "08701",
    "website": "https://gourmetglatt.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website has no online shopping.",
    "siteId": "gourmetglatt.com"
   },
   {
@@ -68,12 +70,13 @@
    "address": "1328 River Ave",
    "zip": "08701",
    "website": "https://gourmetglatt.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website has no online shopping.",
    "siteId": "gourmetglatt.com"
   },
   {
@@ -83,12 +86,13 @@
    "address": "231 Main St",
    "zip": "08701",
    "website": "https://www.gonpgs.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website blocks automated visitors (Cloudflare check). Not scraped.",
    "siteId": "gonpgs.com"
   },
   {
@@ -98,12 +102,13 @@
    "address": "152 James St",
    "zip": "08701",
    "website": "https://www.gonpgs.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website blocks automated visitors (Cloudflare check). Not scraped.",
    "siteId": "gonpgs.com"
   },
   {
@@ -128,12 +133,13 @@
    "address": "951 Madison Ave",
    "zip": "08701",
    "website": "https://aisle9market.com",
-   "adapter": "auto",
+   "adapter": "mycloudgrocer",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "seo": "lakewood",
    "siteId": "aisle9market.com"
   },
   {
@@ -143,12 +149,13 @@
    "address": "485 Locust St, Unit 13",
    "zip": "08701",
    "website": "https://www.nutmegkoshermarket.com",
-   "adapter": "auto",
+   "adapter": "mycloudgrocer",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "seo": "Lakewood-NJ",
    "siteId": "nutmegkoshermarket.com"
   },
   {
@@ -158,12 +165,13 @@
    "address": "945 River Ave",
    "zip": "08701",
    "website": "https://www.shopevergreenkosher.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website blocks automated visitors (Cloudflare check). Not scraped.",
    "siteId": "shopevergreenkosher.com"
   },
   {
@@ -173,12 +181,13 @@
    "address": "407 Princeton Ave",
    "zip": "08701",
    "website": "http://www.foodexsupermarket.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website blocks automated visitors (Cloudflare check). Not scraped.",
    "siteId": "foodexsupermarket.com"
   },
   {
@@ -188,12 +197,13 @@
    "address": "136 Hillside Blvd",
    "zip": "08701",
    "website": "https://www.kosherwest.com",
-   "adapter": "auto",
+   "adapter": "mycloudgrocer",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "seo": "Lakewood-NJ",
    "siteId": "kosherwest.com"
   },
   {
@@ -203,12 +213,13 @@
    "address": "1900 Shorrock St, Suite 401",
    "zip": "08701",
    "website": "https://www.bingowholesale.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Sells online only through Instacart. Not scraped.",
    "siteId": "bingowholesale.com"
   },
   {
@@ -218,12 +229,13 @@
    "address": "2275 W County Line Rd",
    "zip": "08527",
    "website": "https://gourmetglatt.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website has no online shopping.",
    "siteId": "gourmetglatt.com"
   },
   {
@@ -233,12 +245,13 @@
    "address": "2080 W County Line Rd",
    "zip": "08527",
    "website": "https://www.gonpgs.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
+   "note": "Website blocks automated visitors (Cloudflare check). Not scraped.",
    "siteId": "gonpgs.com"
   }
  ],
