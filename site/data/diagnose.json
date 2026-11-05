@@ -1,0 +1,351 @@
+{
+ "https://seasonskosher.com": {
+  "url": "https://seasonskosher.com",
+  "status": 200,
+  "finalUrl": "https://seasonskosher.com/",
+  "title": "SeasonsKosher.com Online Kosher Grocery Shopping and Delivery Service",
+  "generator": "",
+  "shopLinks": [
+   "https://seasonskosher.com/delivery",
+   "https://seasonskosher.com/Queens/store-location",
+   "https://seasonskosher.com/profile/orders/null"
+  ],
+  "text": "PLEASE SELECT YOUR STORE Go! QUEENS (718) 268-6469 68-18 Main Street, Queens, New York 11367 LAWRENCE (516) 295-3300 330 Central Avenue, Lawrence, New York 11559 LAKEWOOD (732) 813-7700 711 Cedarbridge Avenue, Lakewood, New Jersey 08701 TOMS RIVER 732-605-4455 2088 Lakewood Rd, Toms River, New Jersey 08755 SCARSDALE 914-472-2240 1104 Wilmot Road, Scarsdale, New York 10583 EXPRESS STORES",
+  "scriptHosts": [
+   "seasonskosher.com",
+   "www.google.com",
+   "static.elfsight.com",
+   "accounts.google.com",
+   "maps.googleapis.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dataRequests": [
+   "GET https://seasonskosher.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=LandingPageSliderReact",
+   "GET https://seasonskosher.com/proxy-api/Customer/CardsJSON",
+   "GET https://seasonskosher.com/proxy-api/Customer/InfoJSON",
+   "POST https://seasonskosher.com/proxy-api/Common/HeaderLinksJSON?_ts=1793913166702",
+   "GET https://seasonskosher.com/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=undefined",
+   "GET https://seasonskosher.com/proxy-api/multistore/StoresDialogJSON",
+   "GET https://seasonskosher.com/proxy-api/Common/GetPdfFilesFromFolder",
+   "GET https://seasonskosher.com/proxy-api/Common/GetSiteConfigPublicValues",
+   "GET https://seasonskosher.com/proxy-api/Common/FooterJSON",
+   "GET https://seasonskosher.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=ReactHomeSlider",
+   "GET https://seasonskosher.com/proxy-api/DeliMenu/MenuListJSON",
+   "POST https://seasonskosher.com/proxy-api/DeliveryTimeSlots/GetDeliveryOnStatus",
+   "POST https://seasonskosher.com/proxy-api/session/reissue",
+   "GET https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+   "POST https://www.google-analytics.com/g/collect?v=2&tid=G-PT8S839ZHF&gtm=45je6b40v9223323028za20ozb9223315290zd9223315290xf1&_p=1793913166919&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1440426235.1793913167&fr"
+  ]
+ },
+ "https://www.koshervillage.com": {
+  "url": "https://www.koshervillage.com",
+  "status": 200,
+  "finalUrl": "https://www.koshervillage.com/",
+  "title": "Kosher Village",
+  "generator": "",
+  "shopLinks": [
+   "https://www.koshervillage.com/products/store-specials",
+   "https://www.koshervillage.com/products/grocery-1",
+   "https://www.koshervillage.com/products/sushi-1",
+   "https://www.koshervillage.com/products/specialties-and-sauces",
+   "https://www.koshervillage.com/products/produce",
+   "https://www.koshervillage.com/products/beverages-1",
+   "https://www.koshervillage.com/products/dairy-and-eggs",
+   "https://www.koshervillage.com/products/meat-department",
+   "https://www.koshervillage.com/products/fish-2",
+   "https://www.koshervillage.com/products/bakery-2",
+   "https://www.koshervillage.com/products/deli-and-appetizing",
+   "https://www.koshervillage.com/products/nosh-and-snacks",
+   "https://www.koshervillage.com/products/frozen-1",
+   "https://www.koshervillage.com/products/disposables",
+   "https://www.koshervillage.com/products/health-and-beauty"
+  ],
+  "text": "Find products Log In Specials All categories Grocery Sushi Specialties & Sauces Produce Beverages Dairy & Eggs Meat Department Fish Bakery Deli & Appetizing Nosh & Snacks Frozen Disposables Health & Beauty Household Essentials Baby & Childcare Family Entertainment Deli & Takeout Our Café Grab N Go SWEETIE Popping Boba Specials View all 9\" MICROWAVABLE PLASTIC PLATES 100 pcs $3.99 $ 3 . 49 Each Cas",
+  "scriptHosts": [
+   "www.koshervillage.com",
+   "fw-cdn.com",
+   "bnxtlvl-b16d5c09604c06517368343.freshchat.com"
+  ],
+  "dataRequests": [
+   "POST https://sentry.tripening.com/api/15/envelope/?sentry_version=7&sentry_key=da62f88ac2b206948339e82ee108d4ae&sentry_client=sentry.javascript.nuxt%2F9.11.0",
+   "GET https://www.koshervillage.com/_nuxt/builds/meta/ade0faf5-6377-4e3f-930d-0795b2d618d3.json",
+   "GET https://www.koshervillage.com/api/services/ads-ms/public/api/v1/get-ad-by-tenant?tenantId=2252&target=DESKTOP",
+   "GET https://www.koshervillage.com/api/services/supplier-ms/public/api/v1/groceries/_search?categories=479775%2C479733%2C479493%2C479928%2C479434%2C479643%2C479707%2C479669%2C479872%2C479594%2C479419%2C479",
+   "GET https://www.koshervillage.com/api/services/supplier-ms/public/api/v1/groceries/_search?categories=479936%2C479414&page=0&sort=originalId%2Cdesc&size=10&supplierId=2252",
+   "GET https://bnxtlvl-b16d5c09604c06517368343.freshchat.com/app/services/app/webchat/deb28934-e199-4134-9468-35f3055dae9a/config?domain=aHR0cHM6Ly93d3cua29zaGVydmlsbGFnZS5jb20=",
+   "GET https://www.koshervillage.com/api/services/supplier-ms/public/api/v1/groceries/auto-groups/count?tenantId=2252&autoGroupKeys=2252%7C9-microwavable-plastic-plates%7C476356,2252%7Csour-coated-marshmallo",
+   "POST https://www.koshervillage.com/api/services/selector-ms/public/api/v1/categories/categories-by-ids?tenantId=2252&entityType=GROCERY_BRAND"
+  ]
+ },
+ "https://gourmetglatt.com": {
+  "url": "https://gourmetglatt.com",
+  "status": 200,
+  "finalUrl": "https://gourmetglatt.com/",
+  "title": "Gourmet Glatt - Premium Kosher Supermarkets | Fresh Meat, Dairy & Groceries | Gourmet Glatt",
+  "generator": "",
+  "shopLinks": [],
+  "text": "Choose Your Location Select one of our premium locations: Cedarhurst Long Island, NY 137 Spruce St, Cedarhurst, NY 11516 Woodmere Long Island, NY 1030 Railroad Ave, Woodmere, NY 11598 North Lakewood, NJ 1700 Madison Ave, Lakewood, NJ 08701 South Lakewood, NJ 1328 River Ave, Lakewood, NJ 08701 Jackson Lakewood, NJ 2275 W County Line Rd, Jackson Township, NJ 08527 Kiamesha Lake Kiamesha Lake, NY 468",
+  "scriptHosts": [
+   "gourmetglatt.com",
+   "www.googletagmanager.com"
+  ],
+  "dataRequests": [
+   "GET https://gourmetglatt.com/strapi-proxy/stores?populate[city][populate][socialMediaConnect][populate][0]=socialIcon&populate[storeFrontImage]=true&populate[phoneContact]=true&populate[emailContact]=true"
+  ]
+ },
+ "https://www.gonpgs.com": {
+  "url": "https://www.gonpgs.com",
+  "status": 403,
+  "finalUrl": "https://www.gonpgs.com/",
+  "title": "Just a moment...",
+  "generator": "",
+  "shopLinks": [],
+  "text": "www.gonpgs.com Performing security verification This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot. Ray ID: a55edbfb9a74d2ec Performance and Security by Cloudflare Privacy",
+  "scriptHosts": [
+   "www.gonpgs.com",
+   "challenges.cloudflare.com"
+  ],
+  "dataRequests": [
+   "POST https://www.gonpgs.com/cdn-cgi/challenge-platform/h/b/fo/1951298871:1793909504:Sq-DrzjlTIchteKBH2gXKNep7mMVrA23QQ6vcsdhvhM/a55edbfb9a74d2ec/FuCe3GlGJ.q4Z0Q_VL6OjlP6S.EpOXZdpGuNHDzbqjc-1793913174-1.2.1",
+   "POST https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3179165354:1793909506:y64nSLmBG_aLUbQpFjh_mWdg0PHGH2kMU8KoduWltwg/a55edbfe2da3e18a/CtMprVUL_bAZkaTjaRFERYNdvKCwQ7pRZ6Ptrxgdk9GFIlf8b",
+   "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a55edbfe2da3e18a/1793913175206/77af5f7f2bab06346a9c32193617f69ee427a5032af4c58fa2d7e16dfd5aee30/CptcLYXzPRvWyH-btL2hfz33zV656GysdBy",
+   "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a55edbfe2da3e18a/CtMprVUL_bAZkaTjaRFERYNdvKCwQ7pRZ6Ptrxgdk9GFIlf8bajeBGIyKNB8AvdspqrYGdAJHyT8x_VuwSGOBAYZDp7bW4InVvvF5KzBYwv",
+   "POST https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3179165354:1793909506:y64nSLmBG_aLUbQpFjh_mWdg0PHGH2kMU8KoduWltwg/a55edbfe2da3e18a/CtMprVUL_bAZkaTjaRFERYNdvKCwQ7pRZ6Ptrxgdk9GFIlf8b"
+  ]
+ },
+ "https://aisle9market.com": {
+  "url": "https://aisle9market.com",
+  "status": 200,
+  "finalUrl": "https://aisle9market.com/lakewood",
+  "title": "Aisle 9 Market",
+  "generator": "",
+  "shopLinks": [
+   "https://aisle9market.com/store-location",
+   "https://aisle9market.com/delivery",
+   "https://play.google.com/store/apps/details?id=com.mycloudgrocer.a9",
+   "https://aisle9market.com/lakewood/store-location",
+   "https://aisle9market.com/profile/orders/null"
+  ],
+  "text": "AISLE 9 LAKEWOOD STORE SIGN IN DEPARTMENTS RECIPES MY ITEMS SPECIALS CATERING MENU STORE LOCATION SHOP BY DEPARTMENT Fast Aid Grab & Go Flowers Produce Fresh Meat Fresh Fish Dairy Grocery Deli Sushi Bakery Frozen Appetizing Catering Household & Beyond FEATURED PRODUCTS SPECIAL Galil Thin Rice Cake With Salt Gluten Free, 3.5 Oz 4 for $5.00 $1.79 SPECIAL Kedem Cereal Bars Choco Rice, 4.4 Oz $4.99 $5",
+  "scriptHosts": [
+   "aisle9market.com",
+   "www.google.com",
+   "static.elfsight.com",
+   "www.googletagmanager.com",
+   "accounts.google.com",
+   "maps.googleapis.com",
+   "www.gstatic.com",
+   "www.google-analytics.com"
+  ],
+  "dataRequests": [
+   "GET https://aisle9market.com/proxy-api/Customer/CardsJSON",
+   "GET https://aisle9market.com/proxy-api/Customer/InfoJSON",
+   "POST https://aisle9market.com/proxy-api/Common/HeaderLinksJSON?_ts=1793913178527",
+   "GET https://aisle9market.com/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=undefined",
+   "GET https://aisle9market.com/proxy-api/multistore/StoresDialogJSON",
+   "GET https://aisle9market.com/proxy-api/Common/GetPdfFilesFromFolder",
+   "GET https://aisle9market.com/proxy-api/Common/GetSiteConfigPublicValues",
+   "GET https://aisle9market.com/proxy-api/Common/FooterJSON",
+   "GET https://aisle9market.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=ReactHomeSlider",
+   "GET https://aisle9market.com/proxy-api/DeliMenu/MenuListJSON",
+   "POST https://aisle9market.com/proxy-api/DeliveryTimeSlots/GetDeliveryOnStatus",
+   "POST https://aisle9market.com/proxy-api/session/reissue",
+   "POST https://aisle9market.com/proxy-api/CarouselData/ByLocations",
+   "POST https://aisle9market.com/proxy-api/Common/GetlockdownMessage",
+   "POST https://aisle9market.com/proxy-api/CarouselData/ByLocations",
+   "POST https://aisle9market.com/proxy-api/CarouselData/ByLocations",
+   "POST https://aisle9market.com/proxy-api/Common/GetlockdownMessage",
+   "GET https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+   "POST https://www.google-analytics.com/j/collect?v=1&_v=j102&a=1438210450&t=pageview&_s=1&dl=https%3A%2F%2Faisle9market.com%2Flakewood&dp=%2Flakewood&ul=en-us&dt=Aisle%209%20Market&sr=1280x720&vp=1280x720&_",
+   "POST https://www.google-analytics.com/g/collect?v=2&tid=G-VN80H7YE9T&gtm=45je6b40v870567269za20ozb832461780zd832461780xf1&_p=1793913178834&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=348110397.1793913180&frm=0&"
+  ]
+ },
+ "https://www.nutmegkoshermarket.com": {
+  "url": "https://www.nutmegkoshermarket.com",
+  "status": 200,
+  "finalUrl": "https://nutmegkoshermarket.com/Lakewood-NJ",
+  "title": "Nutmeg",
+  "generator": "",
+  "shopLinks": [
+   "https://nutmegkoshermarket.com/store-location",
+   "https://nutmegkoshermarket.com/delivery",
+   "https://play.google.com/store/apps/details?id=com.mycloudgrocer.nutmeg",
+   "https://nutmegkoshermarket.com/Lakewood-NJ/store-location",
+   "https://nutmegkoshermarket.com/profile/orders/null"
+  ],
+  "text": "Our Flyer Sign in Departments Recipes My Items Specials Deli Menu Store Location Subscribe SHOP BY DEPARTMENT Breakfast Bar Catering Fresh Meat Fish Deli Provisions Produce Groceries Beverages Dairy & Eggs Fresh Bakery Sushi Beauty & Personal Candy & Sweets Frozen Household Health Baby Care Media FEATURED PRODUCTS Salmon Fillet $16.99 / lb SHABBOS MEAT MIDDLE CHUCK GF BELZ $13.99 / lb Gefen Cholen",
+  "scriptHosts": [
+   "nutmegkoshermarket.com",
+   "www.google.com",
+   "static.elfsight.com",
+   "accounts.google.com",
+   "maps.googleapis.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dataRequests": [
+   "GET https://nutmegkoshermarket.com/proxy-api/Customer/CardsJSON",
+   "GET https://nutmegkoshermarket.com/proxy-api/Customer/InfoJSON",
+   "POST https://nutmegkoshermarket.com/proxy-api/Common/HeaderLinksJSON?_ts=1793913182221",
+   "GET https://nutmegkoshermarket.com/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=undefined",
+   "GET https://nutmegkoshermarket.com/proxy-api/multistore/StoresDialogJSON",
+   "GET https://nutmegkoshermarket.com/proxy-api/Common/GetPdfFilesFromFolder",
+   "GET https://nutmegkoshermarket.com/proxy-api/Common/GetSiteConfigPublicValues",
+   "GET https://nutmegkoshermarket.com/proxy-api/Common/FooterJSON",
+   "GET https://nutmegkoshermarket.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=ReactHomeSlider",
+   "GET https://nutmegkoshermarket.com/proxy-api/DeliMenu/MenuListJSON",
+   "POST https://nutmegkoshermarket.com/proxy-api/DeliveryTimeSlots/GetDeliveryOnStatus",
+   "POST https://nutmegkoshermarket.com/proxy-api/session/reissue",
+   "POST https://nutmegkoshermarket.com/proxy-api/CarouselData/ByLocations",
+   "POST https://nutmegkoshermarket.com/proxy-api/CarouselData/ByLocations",
+   "POST https://nutmegkoshermarket.com/proxy-api/CarouselData/ByLocations",
+   "POST https://nutmegkoshermarket.com/proxy-api/Common/GetlockdownMessage",
+   "GET https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+   "POST https://www.google-analytics.com/g/collect?v=2&tid=G-J2N8JPQ4R4&gtm=45je6b40v9223320686za20ozb9223311521zd9223311521xf1&_p=1793913182877&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=777905272.1793913184&frm"
+  ]
+ },
+ "https://www.shopevergreenkosher.com": {
+  "url": "https://www.shopevergreenkosher.com",
+  "status": 403,
+  "finalUrl": "https://www.shopevergreenkosher.com/",
+  "title": "Just a moment...",
+  "generator": "",
+  "shopLinks": [],
+  "text": "www.shopevergreenkosher.com Performing security verification This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot. Ray ID: a55edc3d8cc8dd00 Performance and Security by Cloudflare Privacy",
+  "scriptHosts": [
+   "www.shopevergreenkosher.com",
+   "challenges.cloudflare.com"
+  ],
+  "dataRequests": [
+   "POST https://www.shopevergreenkosher.com/cdn-cgi/challenge-platform/h/b/fo/1951298871:1793909504:Sq-DrzjlTIchteKBH2gXKNep7mMVrA23QQ6vcsdhvhM/a55edc3d8cc8dd00/fDQmWwOyAcd5ck3jLWcqWZ1iPzzKe8HWSTJdxRmLL6Q-179",
+   "POST https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3179165354:1793909506:y64nSLmBG_aLUbQpFjh_mWdg0PHGH2kMU8KoduWltwg/a55edc406eac4bce/CmT715zFwU3dhsypFD_iA_cSEBFMupIK3s0pPWWiVqaIvbTLi",
+   "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a55edc406eac4bce/CmT715zFwU3dhsypFD_iA_cSEBFMupIK3s0pPWWiVqaIvbTLiMwUkE7rsdjMSwAu3petdce-kKitxvOCY9W5xaDM01ZXDALfukqBFoXe1kK",
+   "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a55edc406eac4bce/1793913185804/8a4edbf229b1214a495b1d31f06c632bba53c85fc102a68053d3f725fc54f52f/CpMT0vBu1DBJdekpFvD6Uispz_uplW4rPwv"
+  ]
+ },
+ "http://www.foodexsupermarket.com": {
+  "url": "http://www.foodexsupermarket.com",
+  "status": 403,
+  "finalUrl": "https://www.foodexsupermarket.com/",
+  "title": "Just a moment...",
+  "generator": "",
+  "shopLinks": [],
+  "text": "www.foodexsupermarket.com Performing security verification This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot. Ray ID: a55edc4d8c460c7b Performance and Security by Cloudflare Privacy",
+  "scriptHosts": [
+   "www.foodexsupermarket.com",
+   "challenges.cloudflare.com"
+  ],
+  "dataRequests": [
+   "POST https://www.foodexsupermarket.com/cdn-cgi/challenge-platform/h/b/fo/1951298871:1793909504:Sq-DrzjlTIchteKBH2gXKNep7mMVrA23QQ6vcsdhvhM/a55edc4d8c460c7b/QD9uBwVyaQAJgST0GfzhgNca.MWOpYLcZc90TaKRbL0-17939",
+   "POST https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3179165354:1793909506:y64nSLmBG_aLUbQpFjh_mWdg0PHGH2kMU8KoduWltwg/a55edc506c8aa22a/CvKUCUQBEkUh038XQVcCj4kviXbZxy9JfxYx4Qe2G7ojtZH69",
+   "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a55edc506c8aa22a/1793913188404/bd09dda4e324252678a02910cc48606605b72b06c28cdb51abbb1c9df21fa93b/CiOrGSXSpR-SF8H8m7yfuZmbNRKCfM8QpJm",
+   "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a55edc506c8aa22a/CvKUCUQBEkUh038XQVcCj4kviXbZxy9JfxYx4Qe2G7ojtZH69YSDLCFT_MLw8GnOH_SF2__mfYU4lIEf_XksmsyIiBrqGmTy29dOKFy8Ep-",
+   "POST https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3179165354:1793909506:y64nSLmBG_aLUbQpFjh_mWdg0PHGH2kMU8KoduWltwg/a55edc506c8aa22a/CvKUCUQBEkUh038XQVcCj4kviXbZxy9JfxYx4Qe2G7ojtZH69"
+  ]
+ },
+ "https://www.kosherwest.com": {
+  "url": "https://www.kosherwest.com",
+  "status": 200,
+  "finalUrl": "https://kosherwest.com/Lakewood-NJ",
+  "title": "Kosher West - Grocery Delivery In The Lakewood Area",
+  "generator": "",
+  "shopLinks": [
+   "https://kosherwest.com/store-location",
+   "https://kosherwest.com/Lakewood-NJ/store-location",
+   "https://kosherwest.com/Lakewood-NJ/delivery",
+   "https://play.google.com/store/apps/details?id=com.mycloudgrocer.kowe",
+   "https://kosherwest.com/delivery",
+   "https://kosherwest.com/profile/orders/null"
+  ],
+  "text": "Sign In DEPARTMENTS RECIPES MY ITEMS SPECIALS EXPRESS REORDER STORE LOCATION SHOP BY DEPARTMENT Meat Fish Deli Produce Grocery Beverages Dairy Bakery Sushi Candy & Sweets Dried Fruits & Nuts Frozen Household Health & Beauty Baby Care Media FEATURED PRODUCTS Pas Wrap It Plain, 13 Oz $4.49 Chicken Bones Netted $2.99 / lb Pride Of The Farm Heavy Cream $3.99 Salad Mate Caesar Light Dressing, 12 Oz $6.",
+  "scriptHosts": [
+   "kosherwest.com",
+   "www.google.com",
+   "static.elfsight.com",
+   "accounts.google.com",
+   "maps.googleapis.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dataRequests": [
+   "GET https://kosherwest.com/proxy-api/Customer/CardsJSON",
+   "GET https://kosherwest.com/proxy-api/Customer/InfoJSON",
+   "POST https://kosherwest.com/proxy-api/Common/HeaderLinksJSON?_ts=1793913191831",
+   "GET https://kosherwest.com/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=undefined",
+   "GET https://kosherwest.com/proxy-api/multistore/StoresDialogJSON",
+   "GET https://kosherwest.com/proxy-api/Common/GetPdfFilesFromFolder",
+   "GET https://kosherwest.com/proxy-api/Common/GetSiteConfigPublicValues",
+   "GET https://kosherwest.com/proxy-api/Common/FooterJSON",
+   "GET https://kosherwest.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=ReactHomeSlider",
+   "GET https://kosherwest.com/proxy-api/DeliMenu/MenuListJSON",
+   "POST https://kosherwest.com/proxy-api/DeliveryTimeSlots/GetDeliveryOnStatus",
+   "POST https://kosherwest.com/proxy-api/session/reissue",
+   "POST https://kosherwest.com/proxy-api/CarouselData/ByLocations",
+   "POST https://kosherwest.com/proxy-api/CarouselData/ByLocations",
+   "POST https://kosherwest.com/proxy-api/CarouselData/ByLocations",
+   "GET https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+   "POST https://www.google-analytics.com/g/collect?v=2&tid=G-GLR7NK2NF7&gtm=45je6b40v9223323424za20ozb9223310190zd9223310190xf1&_p=1793913192449&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1382657667.1793913193&fr"
+  ]
+ },
+ "https://www.bingowholesale.com": {
+  "url": "https://www.bingowholesale.com",
+  "status": 200,
+  "finalUrl": "https://www.bingowholesale.com/",
+  "title": "Bingo Wholesale",
+  "generator": "Wix.com Website Builder",
+  "shopLinks": [
+   "https://www.instacart.com/store/bingo-wholesale/storefront"
+  ],
+  "text": "Skip to Main Content HOME MEMBERSHIP OFFERS LOCATIONS CONNECT GALLERY ABOUT OUR BUYING POWER IS YOUR PROFIT Black Friday Deals See All Deals Shop Now! At Bingo Wholesale, our membership program is designed to provide our customers with exclusive savings and a convenient Self-Checkout service. We're committed to making sure you get the best value for your money! Join today and start enjoying all th",
+  "scriptHosts": [
+   "browser.sentry-cdn.com",
+   "static.parastorage.com",
+   "",
+   "www.googletagmanager.com",
+   "app-worker.visitor-analytics.io"
+  ],
+  "dataRequests": [
+   "GET https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2289ad9892-2932-455c-9828-10eb93407be9%22%3A%22619%22%2C%223495efc2-56a9-41e9-bb3c-8c9b3b3ab501%22%3A%22151",
+   "GET https://static.parastorage.com/services/wix-thunderbolt/dist/mainSdks.dac4066d.chunk.min.js",
+   "GET https://static.parastorage.com/services/wix-thunderbolt/dist/nonMainSdks.34ef7046.chunk.min.js",
+   "GET https://static.parastorage.com/services/forms-viewer/1.883.0/viewerScript.bundle.min.js",
+   "GET https://static.parastorage.com/services/search-app/1.4011.0/viewerScript.bundle.min.js",
+   "GET https://static.parastorage.com/services/wix-code-viewer-app/1.1479.751/app.js",
+   "GET https://www.bingowholesale.com/_api/v1/access-tokens?cacheBust=1793913199489-1887736021-1884663755",
+   "GET https://static.parastorage.com/services/editor-elements/1.15633.0/rb_wixui.corvid.manifest.min.json",
+   "GET https://static.parastorage.com/services/editor-elements/1.15633.0/rb_dsgnsys.corvid.manifest.min.json",
+   "GET https://www.bingowholesale.com/_api/tag-manager/api/v1/tags/sites/ea5ba90a-a500-4a0c-9be0-69a2cf9f6fc8?wixSite=false&htmlsiteId=e413fa0c-4d55-408a-afa7-c423553d801b&language=en",
+   "GET https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2289ad9892-2932-455c-9828-10eb93407be9%22%3A%22619%22%2C%223495efc2-56a9-41e9-bb3c-8c9b3b3ab501%22%3A%22151",
+   "GET https://static.parastorage.com/services/editor-elements/1.15633.0/rb_wixui.thunderbolt.manifest.min.json",
+   "GET https://static.parastorage.com/services/editor-elements/1.15633.0/rb_dsgnsys.thunderbolt.manifest.min.json",
+   "GET https://static.wixstatic.com/shapes/fd0128_699a625d51534848b28ffa948f50a88e.svg",
+   "GET https://static.wixstatic.com/shapes/0edb6e3056c244c897a256cbd4974189.svg",
+   "GET https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2289ad9892-2932-455c-9828-10eb93407be9%22%3A%22619%22%2C%223495efc2-56a9-41e9-bb3c-8c9b3b3ab501%22%3A%22151",
+   "GET https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2289ad9892-2932-455c-9828-10eb93407be9%22%3A%22619%22%2C%223495efc2-56a9-41e9-bb3c-8c9b3b3ab501%22%3A%22151",
+   "GET https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2289ad9892-2932-455c-9828-10eb93407be9%22%3A%22619%22%2C%223495efc2-56a9-41e9-bb3c-8c9b3b3ab501%22%3A%22151",
+   "GET https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2289ad9892-2932-455c-9828-10eb93407be9%22%3A%22619%22%2C%223495efc2-56a9-41e9-bb3c-8c9b3b3ab501%22%3A%22151",
+   "GET https://static.parastorage.com/services/auto-frontend-modules/1.6238.0/webworker/manifest-worker.min.json",
+   "GET https://static.parastorage.com/services/blocks-client-viewer-app/1.2576.0/viewerApp.umd.min.js",
+   "GET https://static.parastorage.com/services/website-sdk-dummy-viewer-app/1.0.0/viewer-script.js",
+   "GET https://www.bingowholesale.com/_serverless/cookie-consent-settings-serverless/v1/cookie-banner-settings?languageCode=en",
+   "POST https://panorama.wixapps.net/api/v1/bulklog",
+   "GET https://static.parastorage.com/services/editor-elements-library/dist/corvid/rb_wixui.corvid~core.748e8783.bundle.min.js",
+   "POST https://panorama.wixapps.net/api/v1/bulklog",
+   "GET https://visits.visitor-analytics.io/api/standalone/websites/43e6bc40-8cea-11f0-84e1-960004340fd3/settings",
+   "POST https://frog.wix.com/bpm",
+   "GET https://bundler-velo.parastorage.com/v3_metaSiteId_ea5ba90a-a500-4a0c-9be0-69a2cf9f6fc8/gridAppId_e71b7ee4-cf4b-4b36-91c8-515225e6e7be/filePath_public_delimiter_pages_delimiter_masterPage.js/fileType_",
+   "GET https://bundler-velo.parastorage.com/v3_metaSiteId_ea5ba90a-a500-4a0c-9be0-69a2cf9f6fc8/gridAppId_e71b7ee4-cf4b-4b36-91c8-515225e6e7be/filePath_public_delimiter_pages_delimiter_tuckg.js/fileType_js/co",
+   "GET https://frog.wix.com/platform-viewer?_msid=ea5ba90a-a500-4a0c-9be0-69a2cf9f6fc8&vsi=00d78b46-036f-4c82-af3f-e76ce53b1585&_av=thunderbolt-1.18343.0&isb=true&isbr=ua&_siteOwnerId=fd012899-04c2-4ae5-b68d",
+   "POST https://frog.wix.com/bolt-performance",
+   "GET https://static.parastorage.com/services/forms-viewer/dc83e0b402d2bc69b79ea3a1e86f406a3ad5f4ea6bcc0c18645f2b5b/assets/locales/messages_en.json",
+   "GET https://static.parastorage.com/services/auto-frontend-modules/dist/webworker/auto-frontend-modules.68dbdc1c.umd.min.js",
+   "POST https://panorama.wixapps.net/api/v1/bulklog",
+   "GET https://static.parastorage.com/services/editor-elements-library/dist/corvid/rb_wixui.corvid_bootstrap.6c431abf.bundle.min.js",
+   "GET https://static.parastorage.com/services/editor-elements-library/dist/corvid/rb_wixui.corvid[Column].610caa32.bundle.min.js",
+   "GET https://static.parastorage.com/services/editor-elements-library/dist/corvid/rb_wixui.corvid[SearchBox].17a1104e.bundle.min.js",
+   "GET https://static.parastorage.com/services/editor-elements-library/dist/corvid/rb_wixui.corvid[StylableHorizontalMenu].9686408f.bundle.min.js",
+   "GET https://static.parastorage.com/services/editor-elements-library/dist/corvid/rb_wixui.corvid[VectorImage].16172657.bundle.min.js"
+  ]
+ }
+}
