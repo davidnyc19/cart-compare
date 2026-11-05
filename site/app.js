@@ -12,7 +12,7 @@ const svg = (c, s) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill=
 const tint = c => { const t = TINT[c] || TINT.pantry; return `--t:${t[0]};--ti:${t[1]}`; };
 const pic = p => `<span class="pic" style="${tint(p.c)}">${p.img && /^https?:/.test(p.img) ? `<img src="${esc(p.img)}" alt="" loading="lazy" onerror="this.replaceWith(document.createRange().createContextualFragment(this.dataset.f))" data-f='${svg(p.c, 26)}'>` : svg(p.c, 26)}</span>`;
 
-const CATS = [["Eggs", "eggs", "eggs"], ["Milk", "milk", "dairy"], ["Challah", "challah", "bakery"], ["Chicken", "chicken", "meat"], ["Fish", "salmon", "fish"], ["Fruits & Veg", "@produce", "produce"], ["Drinks", "@drinks", "drinks"], ["Paper goods", "@household", "household"]];
+const CATS = [["Eggs", "@eggs", "eggs"], ["Milk", "@dairy", "dairy"], ["Challah", "challah", "bakery"], ["Chicken", "chicken", "meat"], ["Fish", "@fish", "fish"], ["Fruits & Veg", "@produce", "produce"], ["Drinks", "@drinks", "drinks"], ["Paper goods", "@household", "household"]];
 
 let STORES = [], SITES = {}, AREAS = [], CAT = [], BY = new Map();
 let area = mem.get("cc-area", null), list = mem.get("cc-list", []);
@@ -21,6 +21,57 @@ const here = () => STORES.filter(s => s.area === area && s.siteId && SITES[s.sit
 const offer = (s, p) => { const o = p && p.o[s.siteId]; return o && o[3] !== 0 ? { price: o[0], url: o[1], variant: o[2] } : null; };
 const lowest = p => Math.min(...here().map(s => (offer(s, p) || { price: Infinity }).price));
 const stores = p => here().filter(s => offer(s, p)).length;
+// Everyday staples: "Any eggs" = the cheapest dozen eggs at each store, etc.
+// inc: every pattern must match the name; exc: none may; cat: product group.
+const NOT_FOOD = /\b(pan|pans|bag|bags|cover|board|knife|tray|holder|dish|mold|plate|container|cutter|flavou?r|flavored|candy|munch|snack|chips?|crisps|sauce|soup|mix|seasoning|powder|salad|spread|dip)\b/;
+const STAPLES = [
+  { id: "eggs", label: "Eggs (dozen)", words: "eggs egg", cat: "eggs", inc: [/\beggs?\b/, /(dozen|\bdoz\b|\bdz\b|\b12\s*(ct|pk|count|pack)\b)/], exc: /(noodle|beater|white|liquid|substitute|18|30|half)/ },
+  { id: "milk-gal", label: "Milk (gallon)", words: "milk gallon", inc: [/\bmilk\b/, /(gallon|\bgal\b|128\s*oz)/], exc: /(chocolate|choc|soy|almond|oat|coconut|rice|lactaid|goat|evaporated|condensed|powder|half|1\/2)/ },
+  { id: "milk-half", label: "Milk (½ gallon)", words: "milk half", inc: [/\bmilk\b/, /(half gallon|1\/2 gal|64\s*oz|half-gallon)/], exc: /(chocolate|choc|soy|almond|oat|coconut|rice|goat|evaporated|condensed|powder)/ },
+  { id: "challah", label: "Challah", words: "challah challa", inc: [/\bchall?ah\b/], exc: /(topping|roll|bun|mini|kugel|french toast|crumb|stuffing|crouton|flour|gluten|spelt|oat|whole wheat|cookie)/ },
+  { id: "chicken-8", label: "Chicken, cut in 8", words: "chicken whole cut", cat: "meat", inc: [/\bchicken\b/, /(cut in 8|8 cut|cut up|whole chicken|whole broiler|\bbroiler)/], exc: /(soup|roast|bbq|cooked|grilled|marinated)/ },
+  { id: "chicken-cutlets", label: "Chicken cutlets", words: "chicken cutlet cutlets breast", cat: "meat", inc: [/\bchicken\b/, /(cutlet|boneless breast|breast boneless|schnitzel)/], exc: /(breaded|fried|nugget|cooked|grilled|roast|marinated|frozen|deli|stuffed)/ },
+  { id: "chicken-bottoms", label: "Chicken bottoms", words: "chicken bottoms legs", cat: "meat", inc: [/\bchicken\b/, /(bottoms?|leg quarter|legs?\b)/], exc: /(cooked|bbq|roast|grilled|marinated)/ },
+  { id: "ground-beef", label: "Ground beef", words: "ground beef chopped meat", cat: "meat", inc: [/(ground|chopped)/, /(beef|meat)/], exc: /(turkey|chicken|veal|lamb|cooked|patties|burgers?)/ },
+  { id: "salmon", label: "Salmon fillet", words: "salmon fish", cat: "fish", inc: [/\bsalmon\b/], exc: /(smoked|lox|nova|canned|can\b|burger|patt|sushi|roll|salad|spread|cooked|teriyaki|baked)/ },
+  { id: "tomatoes", label: "Tomatoes", words: "tomatoes tomato", cat: "produce", inc: [/\btomato(es)?\b/], exc: /(sauce|paste|juice|dried|sun|ketchup|crushed|diced|canned|puree|soup|\d+(\.\d+)?\s*oz|tuscanini|peeled|\bcan\b)/ },
+  { id: "cucumbers", label: "Cucumbers", words: "cucumbers cucumber cukes", cat: "produce", inc: [/\bcucumbers?\b/], exc: /(pickle|salad|dill|brine|\d+(\.\d+)?\s*oz|tuscanini|peeled|\bcan\b)/ },
+  { id: "onions", label: "Onions", words: "onions onion", cat: "produce", inc: [/\bonions?\b/], exc: /(fried|crispy|soup|powder|rings?|flakes|dried|green|scallion|chopped frozen|\d+(\.\d+)?\s*oz|tuscanini|peeled|\bcan\b)/ },
+  { id: "potatoes", label: "Potatoes", words: "potatoes potato", cat: "produce", inc: [/\bpotato(es)?\b/], exc: /(chips?|kugel|knish|fries|puffs|starch|flakes|mashed|latke|salad|sweet|baby food|\d+(\.\d+)?\s*oz|tuscanini|peeled|\bcan\b)/ },
+  { id: "bananas", label: "Bananas", words: "bananas banana", cat: "produce", inc: [/\bbananas?\b/], exc: /(chips?|dried|bread|cake|muffin|yogurt|split|\d+(\.\d+)?\s*oz|tuscanini|peeled|\bcan\b)/ },
+  { id: "apples", label: "Apples", words: "apples apple", cat: "produce", inc: [/\bapples?\b/], exc: /(juice|sauce|cider|chips?|dried|pie|cake|vinegar|strudel|crisp|rings|\d+(\.\d+)?\s*oz|tuscanini|peeled|\bcan\b)/ },
+  { id: "seltzer", label: "Seltzer (1 liter)", words: "seltzer soda water", cat: "drinks", inc: [/\bseltzer\b/, /(33\.8|\b1\s*l(iter|tr|t)?\b)/], exc: /(flavou?r|lemon|lime|orange|berry|cherry|grape|peach|mango|single|1 lt)/ },
+  { id: "grape-juice", label: "Grape juice (64 oz)", words: "grape juice kiddush", cat: "drinks", inc: [/\bgrape\b/, /\bjuice\b/, /(64\s*oz|half gallon|1\.89\s*l)/], exc: /(white|light|blend|cocktail|box|pouch|mini|kid)/ },
+  { id: "foil-pans", label: "Foil pans 9×13", words: "foil pans aluminum 9x13", cat: "household", inc: [/(9\s*x\s*13|9 ?\* ?13|half size|1\/2 size)/], exc: /(lid|cover|only)/, allowNonFood: true },
+  { id: "paper-towels", label: "Paper towels", words: "paper towels", cat: "household", inc: [/\bpaper towels?\b/], exc: /(holder)/, allowNonFood: true }
+];
+const SBY = new Map(STAPLES.map(x => [x.id, x]));
+const GC = new Map();
+function cands(k) {
+  if (GC.has(k)) return GC.get(k);
+  const st = SBY.get(k.slice(2)); let r = [];
+  if (st) r = CAT.filter(p => { const h = p.n.toLowerCase(); return st.inc.every(re => re.test(h)) && !(st.exc && st.exc.test(h)) && (st.allowNonFood || !NOT_FOOD.test(h)); });
+  GC.set(k, r); return r;
+}
+function staplesFor(term) {
+  const t = term.trim().toLowerCase(); if (!t) return [];
+  if (t.startsWith("@")) return STAPLES.filter(x => x.cat === t.slice(1) || (t === "@dairy" && /milk/.test(x.id)));
+  const w = stem(t.split(/\s+/)[0]);
+  return STAPLES.filter(x => x.words.split(" ").some(v => v.startsWith(w) || w.startsWith(v)));
+}
+function pick(s, k) {
+  if (!k.startsWith("g:")) { const p = BY.get(k), o = offer(s, p); return o ? { p, o } : null; }
+  let best = null;
+  for (const p of cands(k)) { const o = offer(s, p); if (o && (!best || o.price < best.o.price)) best = { p, o }; }
+  return best;
+}
+function item(k) {
+  if (!k.startsWith("g:")) return BY.get(k);
+  const st = SBY.get(k.slice(2)); if (!st) return null;
+  return { k, n: st.label, sub: "Lowest price at each store", c: st.cat || (cands(k)[0] || {}).c || "pantry", img: "", generic: true };
+}
+const lowestK = k => Math.min(...here().map(s => (pick(s, k) || { o: { price: Infinity } }).o.price));
+const storesK = k => here().filter(s => pick(s, k)).length;
 function toast(m) { const t = $("toast"); t.textContent = m; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => t.hidden = true, 1800); }
 
 // ---------- finding items ----------
@@ -31,34 +82,41 @@ function find(term, n = 8) {
   if (term.startsWith("@")) r = CAT.filter(p => p.c === term.slice(1));
   else {
     const words = term.toLowerCase().split(/\s+/).filter(Boolean).map(stem); if (!words.length) return [];
-    r = CAT.filter(p => { const h = (p.n + " " + p.b).toLowerCase(); return words.every(w => h.includes(w)); });
+    const whole = words.map(w => new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(s|es)?\\b"));
+    r = CAT.filter(p => { const h = (p.n + " " + p.b).toLowerCase(); return words.every(w => h.includes(w)); })
+      .map(p => { const h = p.n.toLowerCase(); p._s = whole.every(re => re.test(h)) ? 2 : 0; p._s += whole[0].test(h.split(/[,(]/)[0].split(" ").slice(-2).join(" ")) ? 1 : 0; return p; });
   }
-  return r.map(p => [p, stores(p)]).filter(x => x[1]).sort((a, b) => b[1] - a[1] || a[0].n.length - b[0].n.length).slice(0, n).map(x => x[0]);
+  return r.map(p => [p, stores(p)]).filter(x => x[1]).sort((a, b) => (b[0]._s || 0) - (a[0]._s || 0) || b[1] - a[1] || a[0].n.length - b[0].n.length).slice(0, n).map(x => x[0]);
 }
+let gens = [];
 function showDrop() {
-  drop.innerHTML = hits.length ? hits.map((p, i) => `<button class="opt${i === sel ? " on" : ""}" data-k="${esc(p.k)}">${pic(p)}<span><b>${esc(p.n)}</b><small>from ${money(lowest(p))}</small></span><span class="plus" aria-hidden="true">+</span></button>`).join("")
-    : `<div class="none">We couldn't find that yet. Try a shorter word, like “milk”.</div>`;
+  const term = q.value.trim() || curCat;
+  gens = staplesFor(term).map(x => "g:" + x.id).filter(k => storesK(k) >= 2).slice(0, 3);
+  const gen = gens.map((k, i) => { const it = item(k); return `<button class="opt gen${i === sel ? " on" : ""}" data-k="${esc(k)}">${pic(it)}<span><b>${esc(it.n)}</b><small>Lowest price at each store · from ${money(lowestK(k))}</small></span><span class="plus" aria-hidden="true">+</span></button>`; }).join("");
+  drop.innerHTML = gen + (hits.length ? hits.map((p, i) => `<button class="opt${i + gens.length === sel ? " on" : ""}" data-k="${esc(p.k)}">${pic(p)}<span><b>${esc(p.n)}</b><small>from ${money(lowest(p))}</small></span><span class="plus" aria-hidden="true">+</span></button>`).join("")
+    : (gen ? "" : `<div class="none">We couldn't find that yet. Try a shorter word, like “milk”.</div>`));
   drop.hidden = false;
 }
-q.addEventListener("input", () => { hits = find(q.value); sel = 0; q.value.trim() ? showDrop() : drop.hidden = true; });
+let curCat = "";
+q.addEventListener("input", () => { curCat = ""; hits = find(q.value); sel = 0; q.value.trim() ? showDrop() : drop.hidden = true; });
 q.addEventListener("keydown", e => {
-  if (e.key === "ArrowDown") { sel = Math.min(sel + 1, hits.length - 1); showDrop(); e.preventDefault(); }
+  if (e.key === "ArrowDown") { sel = Math.min(sel + 1, gens.length + hits.length - 1); showDrop(); e.preventDefault(); }
   else if (e.key === "ArrowUp") { sel = Math.max(sel - 1, 0); showDrop(); e.preventDefault(); }
-  else if (e.key === "Enter" && hits[sel]) { add(hits[sel].k); e.preventDefault(); }
+  else if (e.key === "Enter" && (gens[sel] || hits[sel - gens.length])) { add(gens[sel] || hits[sel - gens.length].k); e.preventDefault(); }
   else if (e.key === "Escape") drop.hidden = true;
 });
 drop.addEventListener("mousedown", e => { const b = e.target.closest(".opt"); if (b) { e.preventDefault(); add(b.dataset.k); } });
 q.addEventListener("blur", () => setTimeout(() => drop.hidden = true, 150));
 $("cats").innerHTML = CATS.map(([l, t, c]) => `<button class="cat" data-t="${t}"><span class="ic" style="${tint(c)}">${svg(c, 24)}</span>${l}</button>`).join("");
-$("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; showDrop(); q.focus(); });
-function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; toast("Added ✓"); render(); }
+$("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; curCat = b.dataset.t.startsWith("@") ? b.dataset.t : ""; showDrop(); q.focus(); });
+function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; toast("Added ✓"); render(); }
 
 // ---------- list ----------
 function showList() {
-  list = list.filter(x => BY.has(x.k));
+  list = list.filter(x => x.k.startsWith("g:") ? SBY.has(x.k.slice(2)) && cands(x.k).length : BY.has(x.k));
   $("count").textContent = list.length ? list.length + (list.length === 1 ? " item" : " items") : "";
   $("count").hidden = !list.length;
-  $("list").innerHTML = list.length ? list.map(x => { const p = BY.get(x.k); return `<div class="row">${pic(p)}<span class="name">${esc(p.n)}</span><span class="qty"><button data-a="-" data-k="${esc(x.k)}" aria-label="One less">−</button><span class="num">${x.q}</span><button data-a="+" data-k="${esc(x.k)}" aria-label="One more">+</button></span></div>`; }).join("") + `<p style="margin:12px 0 0"><button class="link" id="clear">Start a new list</button></p>`
+  $("list").innerHTML = list.length ? list.map(x => { const p = item(x.k); return `<div class="row">${pic(p)}<span class="name">${esc(p.n)}${p.generic ? `<small class="gsub">${esc(p.sub)}</small>` : ""}</span><span class="qty"><button data-a="-" data-k="${esc(x.k)}" aria-label="One less">−</button><span class="num">${x.q}</span><button data-a="+" data-k="${esc(x.k)}" aria-label="One more">+</button></span></div>`; }).join("") + `<p style="margin:12px 0 0"><button class="link" id="clear">Start a new list</button></p>`
     : `<p class="empty">Nothing yet. Tap a picture above or type what you need.</p>`;
   const c = $("clear"); if (c) c.onclick = () => { list = []; render(); };
 }
@@ -68,7 +126,7 @@ $("list").addEventListener("click", e => { const b = e.target.closest("button[da
 function totals() {
   return here().map(s => {
     let sub = 0; const miss = [];
-    list.forEach(x => { const o = offer(s, BY.get(x.k)); o ? sub += o.price * x.q : miss.push(x.k); });
+    list.forEach(x => { const m = pick(s, x.k); m ? sub += m.o.price * x.q : miss.push(x.k); });
     const d = s.delivery || {}; const known = d.fee != null;
     const fee = known ? (d.freeOver != null && sub >= d.freeOver ? 0 : d.fee) : 0;
     return { s, sub, miss, known, fee, total: sub + fee, gap: d.freeOver != null ? d.freeOver - sub : null };
@@ -89,7 +147,7 @@ function showAnswer() {
     ${w.known && w.fee && w.gap > 0 && w.gap < 25 ? `<p class="note">Add ${money(w.gap)} more for free delivery.</p>` : ""}
     <button class="big" data-shop="${w.s.id}">Shop at ${esc(w.s.name)}</button></div>
   <details class="more"><summary>Compare all ${R.length} stores</summary>${R.map((r, i) => `<div class="store"><span class="n"><b>${esc(r.s.name)}</b><small>${esc(r.s.address)}</small></span><span class="t num">${money(r.total)}<small class="${i === 0 ? "ok" : ""}">${i === 0 ? "Cheapest" : r.miss.length ? r.miss.length + " missing" : "+" + money(r.total - w.total)}</small></span><button data-shop="${r.s.id}">Shop</button></div>`).join("")}</details>
-  <details class="more"><summary>See every price</summary><div class="tablewrap"><table><thead><tr><th>Item</th>${here().map(s => `<th>${esc(s.name)}</th>`).join("")}</tr></thead><tbody>${list.map(x => { const p = BY.get(x.k), lo = lowest(p); return `<tr><td>${esc(p.n)}${x.q > 1 ? " ×" + x.q : ""}</td>${here().map(s => { const o = offer(s, p); return o ? `<td class="${o.price === lo ? "low" : ""}">${money(o.price)}</td>` : `<td class="na">–</td>`; }).join("")}</tr>`; }).join("")}</tbody></table></div></details>`;
+  <details class="more"><summary>See every price</summary><div class="tablewrap"><table><thead><tr><th>Item</th>${here().map(s => `<th>${esc(s.name)}</th>`).join("")}</tr></thead><tbody>${list.map(x => { const it = item(x.k), lo = lowestK(x.k); return `<tr><td>${esc(it.n)}${x.q > 1 ? " ×" + x.q : ""}</td>${here().map(s => { const m = pick(s, x.k); return m ? `<td class="${m.o.price === lo ? "low" : ""}">${money(m.o.price)}${it.generic ? `<small class="what">${esc(m.p.n)}</small>` : ""}</td>` : `<td class="na">–</td>`; }).join("")}</tr>`; }).join("")}</tbody></table></div></details>`;
   bar.innerHTML = `<div class="in"><div><small>Cheapest</small><b>${esc(w.s.name)} · <span class="num">${money(w.total)}</span></b></div><button data-shop="${w.s.id}">Shop now</button></div>`;
   bar.hidden = false;
 }
@@ -99,7 +157,7 @@ document.addEventListener("click", e => {
   const b = e.target.closest("[data-shop]"); if (!b) return;
   const s = STORES.find(x => x.id === b.dataset.shop), site = SITES[s.siteId];
   const have = [], miss = [];
-  list.forEach(x => { const p = BY.get(x.k), o = offer(s, p); o ? have.push({ p, q: x.q, o }) : miss.push(p); });
+  list.forEach(x => { const m = pick(s, x.k); m ? have.push({ p: m.p, q: x.q, o: m.o }) : miss.push(item(x.k)); });
   const oneClick = site.checkout === "shopify-cart" && have.length && have.every(h => h.o.variant);
   const url = oneClick ? `${site.origin}/cart/${have.map(h => h.o.variant + ":" + h.q).join(",")}` : site.origin;
   $("sheet").innerHTML = `<button class="close" id="x" aria-label="Close">✕</button><h2>Shop at ${esc(s.name)}</h2>

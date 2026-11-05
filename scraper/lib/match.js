@@ -12,7 +12,7 @@ function normName(s) {
 function normGtin(g) { g = String(g || "").replace(/\D/g, ""); if (g.length < 8) return ""; return g.replace(/^0+/, "").padStart(12, "0"); }
 
 const CATS = [
-  ["eggs", /\beggs?\b/], ["dairy", /\bmilk|cheese|yogurt|butter|cream\b|cholov/], ["bakery", /challah|bread|rolls?\b|bagel|pita|cake|rugelach|babka|cookie/],
+  ["eggs", /^(?!.*(noodle|matzo|roll|salad|bagel|kichel|lokshen|pasta|barley|flake|bow|sandwich|wrap|platter|omelet|frittata|quiche|bites|patt)).*\beggs\b/], ["dairy", /\bmilk|cheese|yogurt|butter|cream\b|cholov/], ["bakery", /challah|bread|rolls?\b|bagel|pita|cake|rugelach|babka|cookie/],
   ["meat", /chicken|beef|turkey|flanken|brisket|meat|steak|pastrami|salami|lamb|veal|schnitzel|cutlet/], ["fish", /salmon|tuna|fish|tilapia|gefilte|sushi/],
   ["produce", /tomato|cucumber|onion|potato|lettuce|romaine|apple|banana|carrot|pepper|fruit|vegetable|berr|grape(?!.*juice)|lemon|avocado/],
   ["drinks", /juice|seltzer|water|soda|wine|coffee|tea\b|drink|beverage/], ["frozen", /frozen|ice cream|pops\b/],
@@ -37,6 +37,16 @@ function merge(sites) {
       const prev = row.o[siteId];
       if (!prev || it.price < prev[0]) row.o[siteId] = [Math.round(it.price * 100) / 100, it.url || "", it.variantId || "", it.inStock === false ? 0 : 1];
     }
+  }
+  // drop prices that are clearly for a case or multipack (over 3x what other stores charge)
+  for (const row of byKey.values()) {
+    const ids = Object.keys(row.o); if (ids.length < 3) continue;
+    const bad = ids.filter(id => {
+      const others = ids.filter(x => x !== id).map(x => row.o[x][0]).sort((a, b) => a - b);
+      const med = others[Math.floor(others.length / 2)];
+      return row.o[id][0] > med * 3 || row.o[id][0] < med / 3;
+    });
+    bad.forEach(id => delete row.o[id]);
   }
   return [...byKey.values()];
 }
