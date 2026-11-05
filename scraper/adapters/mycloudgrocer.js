@@ -27,6 +27,15 @@ async function scrape(origin, { seo = "", deadline = Infinity, log = () => {} } 
       const r = await fetch(p, b ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(b) } : {});
       return r.ok ? r.json() : { __status: r.status };
     }, [path, body || null]);
+    if (process.env.MCG_DEBUG) {
+      page.on("request", r => { if (/JsonProductsList/.test(r.url())) log("  DEBUG SITE-REQ headers=" + JSON.stringify(r.headers()).slice(0, 900)); });
+      await page.goto(`${origin}/${seo}/category/4892/avocado`, { waitUntil: "load", timeout: 60000 }); await page.waitForTimeout(8000);
+      const mineRes = await api(`/proxy-api/AjaxFilter/JsonProductsList?pageNumber=1&filterMode=00000000&storeId=1`, [{ FilterType: 0, Value1: "4892", categoryId: 0 }, { FilterType: 0, Value1: "4892", categoryId: "4892" }]);
+      log("  DEBUG MINE count=" + (mineRes && mineRes.productsCount) + " status=" + (mineRes && mineRes.__status) + " keys=" + Object.keys(mineRes || {}).slice(0, 8));
+      const t = await api(`/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=1`);
+      log("  DEBUG TREE sample=" + JSON.stringify(t).slice(0, 300));
+      return { items: [], checkout: "product-links" };
+    }
     const stores = await api("/proxy-api/multistore/StoresDialogJSON");
     const mine = (stores.StoresList || []).find(s => seo && String(s.SeoLocation || "").toLowerCase() === seo.toLowerCase());
     const storeId = (mine && (mine.Id ?? mine.StoreId)) ?? stores.SelectedStoreId;
