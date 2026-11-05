@@ -29,7 +29,8 @@
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "seo": "Lakewood"
   },
   {
    "id": "kosher-village",
@@ -52,12 +53,13 @@
    "address": "1700 Madison Ave",
    "zip": "08701",
    "website": "https://gourmetglatt.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "note": "Website has no online shopping."
   },
   {
    "id": "gourmet-glatt-south",
@@ -66,12 +68,13 @@
    "address": "1328 River Ave",
    "zip": "08701",
    "website": "https://gourmetglatt.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "note": "Website has no online shopping."
   },
   {
    "id": "npgs-main",
@@ -129,7 +132,8 @@
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "seo": "lakewood"
   },
   {
    "id": "nutmeg",
@@ -143,7 +147,8 @@
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "seo": "Lakewood-NJ"
   },
   {
    "id": "evergreen",
@@ -187,7 +192,8 @@
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "seo": "Lakewood-NJ"
   },
   {
    "id": "bingo",
@@ -211,12 +217,13 @@
    "address": "2275 W County Line Rd",
    "zip": "08527",
    "website": "https://gourmetglatt.com",
-   "adapter": "auto",
+   "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "note": "Website has no online shopping."
   },
   {
    "id": "npgs-jackson",

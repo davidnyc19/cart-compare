@@ -8,6 +8,8 @@ const path = require("path");
 const shopify = require("./adapters/shopify");
 const sitemap = require("./adapters/sitemap");
 const { merge } = require("./lib/match");
+const mycloudgrocer = require("./adapters/mycloudgrocer");
+const koshervillage = require("./adapters/koshervillage");
 
 const ROOT = path.join(__dirname, "..");
 const STORES_FILE = process.env.STORES_FILE || path.join(ROOT, "stores.json");
@@ -17,7 +19,7 @@ const args = Object.fromEntries(process.argv.slice(2).map(a => { const [k, v] = 
 const MAX = Number(args.max || 5000);
 const PER_SITE_MIN = Number(process.env.PER_SITE_MINUTES || 60);
 const PARALLEL = Number(process.env.PARALLEL_SITES || 5);
-const ADAPTERS = { shopify, sitemap };
+const ADAPTERS = { shopify, sitemap, mycloudgrocer, koshervillage };
 
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const siteIdOf = url => new URL(url).host.replace(/^www\./, "");
@@ -41,7 +43,7 @@ async function main() {
   for (const s of cfg.stores) {
     if (!s.website || s.adapter === "off") continue;
     const id = siteIdOf(s.website);
-    if (!sites.has(id)) sites.set(id, { id, origin: new URL(s.website).origin, adapter: s.adapter });
+    if (!sites.has(id)) sites.set(id, { id, origin: new URL(s.website).origin, adapter: s.adapter, seo: s.seo });
   }
 
   if (!args["merge-only"]) {
@@ -54,7 +56,7 @@ async function main() {
         const ad = await pickAdapter(site.origin, site.adapter);
         if (!ad) throw new Error("No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only.");
         L(`using ${ad.name} adapter`);
-        const res = await ad.scrape(site.origin, { maxPages: Math.ceil(MAX / 250), maxProducts: MAX, deadline: Date.now() + PER_SITE_MIN * 60000, log: L });
+        const res = await ad.scrape(site.origin, { maxPages: Math.ceil(MAX / 250), maxProducts: MAX, deadline: Date.now() + PER_SITE_MIN * 60000, seo: site.seo, log: L });
         if (!res.items.length) throw new Error("Scrape finished but found 0 prices.");
         fs.writeFileSync(path.join(RAW, fileOf(site.id)), JSON.stringify({ siteId: site.id, origin: site.origin, adapter: ad.name, checkout: res.checkout, checkedAt: new Date().toISOString(), items: res.items }));
         Object.assign(st, { ok: true, adapter: ad.name, items: res.items.length, checkedAt: new Date().toISOString(), error: null });
