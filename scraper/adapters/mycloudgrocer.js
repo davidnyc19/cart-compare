@@ -35,13 +35,14 @@ async function scrape(origin, { seo = "", deadline = Infinity, log = () => {} } 
     log(`  ${cats.length} departments`);
     const seen = new Map();
     for (const [i, c] of cats.entries()) {
+      if (process.env.MCG_DEBUG && i >= 4) break;
       if (Date.now() > deadline) { log("  time limit reached"); break; }
       let res;
       for (let pg = 1; pg <= 40; pg++) {
         const filters = [{ FilterType: 0, Value1: c.Id, Value2: null, categoryId: "0" }];
         if (pg > 1) filters.push({ FilterType: 5, Value1: pg, Value2: null, categoryId: "0" }); // page number
         res = await api("/proxy-api/AjaxFilter/JsonProductsList?filterMode=00000000", filters);
-        if (i === 0 && pg === 1) log("  response keys: " + Object.keys(res || {}).join(", "));
+        if (process.env.MCG_DEBUG && i < 4 && pg === 1) log("  DEBUG " + c.N + " count=" + res.productsCount + " pager=" + JSON.stringify(res.pager).slice(0, 300) + " json=" + String(typeof res.productsJson === "string" ? res.productsJson : JSON.stringify(res.productsJson)).slice(0, 900) + " list=" + String(JSON.stringify(res.productsList)).slice(0, 600));
         const found = []; findItems(res, found);
         let fresh = 0;
         for (const p of found) if (!seen.has(p.Id)) { seen.set(p.Id, { p, cat: c }); fresh++; }

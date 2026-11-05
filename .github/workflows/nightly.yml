@@ -5,6 +5,7 @@ on:
     - cron: "17 7 * * *"   # every night around 2–3 am New York time
   workflow_dispatch:        # "Run workflow" button for a manual refresh
     inputs:
+      debug: { description: "Debug output", required: false, default: "" }
       only: { description: "Only this store website (e.g. kosherwest.com); blank = all", required: false, default: "" }
   push:
     branches: [main]
@@ -29,6 +30,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Check every store's prices
+        env: { MCG_DEBUG: "${{ inputs.debug }}" }
         run: node scraper/run.js ${{ inputs.only && format('--only={0}', inputs.only) || '' }}
       - name: Save today's prices
         run: |
