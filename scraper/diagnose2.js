@@ -2,10 +2,7 @@ const fs = require("fs"), path = require("path");
 const { chromium } = require("playwright");
 const { UA } = require("./lib/http");
 const TARGETS = [
-  ["https://kosherwest.com/Lakewood-NJ", ["Produce", "Dairy", "Grocery"]],
-  ["https://seasonskosher.com/Lakewood", ["Produce", "Dairy", "Grocery"]],
-  ["https://www.koshervillage.com/products/dairy-eggs", null],
-  ["https://gourmetglatt.com/", ["Shop", "Order", "Online"]]
+  ["https://www.gourmetglattonline.com/", ["Produce", "Dairy", "Grocery", "Lakewood"]]
 ];
 (async () => {
   const b = await chromium.launch(); const out = {};
