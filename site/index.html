@@ -7,7 +7,7 @@
 <meta name="description" content="Find the cheapest kosher grocery store in Lakewood for your shopping list, then order from that store.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="top">
@@ -17,7 +17,7 @@
   </div>
   <div class="right">
     <select id="area" aria-label="Your area"></select>
-    <button class="mylist" id="mylist" aria-label="My list"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.3"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg><span class="num" id="badge">0</span></button>
+    <button class="mylist" id="mylist" aria-label="My cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.3"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg><span class="num" id="badge">0</span></button>
   </div>
 </header>
 
@@ -39,7 +39,7 @@
   </section>
 
   <section class="card" id="listCard">
-    <h2>Your list <span class="count num" id="count"></span></h2>
+    <h2>Your cart <span class="count num" id="count"></span></h2>
     <div id="list"></div>
   </section>
 
@@ -54,6 +54,6 @@
 
 <div class="modal" id="modal" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
 <div class="toast" id="toast" hidden></div>
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

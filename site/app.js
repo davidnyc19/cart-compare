@@ -17,6 +17,7 @@ const CATS = [["Eggs", "@eggs", "eggs"], ["Milk", "@dairy", "dairy"], ["Challah"
 let STORES = [], SITES = {}, AREAS = [], CAT = [], BY = new Map();
 let area = mem.get("cc-area", null), list = mem.get("cc-list", []);
 const save = () => { mem.set("cc-list", list); mem.set("cc-area", area); };
+const unlisted = () => STORES.filter(s => s.area === area && !(s.siteId && SITES[s.siteId]));
 const here = () => STORES.filter(s => s.area === area && s.siteId && SITES[s.siteId]);
 const offer = (s, p) => { const o = p && p.o[s.siteId]; return o && o[3] !== 0 ? { price: o[0], url: o[1], variant: o[2] } : null; };
 const lowest = p => Math.min(...here().map(s => (offer(s, p) || { price: Infinity }).price));
@@ -83,6 +84,7 @@ function find(term, n = 8) {
   else {
     const words = term.toLowerCase().split(/\s+/).filter(Boolean).map(stem); if (!words.length) return [];
     const whole = words.map(w => new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(s|es)?\\b"));
+    if (!CAT.length) return [];
     r = CAT.filter(p => { const h = (p.n + " " + p.b).toLowerCase(); return words.every(w => h.includes(w)); })
       .map(p => { const h = p.n.toLowerCase(); p._s = whole.every(re => re.test(h)) ? 2 : 0; p._s += whole[0].test(h.split(/[,(]/)[0].split(" ").slice(-2).join(" ")) ? 1 : 0; return p; });
   }
@@ -106,25 +108,47 @@ q.addEventListener("keydown", e => {
   else if (e.key === "Escape") drop.hidden = true;
 });
 let lastAdd = 0;
-const pickOpt = e => { const b = e.target.closest(".opt"); if (!b) return; e.preventDefault(); if (Date.now() - lastAdd < 400) return; lastAdd = Date.now(); add(b.dataset.k); };
-drop.addEventListener("pointerdown", e => { if (e.target.closest(".opt")) e.preventDefault(); });
+const pickOpt = e => { const b = e.target.closest(".opt"); if (!b) return; e.preventDefault(); if (Date.now() - lastAdd < 500) return; lastAdd = Date.now(); drop.hidden = true; q.blur(); compare(b.dataset.k); };
 drop.addEventListener("mousedown", e => { if (e.target.closest(".opt")) e.preventDefault(); });
 drop.addEventListener("click", pickOpt);
-q.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== q) drop.hidden = true; }, 300));
+q.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== q && $("modal").hidden) drop.hidden = true; }, 400));
+
+// ---------- compare one item across every store ----------
+function compare(k) {
+  const it = item(k); if (!it) return;
+  const rows = here().map(s => ({ s, m: pick(s, k) })).sort((a, b) => (a.m ? a.m.o.price : Infinity) - (b.m ? b.m.o.price : Infinity));
+  const lo = rows[0] && rows[0].m ? rows[0].m.o.price : null;
+  const inCart = (list.find(x => x.k === k) || {}).q || 0;
+  $("sheet").innerHTML = `<button class="close" id="x" aria-label="Close">✕</button>
+    <div class="cmphead">${pic(it)}<div><h2>${esc(it.n)}</h2>${it.generic ? `<p class="sub">Lowest price for this at each store</p>` : ""}</div></div>
+    <div class="cmp">${rows.map((r, i) => r.m ? `<div class="crow${r.m.o.price === lo ? " best" : ""}"><span class="n"><b>${esc(r.s.name)}</b>${it.generic ? `<small>${esc(r.m.p.n)}</small>` : ""}</span><span class="pr num">${money(r.m.o.price)}${r.m.o.price === lo ? "<small>Cheapest</small>" : `<small>+${money(r.m.o.price - lo)}</small>`}</span></div>`
+      : `<div class="crow na"><span class="n"><b>${esc(r.s.name)}</b></span><span class="pr">Not carried</span></div>`).join("")}</div>
+    <button class="big solid" id="addbtn">${inCart ? `Add another (you have ${inCart})` : "Add to cart"}</button>`;
+  $("modal").hidden = false;
+  $("x").onclick = () => $("modal").hidden = true;
+  $("addbtn").onclick = () => {
+    add(k);
+    const n = list.reduce((a, i) => a + i.q, 0);
+    $("sheet").innerHTML = `<div class="done"><div class="tick">✓</div><h2>Added to your cart</h2><p>${esc(it.n)} · you have ${n} item${n === 1 ? "" : "s"} in your cart</p>
+      <button class="big solid" id="seecart">See my cart and the cheapest store</button><button class="big ghost" id="more">Keep shopping</button></div>`;
+    $("seecart").onclick = () => { $("modal").hidden = true; $("listCard").scrollIntoView({ behavior: "smooth", block: "start" }); };
+    $("more").onclick = () => { $("modal").hidden = true; q.focus(); };
+  };
+}
 $("cats").innerHTML = CATS.map(([l, t, c]) => `<button class="cat" data-t="${t}"><span class="ic" style="${tint(c)}">${svg(c, 24)}</span>${l}</button>`).join("");
-$("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; curCat = b.dataset.t.startsWith("@") ? b.dataset.t : ""; showDrop(); q.focus(); });
-function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; render(); const n = list.reduce((a, i) => a + i.q, 0); toast(`Added to your list ✓  (${n} item${n === 1 ? "" : "s"})`); const bd = $("mylist"); bd.classList.remove("bump"); void bd.offsetWidth; bd.classList.add("bump"); q.blur(); }
+$("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b || !CAT.length) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; curCat = b.dataset.t.startsWith("@") ? b.dataset.t : ""; showDrop(); q.focus(); });
+function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; render(); const bd = $("mylist"); bd.classList.remove("bump"); void bd.offsetWidth; bd.classList.add("bump"); }
 
 // ---------- list ----------
 function showList() {
   list = list.filter(x => x.k.startsWith("g:") ? SBY.has(x.k.slice(2)) && cands(x.k).length : BY.has(x.k));
   $("count").textContent = list.length ? list.length + (list.length === 1 ? " item" : " items") : "";
   $("count").hidden = !list.length;
-  $("list").innerHTML = list.length ? list.map(x => { const p = item(x.k); return `<div class="row">${pic(p)}<span class="name">${esc(p.n)}${p.generic ? `<small class="gsub">${esc(p.sub)}</small>` : ""}</span><span class="qty"><button data-a="-" data-k="${esc(x.k)}" aria-label="One less">−</button><span class="num">${x.q}</span><button data-a="+" data-k="${esc(x.k)}" aria-label="One more">+</button></span></div>`; }).join("") + `<p style="margin:12px 0 0"><button class="link" id="clear">Start a new list</button></p>`
-    : `<p class="empty">Nothing yet. Tap a picture above or type what you need.</p>`;
+  $("list").innerHTML = list.length ? list.map(x => { const p = item(x.k); return `<div class="row">${pic(p)}<span class="name" data-cmp="${esc(x.k)}">${esc(p.n)}${p.generic ? `<small class="gsub">${esc(p.sub)}</small>` : ""}</span><span class="qty"><button data-a="-" data-k="${esc(x.k)}" aria-label="One less">−</button><span class="num">${x.q}</span><button data-a="+" data-k="${esc(x.k)}" aria-label="One more">+</button></span></div>`; }).join("") + `<p style="margin:12px 0 0"><button class="link" id="clear">Empty cart</button></p>`
+    : `<p class="empty">Your cart is empty. Tap a picture above or type what you need, then tap “Add to cart”.</p>`;
   const c = $("clear"); if (c) c.onclick = () => { list = []; render(); };
 }
-$("list").addEventListener("click", e => { const b = e.target.closest("button[data-a]"); if (!b) return; const x = list.find(i => i.k === b.dataset.k); if (!x) return; x.q += b.dataset.a === "+" ? 1 : -1; if (x.q < 1) list = list.filter(i => i !== x); render(); });
+$("list").addEventListener("click", e => { const c = e.target.closest("[data-cmp]"); if (c) { compare(c.dataset.cmp); return; } const b = e.target.closest("button[data-a]"); if (!b) return; const x = list.find(i => i.k === b.dataset.k); if (!x) return; x.q += b.dataset.a === "+" ? 1 : -1; if (x.q < 1) list = list.filter(i => i !== x); render(); });
 
 // ---------- the answer ----------
 function totals() {
@@ -139,18 +163,22 @@ function totals() {
 function showAnswer() {
   const A = $("answer"), bar = $("bar");
   bar.hidden = true;
-  if (!here().length) { A.innerHTML = `<div class="card"><h2>Prices are coming soon</h2><p class="empty">We're collecting prices from the stores in this area. Check back shortly.</p></div>`; return; }
+  if (!here().length) { const an = (AREAS.find(a => a.id === area) || {}).name || "this area"; A.innerHTML = `<div class="card"><h2>${esc(an)}: coming soon</h2><p class="empty">We're adding the kosher stores in ${esc(an)}. For now, prices are ready for Lakewood · Jackson · Toms River.</p><button class="big solid" id="golkwd">Switch to Lakewood</button></div>`; $("golkwd").onclick = () => { area = AREAS[0].id; $("area").value = area; render(); }; return; }
   if (!list.length) { A.innerHTML = ""; return; }
   const R = totals(), w = R[0], full = R.filter(r => !r.miss.length);
   const save = full.length > 1 ? Math.max(...full.map(r => r.total)) - w.total : 0;
   const deliv = !w.known ? "plus delivery" : w.fee ? `includes ${money(w.fee)} delivery` : "free delivery";
-  A.innerHTML = `<div class="win"><div class="lbl">Cheapest store for your list</div><h2>${esc(w.s.name)}</h2>
+  const names = R.map(r => r.s.name);
+  A.innerHTML = `<div class="win"><div class="lbl">Cheapest store for your cart</div><h2>${esc(w.s.name)}</h2>
     <div class="total num">${money(w.total)} <small>${deliv}</small></div>
-    ${save > 0.005 ? `<span class="save num">You save ${money(save)}</span>` : ""}
+    ${save > 0.005 ? `<span class="save num">You save ${money(save)} vs. the most expensive store</span>` : ""}
     ${w.miss.length ? `<p class="note">Doesn't carry ${w.miss.length} of your items.</p>` : ""}
     ${w.known && w.fee && w.gap > 0 && w.gap < 25 ? `<p class="note">Add ${money(w.gap)} more for free delivery.</p>` : ""}
     <button class="big" data-shop="${w.s.id}">Shop at ${esc(w.s.name)}</button></div>
-  <details class="more"><summary>Compare all ${R.length} stores</summary>${R.map((r, i) => `<div class="store"><span class="n"><b>${esc(r.s.name)}</b><small>${esc(r.s.address)}</small></span><span class="t num">${money(r.total)}<small class="${i === 0 ? "ok" : ""}">${i === 0 ? "Cheapest" : r.miss.length ? r.miss.length + " missing" : "+" + money(r.total - w.total)}</small></span><button data-shop="${r.s.id}">Shop</button></div>`).join("")}</details>
+  <div class="card"><h2>All ${R.length} stores compared</h2><p class="compared">${names.map(esc).join(" · ")}</p>
+    ${R.map((r, i) => `<div class="store${i === 0 ? " first" : ""}"><span class="rk num">${i + 1}</span><span class="n"><b>${esc(r.s.name)}</b><small>${r.miss.length ? `Missing ${r.miss.length} item${r.miss.length > 1 ? "s" : ""}` : "Has everything"}</small></span><span class="t num">${money(r.total)}<small class="${i === 0 ? "ok" : ""}">${i === 0 ? "Cheapest" : r.total < w.total ? money(w.total - r.total) + " less, missing items" : "+" + money(r.total - w.total)}</small></span><button data-shop="${r.s.id}">Shop</button></div>`).join("")}
+    ${unlisted().length ? `<p class="compared" style="margin-top:12px">Not compared (their websites block price checks or have no online shop): ${unlisted().map(s => esc(s.name)).join(", ")}</p>` : ""}
+  </div>
   <details class="more"><summary>See every price</summary><div class="tablewrap"><table><thead><tr><th>Item</th>${here().map(s => `<th>${esc(s.name)}</th>`).join("")}</tr></thead><tbody>${list.map(x => { const it = item(x.k), lo = lowestK(x.k); return `<tr><td>${esc(it.n)}${x.q > 1 ? " ×" + x.q : ""}</td>${here().map(s => { const m = pick(s, x.k); return m ? `<td class="${m.o.price === lo ? "low" : ""}">${money(m.o.price)}${it.generic ? `<small class="what">${esc(m.p.n)}</small>` : ""}</td>` : `<td class="na">–</td>`; }).join("")}</tr>`; }).join("")}</tbody></table></div></details>`;
   bar.innerHTML = `<div class="in"><div><small>Cheapest</small><b>${esc(w.s.name)} · <span class="num">${money(w.total)}</span></b></div><button data-shop="${w.s.id}">Shop now</button></div>`;
   bar.hidden = false;
@@ -177,16 +205,18 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") $("modal").h
 function render() {
   showList(); showAnswer(); save(); $("intro").hidden = list.length > 0;
   const n = list.reduce((a, i) => a + i.q, 0); $("badge").textContent = n;
-  if (n && $("bar").hidden) { $("bar").innerHTML = `<div class="in"><div data-go="list"><small>Your list</small><b>${n} item${n === 1 ? "" : "s"}</b></div></div>`; $("bar").hidden = false; }
-  if (n) { const d = $("bar").querySelector(".in div"); d.dataset.go = "list"; d.querySelector("small").textContent = `${n} item${n === 1 ? "" : "s"} · Cheapest`; if (!$("bar").querySelector("button")) d.querySelector("small").textContent = "Your list"; }
+  if (n && $("bar").hidden) { $("bar").innerHTML = `<div class="in"><div data-go="list"><small>Your cart</small><b>${n} item${n === 1 ? "" : "s"}</b></div></div>`; $("bar").hidden = false; }
+  if (n) { const d = $("bar").querySelector(".in div"); d.dataset.go = "list"; d.querySelector("small").textContent = `${n} item${n === 1 ? "" : "s"} · Cheapest`; if (!$("bar").querySelector("button")) d.querySelector("small").textContent = "Your cart"; }
 }
 $("mylist").onclick = () => $("listCard").scrollIntoView({ behavior: "smooth", block: "start" });
 document.addEventListener("click", e => { if (e.target.closest("[data-go=list]")) $("listCard").scrollIntoView({ behavior: "smooth", block: "start" }); });
 $("area").addEventListener("change", e => { area = e.target.value; render(); });
+q.placeholder = "Loading prices…"; q.disabled = true;
 Promise.all([fetch("data/stores.json").then(r => r.json()), fetch("data/catalog.json").then(r => r.json())]).then(([st, cat]) => {
   STORES = st.stores; SITES = st.sites || {}; AREAS = st.areas; CAT = cat.products || []; CAT.forEach(p => BY.set(p.k, p));
+  q.disabled = false; q.placeholder = "Type here… eggs, milk, challah";
   if (!AREAS.some(a => a.id === area)) area = AREAS[0].id;
-  $("area").innerHTML = AREAS.map(a => `<option value="${a.id}"${a.id === area ? " selected" : ""}>${esc(a.name.replace(", NJ", "").split(" · ")[0] + (a.name.includes(" · ") ? " area" : ""))}</option>`).join("");
+  $("area").innerHTML = AREAS.map(a => `<option value="${a.id}"${a.id === area ? " selected" : ""}>${esc(a.name)}</option>`).join("");
   render();
 }).catch(() => { $("answer").innerHTML = `<div class="card"><h2>Something didn't load</h2><p class="empty">Please refresh the page.</p></div>`; });
 })();

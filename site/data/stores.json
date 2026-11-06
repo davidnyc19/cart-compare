@@ -10,6 +10,71 @@
     "08753",
     "08757"
    ]
+  },
+  {
+   "id": "boro-park",
+   "name": "Boro Park, Brooklyn",
+   "zips": []
+  },
+  {
+   "id": "flatbush",
+   "name": "Flatbush / Midwood, Brooklyn",
+   "zips": []
+  },
+  {
+   "id": "williamsburg",
+   "name": "Williamsburg, Brooklyn",
+   "zips": []
+  },
+  {
+   "id": "five-towns",
+   "name": "Five Towns, NY",
+   "zips": []
+  },
+  {
+   "id": "teaneck",
+   "name": "Teaneck / Bergenfield / Passaic, NJ",
+   "zips": []
+  },
+  {
+   "id": "monsey",
+   "name": "Monsey, NY",
+   "zips": []
+  },
+  {
+   "id": "monroe",
+   "name": "Monroe / Kiryas Joel, NY",
+   "zips": []
+  },
+  {
+   "id": "baltimore",
+   "name": "Baltimore, MD",
+   "zips": []
+  },
+  {
+   "id": "cleveland",
+   "name": "Cleveland, OH",
+   "zips": []
+  },
+  {
+   "id": "chicago",
+   "name": "Chicago / Skokie, IL",
+   "zips": []
+  },
+  {
+   "id": "miami",
+   "name": "Miami Beach / Aventura / Hollywood, FL",
+   "zips": []
+  },
+  {
+   "id": "boca",
+   "name": "Boca Raton / Delray, FL",
+   "zips": []
+  },
+  {
+   "id": "los-angeles",
+   "name": "Los Angeles, CA",
+   "zips": []
   }
  ],
  "stores": [
