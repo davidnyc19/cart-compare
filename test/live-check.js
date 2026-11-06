@@ -12,7 +12,13 @@ const URL = process.env.SITE_URL || "https://davidnyc19.github.io/cart-compare/"
       await p.tap("#q"); await p.keyboard.type("milk"); await p.waitForTimeout(800);
       const opts = await p.$$eval(".opt", o => o.map(x => x.innerText.split("\n")[0]).slice(0, 3));
       await p.tap(".opt >> nth=0"); await p.waitForTimeout(1000);
-      await p.tap(".cat >> nth=0"); await p.waitForTimeout(800); await p.tap(".opt >> nth=0"); await p.waitForTimeout(1000);
+      const card = await p.$eval("#sheet", e => e.innerText.replace(/\n/g, " | ").slice(0, 250)).catch(() => "NO CARD");
+      console.log(`--- ${name} compare card: ${card}`);
+      await p.tap("#addbtn"); await p.waitForTimeout(800);
+      const done = await p.$eval("#sheet", e => e.innerText.replace(/\n/g, " | ").slice(0, 120)).catch(() => "?");
+      console.log(`--- ${name} after Add to cart: ${done}`);
+      await p.tap("#more"); await p.waitForTimeout(500);
+      await p.tap(".cat >> nth=0"); await p.waitForTimeout(800); await p.tap(".opt >> nth=0"); await p.waitForTimeout(800); await p.tap("#addbtn"); await p.waitForTimeout(800); await p.tap("#seecart"); await p.waitForTimeout(800);
       const rows = await p.$$eval("#list .row", r => r.map(x => x.innerText.split("\n")[0]));
       const badge = await p.$eval("#badge", e => e.textContent).catch(() => "NO BADGE");
       const bar = await p.$eval("#bar", e => e.hidden ? "hidden" : e.innerText.replace(/\n/g, " | ")).catch(() => "?");
