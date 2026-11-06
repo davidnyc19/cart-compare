@@ -24,7 +24,13 @@ h1,h2{font-family:var(--display);margin:0;letter-spacing:-.01em;text-wrap:balanc
 .top{position:sticky;top:0;z-index:20;background:var(--brand);color:var(--brand-ink);display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding:calc(10px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px))}
 .logo{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:800;font-size:1.25rem}
-.top select{background:rgba(255,255,255,.16);border:0;border-radius:999px;padding:8px 14px;color:inherit;font-weight:600}
+.top .right{display:flex;align-items:center;gap:8px;min-width:0}
+.top select{background:rgba(255,255,255,.16);border:0;border-radius:999px;padding:8px 12px;color:inherit;font-weight:600;max-width:42vw;text-overflow:ellipsis}
+.mylist{display:flex;align-items:center;gap:6px;border:0;border-radius:999px;background:var(--brand-ink);color:var(--brand);font-weight:800;padding:8px 12px}
+.mylist.bump{animation:bump .4s ease}
+@keyframes bump{40%{transform:scale(1.18)}}
+@media (prefers-reduced-motion:reduce){.mylist.bump{animation:none}}
+.logo{white-space:nowrap}
 .top select option{color:#132a2e}
 
 .page{max-width:640px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:16px}
@@ -108,6 +114,7 @@ td.na{color:var(--muted)}
 .bar .in div{flex:1;min-width:0;line-height:1.25}
 .bar .in small{color:var(--muted);display:block;font-size:.82rem}
 .bar .in b{font-size:1.05rem}
+.bar .in div{cursor:pointer}
 .bar button{border:0;border-radius:12px;background:var(--brand);color:var(--brand-ink);font-weight:700;padding:13px 18px;white-space:nowrap}
 
 /* checkout sheet */
@@ -126,3 +133,11 @@ td.na{color:var(--muted)}
 .gsub{display:block;font-weight:500;font-size:.82rem;color:var(--good)}
 .opt.gen{background:var(--good-soft)}
 td .what{display:block;font-size:.72rem;font-weight:500;color:var(--muted);white-space:normal;max-width:150px;margin-left:auto}
+@media (max-width:480px){
+  .logo{font-size:1.05rem;gap:6px}
+  .logo svg{width:24px;height:24px}
+  .top{gap:8px}
+  .top select{max-width:34vw;padding:7px 10px;font-size:.9rem}
+  .mylist{padding:7px 10px}
+}
+@media (max-width:370px){ .top select{max-width:30vw} .logo{font-size:.95rem} }

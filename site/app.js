@@ -105,11 +105,15 @@ q.addEventListener("keydown", e => {
   else if (e.key === "Enter" && (gens[sel] || hits[sel - gens.length])) { add(gens[sel] || hits[sel - gens.length].k); e.preventDefault(); }
   else if (e.key === "Escape") drop.hidden = true;
 });
-drop.addEventListener("mousedown", e => { const b = e.target.closest(".opt"); if (b) { e.preventDefault(); add(b.dataset.k); } });
-q.addEventListener("blur", () => setTimeout(() => drop.hidden = true, 150));
+let lastAdd = 0;
+const pickOpt = e => { const b = e.target.closest(".opt"); if (!b) return; e.preventDefault(); if (Date.now() - lastAdd < 400) return; lastAdd = Date.now(); add(b.dataset.k); };
+drop.addEventListener("pointerdown", e => { if (e.target.closest(".opt")) e.preventDefault(); });
+drop.addEventListener("mousedown", e => { if (e.target.closest(".opt")) e.preventDefault(); });
+drop.addEventListener("click", pickOpt);
+q.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== q) drop.hidden = true; }, 300));
 $("cats").innerHTML = CATS.map(([l, t, c]) => `<button class="cat" data-t="${t}"><span class="ic" style="${tint(c)}">${svg(c, 24)}</span>${l}</button>`).join("");
 $("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; curCat = b.dataset.t.startsWith("@") ? b.dataset.t : ""; showDrop(); q.focus(); });
-function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; toast("Added ✓"); render(); }
+function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; render(); const n = list.reduce((a, i) => a + i.q, 0); toast(`Added to your list ✓  (${n} item${n === 1 ? "" : "s"})`); const bd = $("mylist"); bd.classList.remove("bump"); void bd.offsetWidth; bd.classList.add("bump"); q.blur(); }
 
 // ---------- list ----------
 function showList() {
@@ -170,12 +174,19 @@ $("modal").addEventListener("click", e => { if (e.target.id === "modal") $("moda
 document.addEventListener("keydown", e => { if (e.key === "Escape") $("modal").hidden = true; });
 
 // ---------- start ----------
-function render() { showList(); showAnswer(); save(); $("intro").hidden = list.length > 0; }
+function render() {
+  showList(); showAnswer(); save(); $("intro").hidden = list.length > 0;
+  const n = list.reduce((a, i) => a + i.q, 0); $("badge").textContent = n;
+  if (n && $("bar").hidden) { $("bar").innerHTML = `<div class="in"><div data-go="list"><small>Your list</small><b>${n} item${n === 1 ? "" : "s"}</b></div></div>`; $("bar").hidden = false; }
+  if (n) { const d = $("bar").querySelector(".in div"); d.dataset.go = "list"; d.querySelector("small").textContent = `${n} item${n === 1 ? "" : "s"} · Cheapest`; if (!$("bar").querySelector("button")) d.querySelector("small").textContent = "Your list"; }
+}
+$("mylist").onclick = () => $("listCard").scrollIntoView({ behavior: "smooth", block: "start" });
+document.addEventListener("click", e => { if (e.target.closest("[data-go=list]")) $("listCard").scrollIntoView({ behavior: "smooth", block: "start" }); });
 $("area").addEventListener("change", e => { area = e.target.value; render(); });
 Promise.all([fetch("data/stores.json").then(r => r.json()), fetch("data/catalog.json").then(r => r.json())]).then(([st, cat]) => {
   STORES = st.stores; SITES = st.sites || {}; AREAS = st.areas; CAT = cat.products || []; CAT.forEach(p => BY.set(p.k, p));
   if (!AREAS.some(a => a.id === area)) area = AREAS[0].id;
-  $("area").innerHTML = AREAS.map(a => `<option value="${a.id}"${a.id === area ? " selected" : ""}>${esc(a.name.replace(", NJ", ""))}</option>`).join("");
+  $("area").innerHTML = AREAS.map(a => `<option value="${a.id}"${a.id === area ? " selected" : ""}>${esc(a.name.replace(", NJ", "").split(" · ")[0] + (a.name.includes(" · ") ? " area" : ""))}</option>`).join("");
   render();
 }).catch(() => { $("answer").innerHTML = `<div class="card"><h2>Something didn't load</h2><p class="empty">Please refresh the page.</p></div>`; });
 })();
