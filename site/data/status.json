@@ -8,12 +8,12 @@
     "checkedAt": "2026-11-06T08:34:11.158Z"
   },
   "koshervillage.com": {
-    "lastAttempt": "2026-11-06T08:26:26.489Z",
+    "lastAttempt": "2026-11-06T15:31:11.109Z",
     "ok": true,
     "error": null,
     "adapter": "koshervillage",
     "items": 10000,
-    "checkedAt": "2026-11-06T08:28:27.772Z"
+    "checkedAt": "2026-11-06T15:33:12.534Z"
   },
   "gourmetglatt.com": {
     "lastAttempt": "2026-11-05T21:11:17.379Z",
@@ -63,5 +63,53 @@
     "lastAttempt": "2026-11-05T21:11:21.047Z",
     "ok": false,
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
+  },
+  "seasonskosher.com/lakewood": {
+    "lastAttempt": "2026-11-06T15:31:11.109Z",
+    "ok": true,
+    "adapter": "mycloudgrocer",
+    "items": 10550,
+    "checkedAt": "2026-11-06T15:35:50.691Z",
+    "error": null
+  },
+  "aisle9market.com/lakewood": {
+    "lastAttempt": "2026-11-06T15:31:11.109Z",
+    "ok": true,
+    "adapter": "mycloudgrocer",
+    "items": 6677,
+    "checkedAt": "2026-11-06T15:35:36.484Z",
+    "error": null
+  },
+  "nutmegkoshermarket.com/lakewood-nj": {
+    "lastAttempt": "2026-11-06T15:31:11.109Z",
+    "ok": true,
+    "adapter": "mycloudgrocer",
+    "items": 9484,
+    "checkedAt": "2026-11-06T15:37:38.529Z",
+    "error": null
+  },
+  "kosherwest.com/lakewood-nj": {
+    "lastAttempt": "2026-11-06T15:31:11.110Z",
+    "ok": true,
+    "adapter": "mycloudgrocer",
+    "items": 10260,
+    "checkedAt": "2026-11-06T15:38:57.017Z",
+    "error": null
+  },
+  "superstopnj.com/lakewood": {
+    "lastAttempt": "2026-11-06T15:33:12.535Z",
+    "ok": true,
+    "adapter": "mycloudgrocer",
+    "items": 6447,
+    "checkedAt": "2026-11-06T15:36:39.467Z",
+    "error": null
+  },
+  "seasonskosher.com/toms-river": {
+    "lastAttempt": "2026-11-06T15:35:36.485Z",
+    "ok": true,
+    "adapter": "mycloudgrocer",
+    "items": 7875,
+    "checkedAt": "2026-11-06T15:42:59.121Z",
+    "error": null
   }
 }

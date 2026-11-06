@@ -2,16 +2,13 @@
  "areas": [
   {
    "id": "lakewood",
-   "name": "Lakewood, NJ",
+   "name": "Lakewood · Jackson · Toms River",
    "zips": [
-    "08701"
-   ]
-  },
-  {
-   "id": "jackson",
-   "name": "Jackson, NJ",
-   "zips": [
-    "08527"
+    "08701",
+    "08527",
+    "08755",
+    "08753",
+    "08757"
    ]
   }
  ],
@@ -30,7 +27,7 @@
     "minimum": null
    },
    "seo": "Lakewood",
-   "siteId": "seasonskosher.com"
+   "siteId": "seasonskosher.com/lakewood"
   },
   {
    "id": "kosher-village",
@@ -141,7 +138,7 @@
     "minimum": null
    },
    "seo": "lakewood",
-   "siteId": "aisle9market.com"
+   "siteId": "aisle9market.com/lakewood"
   },
   {
    "id": "nutmeg",
@@ -157,7 +154,7 @@
     "minimum": null
    },
    "seo": "Lakewood-NJ",
-   "siteId": "nutmegkoshermarket.com"
+   "siteId": "nutmegkoshermarket.com/lakewood-nj"
   },
   {
    "id": "evergreen",
@@ -205,7 +202,7 @@
     "minimum": null
    },
    "seo": "Lakewood-NJ",
-   "siteId": "kosherwest.com"
+   "siteId": "kosherwest.com/lakewood-nj"
   },
   {
    "id": "bingo",
@@ -226,7 +223,7 @@
   {
    "id": "gourmet-glatt-jackson",
    "name": "Gourmet Glatt Jackson",
-   "area": "jackson",
+   "area": "lakewood",
    "address": "2275 W County Line Rd",
    "zip": "08527",
    "website": "https://www.gourmetglattonline.com",
@@ -242,7 +239,7 @@
   {
    "id": "npgs-jackson",
    "name": "NPGS Jackson",
-   "area": "jackson",
+   "area": "lakewood",
    "address": "2080 W County Line Rd",
    "zip": "08527",
    "website": "https://www.gonpgs.com",
@@ -254,38 +251,82 @@
    },
    "note": "Website blocks automated visitors (Cloudflare check). Not scraped.",
    "siteId": "gonpgs.com"
+  },
+  {
+   "id": "superstop",
+   "name": "Super Stop",
+   "area": "lakewood",
+   "address": "1161 River Ave",
+   "zip": "08701",
+   "website": "https://superstopnj.com",
+   "seo": "lakewood",
+   "adapter": "mycloudgrocer",
+   "delivery": {
+    "fee": null,
+    "freeOver": null,
+    "minimum": null
+   },
+   "siteId": "superstopnj.com/lakewood"
+  },
+  {
+   "id": "seasons-toms-river",
+   "name": "Seasons Toms River",
+   "area": "lakewood",
+   "address": "2088 Lakewood Rd, Toms River",
+   "zip": "08755",
+   "website": "https://seasonskosher.com",
+   "seo": "Toms-River",
+   "adapter": "mycloudgrocer",
+   "delivery": {
+    "fee": null,
+    "freeOver": null,
+    "minimum": null
+   },
+   "siteId": "seasonskosher.com/toms-river"
   }
  ],
  "sites": {
-  "aisle9market.com": {
+  "aisle9market.com/lakewood": {
    "origin": "https://aisle9market.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-06T08:32:30.283Z",
-   "items": 6676
+   "checkedAt": "2026-11-06T15:35:36.472Z",
+   "items": 6677
   },
   "koshervillage.com": {
    "origin": "https://www.koshervillage.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-06T08:28:27.752Z",
+   "checkedAt": "2026-11-06T15:33:12.511Z",
    "items": 10000
   },
-  "kosherwest.com": {
+  "kosherwest.com/lakewood-nj": {
    "origin": "https://www.kosherwest.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-06T08:32:54.774Z",
-   "items": 10311
+   "checkedAt": "2026-11-06T15:38:56.996Z",
+   "items": 10260
   },
-  "nutmegkoshermarket.com": {
+  "nutmegkoshermarket.com/lakewood-nj": {
    "origin": "https://www.nutmegkoshermarket.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-06T08:35:07.439Z",
-   "items": 9471
+   "checkedAt": "2026-11-06T15:37:38.511Z",
+   "items": 9484
   },
-  "seasonskosher.com": {
+  "seasonskosher.com/lakewood": {
    "origin": "https://seasonskosher.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-06T08:34:11.134Z",
-   "items": 10647
+   "checkedAt": "2026-11-06T15:35:50.672Z",
+   "items": 10550
+  },
+  "seasonskosher.com/toms-river": {
+   "origin": "https://seasonskosher.com",
+   "checkout": "product-links",
+   "checkedAt": "2026-11-06T15:42:59.105Z",
+   "items": 7875
+  },
+  "superstopnj.com/lakewood": {
+   "origin": "https://superstopnj.com",
+   "checkout": "product-links",
+   "checkedAt": "2026-11-06T15:36:39.454Z",
+   "items": 6447
   }
  }
 }
