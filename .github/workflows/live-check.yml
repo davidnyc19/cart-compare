@@ -1,0 +1,13 @@
+name: Check live site on phones
+on: { workflow_dispatch: {} }
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps webkit chromium
+      - run: node test/live-check.js
