@@ -52,14 +52,14 @@
    "area": "lakewood",
    "address": "1700 Madison Ave",
    "zip": "08701",
-   "website": "https://gourmetglatt.com",
+   "website": "https://www.gourmetglattonline.com",
    "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
-   "note": "Website has no online shopping."
+   "note": "Online shop blocks automated visitors (Cloudflare check). Not scraped."
   },
   {
    "id": "gourmet-glatt-south",
@@ -67,14 +67,14 @@
    "area": "lakewood",
    "address": "1328 River Ave",
    "zip": "08701",
-   "website": "https://gourmetglatt.com",
+   "website": "https://www.gourmetglattonline.com",
    "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
-   "note": "Website has no online shopping."
+   "note": "Online shop blocks automated visitors (Cloudflare check). Not scraped."
   },
   {
    "id": "npgs-main",
@@ -118,7 +118,8 @@
     "fee": null,
     "freeOver": null,
     "minimum": null
-   }
+   },
+   "note": "No online shop (in-store only)."
   },
   {
    "id": "aisle9",
@@ -208,7 +209,7 @@
     "freeOver": null,
     "minimum": null
    },
-   "note": "Sells online only through Instacart. Not scraped."
+   "note": "No online shop (in-store only)."
   },
   {
    "id": "gourmet-glatt-jackson",
@@ -216,14 +217,14 @@
    "area": "jackson",
    "address": "2275 W County Line Rd",
    "zip": "08527",
-   "website": "https://gourmetglatt.com",
+   "website": "https://www.gourmetglattonline.com",
    "adapter": "off",
    "delivery": {
     "fee": null,
     "freeOver": null,
     "minimum": null
    },
-   "note": "Website has no online shopping."
+   "note": "Online shop blocks automated visitors (Cloudflare check). Not scraped."
   },
   {
    "id": "npgs-jackson",
