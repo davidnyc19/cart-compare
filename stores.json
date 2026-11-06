@@ -3,16 +3,13 @@
  "areas": [
   {
    "id": "lakewood",
-   "name": "Lakewood, NJ",
+   "name": "Lakewood \u00b7 Jackson \u00b7 Toms River",
    "zips": [
-    "08701"
-   ]
-  },
-  {
-   "id": "jackson",
-   "name": "Jackson, NJ",
-   "zips": [
-    "08527"
+    "08701",
+    "08527",
+    "08755",
+    "08753",
+    "08757"
    ]
   }
  ],
@@ -214,7 +211,7 @@
   {
    "id": "gourmet-glatt-jackson",
    "name": "Gourmet Glatt Jackson",
-   "area": "jackson",
+   "area": "lakewood",
    "address": "2275 W County Line Rd",
    "zip": "08527",
    "website": "https://www.gourmetglattonline.com",
@@ -229,7 +226,7 @@
   {
    "id": "npgs-jackson",
    "name": "NPGS Jackson",
-   "area": "jackson",
+   "area": "lakewood",
    "address": "2080 W County Line Rd",
    "zip": "08527",
    "website": "https://www.gonpgs.com",
@@ -240,6 +237,36 @@
     "minimum": null
    },
    "note": "Website blocks automated visitors (Cloudflare check). Not scraped."
+  },
+  {
+   "id": "superstop",
+   "name": "Super Stop",
+   "area": "lakewood",
+   "address": "1161 River Ave",
+   "zip": "08701",
+   "website": "https://superstopnj.com",
+   "seo": "lakewood",
+   "adapter": "mycloudgrocer",
+   "delivery": {
+    "fee": null,
+    "freeOver": null,
+    "minimum": null
+   }
+  },
+  {
+   "id": "seasons-toms-river",
+   "name": "Seasons Toms River",
+   "area": "lakewood",
+   "address": "2088 Lakewood Rd, Toms River",
+   "zip": "08755",
+   "website": "https://seasonskosher.com",
+   "seo": "Toms-River",
+   "adapter": "mycloudgrocer",
+   "delivery": {
+    "fee": null,
+    "freeOver": null,
+    "minimum": null
+   }
   }
  ]
 }

@@ -22,7 +22,7 @@ const PARALLEL = Number(process.env.PARALLEL_SITES || 5);
 const ADAPTERS = { shopify, sitemap, mycloudgrocer, koshervillage };
 
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
-const siteIdOf = url => new URL(url).host.replace(/^www\./, "");
+const siteIdOf = (url, seo) => new URL(url).host.replace(/^www\./, "") + (seo ? "/" + seo.toLowerCase() : "");
 const fileOf = id => id.replace(/[^a-z0-9.-]/gi, "_") + ".json";
 
 async function pickAdapter(origin, wanted) {
@@ -42,7 +42,7 @@ async function main() {
   const sites = new Map();
   for (const s of cfg.stores) {
     if (!s.website || s.adapter === "off") continue;
-    const id = siteIdOf(s.website);
+    const id = siteIdOf(s.website, s.adapter === "mycloudgrocer" ? s.seo : null);
     if (!sites.has(id)) sites.set(id, { id, origin: new URL(s.website).origin, adapter: s.adapter, seo: s.seo });
   }
 
@@ -75,7 +75,7 @@ async function main() {
   const raws = fs.readdirSync(RAW).filter(f => f.endsWith(".json")).map(f => JSON.parse(fs.readFileSync(path.join(RAW, f), "utf8")));
   const catalog = merge(raws);
   const siteMeta = Object.fromEntries(raws.map(r => [r.siteId, { origin: r.origin, checkout: r.checkout, checkedAt: r.checkedAt, items: r.items.length }]));
-  const stores = cfg.stores.map(s => ({ ...s, siteId: s.website ? siteIdOf(s.website) : null }));
+  const stores = cfg.stores.map(s => ({ ...s, siteId: s.website ? siteIdOf(s.website, s.adapter === "mycloudgrocer" ? s.seo : null) : null }));
   fs.writeFileSync(path.join(OUT, "catalog.json"), JSON.stringify({ builtAt: new Date().toISOString(), products: catalog }));
   fs.writeFileSync(path.join(OUT, "stores.json"), JSON.stringify({ areas: cfg.areas, stores, sites: siteMeta }, null, 1));
   fs.writeFileSync(statusFile, JSON.stringify(status, null, 2));
