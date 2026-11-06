@@ -1,6 +1,6 @@
 (function () {
 "use strict";
-const VERSION = "5";
+const VERSION = "6";
 function showErr(msg) {
   let b = document.getElementById("errbox");
   if (!b) { b = document.createElement("div"); b.id = "errbox"; document.body.appendChild(b); }
@@ -69,13 +69,13 @@ function staplesFor(term) {
   return STAPLES.filter(x => x.words.split(" ").some(v => v.startsWith(w) || w.startsWith(v)));
 }
 function pick(s, k) {
-  if (!k.startsWith("g:")) { const p = BY.get(k), o = offer(s, p); return o ? { p, o } : null; }
+  if (!k.startsWith("s:")) { const p = BY.get(k), o = offer(s, p); return o ? { p, o } : null; }
   let best = null;
   for (const p of cands(k)) { const o = offer(s, p); if (o && (!best || o.price < best.o.price)) best = { p, o }; }
   return best;
 }
 function item(k) {
-  if (!k.startsWith("g:")) return BY.get(k);
+  if (!k.startsWith("s:")) return BY.get(k);
   const st = SBY.get(k.slice(2)); if (!st) return null;
   return { k, n: st.label, sub: "Lowest price at each store", c: st.cat || (cands(k)[0] || {}).c || "pantry", img: "", generic: true };
 }
@@ -101,7 +101,7 @@ function find(term, n = 8) {
 let gens = [];
 function showDrop() {
   const term = q.value.trim() || curCat;
-  gens = staplesFor(term).map(x => "g:" + x.id).filter(k => storesK(k) >= 2).slice(0, 3);
+  gens = staplesFor(term).map(x => "s:" + x.id).filter(k => storesK(k) >= 2).slice(0, 3);
   const rowH = (k, it, sub, gen) => { const q = (list.find(x => x.k === k) || {}).q || 0; return `<div class="opt${gen ? " gen" : ""}">${pic(it)}<span class="on-txt"><b>${esc(it.n)}</b><small>${sub}</small></span><button type="button" class="addb${q ? " in" : ""}" data-add="${esc(k)}">${q ? "✓ " + q : "Add"}</button></div>`; };
   const gen = gens.map(k => rowH(k, item(k), "Cheapest kind at each store · from " + money(lowestK(k)), true)).join("");
   drop.innerHTML = gen + (hits.length ? hits.map(p => rowH(p.k, p, "from " + money(lowest(p)), false)).join("")
@@ -117,10 +117,10 @@ q.addEventListener("keydown", e => {
   else if (e.key === "Enter" && (gens[sel] || hits[sel - gens.length])) { add(gens[sel] || hits[sel - gens.length].k); e.preventDefault(); }
   else if (e.key === "Escape") drop.hidden = true;
 });
-let lastAdd = 0;
+let lastAdd = 0, lastKey = "";
 drop.addEventListener("click", e => {
   const b = e.target.closest("[data-add]"); if (!b) return;
-  e.preventDefault(); if (Date.now() - lastAdd < 350) return; lastAdd = Date.now();
+  e.preventDefault(); if (b.dataset.add === lastKey && Date.now() - lastAdd < 300) return; lastAdd = Date.now(); lastKey = b.dataset.add;
   try { add(b.dataset.add); } catch (err) { showErr("add: " + err.message); }
   const q2 = (list.find(x => x.k === b.dataset.add) || {}).q || 0;
   b.textContent = "✓ " + q2; b.classList.add("in");
@@ -154,7 +154,7 @@ function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k
 
 // ---------- list ----------
 function showList() {
-  list = list.filter(x => x.k.startsWith("g:") ? SBY.has(x.k.slice(2)) && cands(x.k).length : BY.has(x.k));
+  list = list.filter(x => x.k.startsWith("s:") ? SBY.has(x.k.slice(2)) && cands(x.k).length : BY.has(x.k));
   $("count").textContent = list.length ? list.length + (list.length === 1 ? " item" : " items") : "";
   $("count").hidden = !list.length;
   $("list").innerHTML = list.length ? list.map(x => { const p = item(x.k); return `<div class="row">${pic(p)}<span class="name" data-cmp="${esc(x.k)}">${esc(p.n)}${p.generic ? `<small class="gsub">${esc(p.sub)}</small>` : ""}</span><span class="qty"><button data-a="-" data-k="${esc(x.k)}" aria-label="One less">−</button><span class="num">${x.q}</span><button data-a="+" data-k="${esc(x.k)}" aria-label="One more">+</button></span></div>`; }).join("") + `<p style="margin:12px 0 0"><button class="link" id="clear">Empty cart</button></p>`

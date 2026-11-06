@@ -15,6 +15,7 @@ const URL = process.env.SITE_URL || "https://davidnyc19.github.io/cart-compare/"
       console.log("--- " + name + " " + ver);
       await p.tap("[data-add] >> nth=0"); await p.waitForTimeout(800);
       await p.fill("#q", "eggs"); await p.waitForTimeout(800); await p.tap("[data-add] >> nth=0"); await p.waitForTimeout(800);
+      await p.fill("#q", "pride"); await p.waitForTimeout(800); await p.tap("[data-add] >> nth=0"); await p.waitForTimeout(600); await p.tap("[data-add] >> nth=1"); await p.waitForTimeout(800);
       const rows = await p.$$eval("#list .row", r => r.map(x => x.innerText.split("\n")[0]));
       const badge = await p.$eval("#badge", e => e.textContent).catch(() => "NO BADGE");
       const bar = await p.$eval("#bar", e => e.hidden ? "hidden" : e.innerText.replace(/\n/g, " | ")).catch(() => "?");
