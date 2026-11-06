@@ -1,5 +1,13 @@
 (function () {
 "use strict";
+const VERSION = "4";
+function showErr(msg) {
+  let b = document.getElementById("errbox");
+  if (!b) { b = document.createElement("div"); b.id = "errbox"; document.body.appendChild(b); }
+  b.textContent = "Something went wrong (version " + VERSION + "): " + msg;
+}
+window.addEventListener("error", e => showErr((e.message || "error") + (e.lineno ? " @" + e.lineno : "")));
+window.addEventListener("unhandledrejection", e => showErr(String(e.reason && e.reason.message || e.reason)));
 const $ = id => document.getElementById(id);
 const money = n => "$" + n.toFixed(2);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -127,7 +135,7 @@ function compare(k) {
   $("modal").hidden = false;
   $("x").onclick = () => $("modal").hidden = true;
   $("addbtn").onclick = () => {
-    add(k);
+    try { add(k); } catch (e) { showErr("add: " + e.message); }
     const n = list.reduce((a, i) => a + i.q, 0);
     $("sheet").innerHTML = `<div class="done"><div class="tick">✓</div><h2>Added to your cart</h2><p>${esc(it.n)} · you have ${n} item${n === 1 ? "" : "s"} in your cart</p>
       <button class="big solid" id="seecart">See my cart and the cheapest store</button><button class="big ghost" id="more">Keep shopping</button></div>`;
@@ -137,7 +145,7 @@ function compare(k) {
 }
 $("cats").innerHTML = CATS.map(([l, t, c]) => `<button class="cat" data-t="${t}"><span class="ic" style="${tint(c)}">${svg(c, 24)}</span>${l}</button>`).join("");
 $("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b || !CAT.length) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; curCat = b.dataset.t.startsWith("@") ? b.dataset.t : ""; showDrop(); q.focus(); });
-function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; render(); const bd = $("mylist"); bd.classList.remove("bump"); void bd.offsetWidth; bd.classList.add("bump"); }
+function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; render(); const nn = list.reduce((a, i) => a + i.q, 0); $("badge").textContent = nn; const bd = $("mylist"); bd.classList.remove("bump"); void bd.offsetWidth; bd.classList.add("bump"); }
 
 // ---------- list ----------
 function showList() {
@@ -203,7 +211,8 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") $("modal").h
 
 // ---------- start ----------
 function render() {
-  showList(); showAnswer(); save(); $("intro").hidden = list.length > 0;
+  for (const f of [showList, showAnswer, save]) { try { f(); } catch (e) { showErr(f.name + ": " + e.message); } }
+  $("intro").hidden = list.length > 0;
   const n = list.reduce((a, i) => a + i.q, 0); $("badge").textContent = n;
   if (n && $("bar").hidden) { $("bar").innerHTML = `<div class="in"><div data-go="list"><small>Your cart</small><b>${n} item${n === 1 ? "" : "s"}</b></div></div>`; $("bar").hidden = false; }
   if (n) { const d = $("bar").querySelector(".in div"); d.dataset.go = "list"; d.querySelector("small").textContent = `${n} item${n === 1 ? "" : "s"} · Cheapest`; if (!$("bar").querySelector("button")) d.querySelector("small").textContent = "Your cart"; }
@@ -214,6 +223,7 @@ $("area").addEventListener("change", e => { area = e.target.value; render(); });
 q.placeholder = "Loading prices…"; q.disabled = true;
 Promise.all([fetch("data/stores.json").then(r => r.json()), fetch("data/catalog.json").then(r => r.json())]).then(([st, cat]) => {
   STORES = st.stores; SITES = st.sites || {}; AREAS = st.areas; CAT = cat.products || []; CAT.forEach(p => BY.set(p.k, p));
+  const vf = document.getElementById("ver"); if (vf) vf.textContent = "Version " + VERSION + " · " + CAT.length.toLocaleString() + " products";
   q.disabled = false; q.placeholder = "Type here… eggs, milk, challah";
   if (!AREAS.some(a => a.id === area)) area = AREAS[0].id;
   $("area").innerHTML = AREAS.map(a => `<option value="${a.id}"${a.id === area ? " selected" : ""}>${esc(a.name)}</option>`).join("");

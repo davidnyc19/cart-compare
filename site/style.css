@@ -165,3 +165,5 @@ td .what{display:block;font-size:.72rem;font-weight:500;color:var(--muted);white
 .store .rk{font-family:var(--display);font-weight:800;color:var(--muted);width:20px}
 .store.first .rk,.store.first b{color:var(--good)}
 .card .store:first-of-type{border-top:0}
+
+#errbox{position:fixed;left:12px;right:12px;top:calc(70px + env(safe-area-inset-top,0px));z-index:100;background:#b3261e;color:#fff;font-weight:700;padding:12px 14px;border-radius:12px;font-size:.9rem}
