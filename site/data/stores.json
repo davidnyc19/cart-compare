@@ -259,32 +259,32 @@
   "aisle9market.com": {
    "origin": "https://aisle9market.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-05T22:24:42.544Z",
-   "items": 6697
+   "checkedAt": "2026-11-06T08:32:30.283Z",
+   "items": 6676
   },
   "koshervillage.com": {
    "origin": "https://www.koshervillage.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-05T22:50:59.881Z",
+   "checkedAt": "2026-11-06T08:28:27.752Z",
    "items": 10000
   },
   "kosherwest.com": {
    "origin": "https://www.kosherwest.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-05T22:26:06.287Z",
-   "items": 10272
+   "checkedAt": "2026-11-06T08:32:54.774Z",
+   "items": 10311
   },
   "nutmegkoshermarket.com": {
    "origin": "https://www.nutmegkoshermarket.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-05T22:27:25.374Z",
-   "items": 9685
+   "checkedAt": "2026-11-06T08:35:07.439Z",
+   "items": 9471
   },
   "seasonskosher.com": {
    "origin": "https://seasonskosher.com",
    "checkout": "product-links",
-   "checkedAt": "2026-11-05T22:26:50.306Z",
-   "items": 10627
+   "checkedAt": "2026-11-06T08:34:11.134Z",
+   "items": 10647
   }
  }
 }
