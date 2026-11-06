@@ -1,6 +1,6 @@
 (function () {
 "use strict";
-const VERSION = "4";
+const VERSION = "5";
 function showErr(msg) {
   let b = document.getElementById("errbox");
   if (!b) { b = document.createElement("div"); b.id = "errbox"; document.body.appendChild(b); }
@@ -102,13 +102,15 @@ let gens = [];
 function showDrop() {
   const term = q.value.trim() || curCat;
   gens = staplesFor(term).map(x => "g:" + x.id).filter(k => storesK(k) >= 2).slice(0, 3);
-  const gen = gens.map((k, i) => { const it = item(k); return `<button class="opt gen${i === sel ? " on" : ""}" data-k="${esc(k)}">${pic(it)}<span><b>${esc(it.n)}</b><small>Lowest price at each store · from ${money(lowestK(k))}</small></span><span class="plus" aria-hidden="true">+</span></button>`; }).join("");
-  drop.innerHTML = gen + (hits.length ? hits.map((p, i) => `<button class="opt${i + gens.length === sel ? " on" : ""}" data-k="${esc(p.k)}">${pic(p)}<span><b>${esc(p.n)}</b><small>from ${money(lowest(p))}</small></span><span class="plus" aria-hidden="true">+</span></button>`).join("")
+  const rowH = (k, it, sub, gen) => { const q = (list.find(x => x.k === k) || {}).q || 0; return `<div class="opt${gen ? " gen" : ""}">${pic(it)}<span class="on-txt"><b>${esc(it.n)}</b><small>${sub}</small></span><button type="button" class="addb${q ? " in" : ""}" data-add="${esc(k)}">${q ? "✓ " + q : "Add"}</button></div>`; };
+  const gen = gens.map(k => rowH(k, item(k), "Cheapest kind at each store · from " + money(lowestK(k)), true)).join("");
+  drop.innerHTML = gen + (hits.length ? hits.map(p => rowH(p.k, p, "from " + money(lowest(p)), false)).join("")
     : (gen ? "" : `<div class="none">We couldn't find that yet. Try a shorter word, like “milk”.</div>`));
   drop.hidden = false;
 }
 let curCat = "";
 q.addEventListener("input", () => { curCat = ""; hits = find(q.value); sel = 0; q.value.trim() ? showDrop() : drop.hidden = true; });
+q.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); q.blur(); } });
 q.addEventListener("keydown", e => {
   if (e.key === "ArrowDown") { sel = Math.min(sel + 1, gens.length + hits.length - 1); showDrop(); e.preventDefault(); }
   else if (e.key === "ArrowUp") { sel = Math.max(sel - 1, 0); showDrop(); e.preventDefault(); }
@@ -116,10 +118,13 @@ q.addEventListener("keydown", e => {
   else if (e.key === "Escape") drop.hidden = true;
 });
 let lastAdd = 0;
-const pickOpt = e => { const b = e.target.closest(".opt"); if (!b) return; e.preventDefault(); if (Date.now() - lastAdd < 500) return; lastAdd = Date.now(); drop.hidden = true; q.blur(); compare(b.dataset.k); };
-drop.addEventListener("mousedown", e => { if (e.target.closest(".opt")) e.preventDefault(); });
-drop.addEventListener("click", pickOpt);
-q.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== q && $("modal").hidden) drop.hidden = true; }, 400));
+drop.addEventListener("click", e => {
+  const b = e.target.closest("[data-add]"); if (!b) return;
+  e.preventDefault(); if (Date.now() - lastAdd < 350) return; lastAdd = Date.now();
+  try { add(b.dataset.add); } catch (err) { showErr("add: " + err.message); }
+  const q2 = (list.find(x => x.k === b.dataset.add) || {}).q || 0;
+  b.textContent = "✓ " + q2; b.classList.add("in");
+});
 
 // ---------- compare one item across every store ----------
 function compare(k) {
@@ -144,8 +149,8 @@ function compare(k) {
   };
 }
 $("cats").innerHTML = CATS.map(([l, t, c]) => `<button class="cat" data-t="${t}"><span class="ic" style="${tint(c)}">${svg(c, 24)}</span>${l}</button>`).join("");
-$("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b || !CAT.length) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; curCat = b.dataset.t.startsWith("@") ? b.dataset.t : ""; showDrop(); q.focus(); });
-function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); q.value = ""; drop.hidden = true; curCat = ""; render(); const nn = list.reduce((a, i) => a + i.q, 0); $("badge").textContent = nn; const bd = $("mylist"); bd.classList.remove("bump"); void bd.offsetWidth; bd.classList.add("bump"); }
+$("cats").addEventListener("click", e => { const b = e.target.closest(".cat"); if (!b || !CAT.length) return; hits = find(b.dataset.t); sel = 0; q.value = b.dataset.t.startsWith("@") ? "" : b.dataset.t; curCat = b.dataset.t.startsWith("@") ? b.dataset.t : ""; showDrop(); drop.scrollIntoView({ behavior: "smooth", block: "nearest" }); });
+function add(k) { const x = list.find(i => i.k === k); x ? x.q++ : list.push({ k, q: 1 }); render(); toast("Added to cart ✓"); const nn = list.reduce((a, i) => a + i.q, 0); $("badge").textContent = nn; const bd = $("mylist"); bd.classList.remove("bump"); void bd.offsetWidth; bd.classList.add("bump"); }
 
 // ---------- list ----------
 function showList() {
@@ -182,6 +187,7 @@ function showAnswer() {
     ${save > 0.005 ? `<span class="save num">You save ${money(save)} vs. the most expensive store</span>` : ""}
     ${w.miss.length ? `<p class="note">Doesn't carry ${w.miss.length} of your items.</p>` : ""}
     ${w.known && w.fee && w.gap > 0 && w.gap < 25 ? `<p class="note">Add ${money(w.gap)} more for free delivery.</p>` : ""}
+    <div class="brk">${list.map(x => { const m = pick(w.s, x.k), it = item(x.k); return `<div><span>${esc(m ? m.p.n : it.n)}${x.q > 1 ? " ×" + x.q : ""}</span><span class="num">${m ? money(m.o.price * x.q) : "not sold here"}</span></div>`; }).join("")}<div class="tot"><span>Total</span><span class="num">${money(w.sub)}</span></div></div>
     <button class="big" data-shop="${w.s.id}">Shop at ${esc(w.s.name)}</button></div>
   <div class="card"><h2>All ${R.length} stores compared</h2><p class="compared">${names.map(esc).join(" · ")}</p>
     ${R.map((r, i) => `<div class="store${i === 0 ? " first" : ""}"><span class="rk num">${i + 1}</span><span class="n"><b>${esc(r.s.name)}</b><small>${r.miss.length ? `Missing ${r.miss.length} item${r.miss.length > 1 ? "s" : ""}` : "Has everything"}</small></span><span class="t num">${money(r.total)}<small class="${i === 0 ? "ok" : ""}">${i === 0 ? "Cheapest" : r.total < w.total ? money(w.total - r.total) + " less, missing items" : "+" + money(r.total - w.total)}</small></span><button data-shop="${r.s.id}">Shop</button></div>`).join("")}

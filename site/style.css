@@ -167,3 +167,18 @@ td .what{display:block;font-size:.72rem;font-weight:500;color:var(--muted);white
 .card .store:first-of-type{border-top:0}
 
 #errbox{position:fixed;left:12px;right:12px;top:calc(70px + env(safe-area-inset-top,0px));z-index:100;background:#b3261e;color:#fff;font-weight:700;padding:12px 14px;border-radius:12px;font-size:.9rem}
+
+/* v5: results are a normal list on the page, each with its own Add button */
+.drop{position:static;box-shadow:none;border:0;padding:0;margin-top:10px;max-height:none;background:transparent}
+.opt{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line);border-radius:0;background:none}
+.opt:first-child{border-top:0}
+.opt.gen{background:none}
+.opt .on-txt{flex:1;min-width:0}
+.opt .on-txt b{display:block;font-weight:600;line-height:1.3}
+.opt .on-txt small{color:var(--good);font-weight:600}
+.addb{flex:none;min-width:76px;min-height:44px;border:0;border-radius:12px;background:var(--brand);color:var(--brand-ink);font-weight:800;font-size:1rem;touch-action:manipulation}
+.addb.in{background:var(--good)}
+.brk{margin-top:16px;background:rgba(255,255,255,.12);border-radius:14px;padding:6px 14px}
+.brk div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(255,255,255,.18);font-size:.95rem}
+.brk div:first-child{border-top:0}
+.brk .tot{font-weight:800}
