@@ -95,7 +95,7 @@
    "h": {},
    "body": "",
    "s": 401,
-   "res": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-42223ae030074ec15008a1b8f5153e55-f45de85ff8904a88-00\"}"
+   "res": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-685b27d98f8ba720e7ff4c47f860352f-50a97d03e8605746-00\"}"
   },
   {
    "m": "GET",
@@ -167,37 +167,25 @@
    "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"Value2\":null,\"categoryId\":\"0\"}]",
    "s": 200,
    "res": "{\"Model\":{\"List\":[],\"Selected\":[],\"ScrollItemsNumber\":15},\"Templates\":{\"holder\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003ePrice\\u003c/h2\\u003e\\n    \\u003cul class=\\\"ajax-filter-items-list\\\" id=\\\"PriceList\\\"\\u003e\\n        [ITEMS]\\n    \\u003c/ul\\u003e\\n\\u003c/div\\u003e\\n\",\"item\":\"\\n\\u003cli class=\\\"pr-li\\\"\\u003e\\u003ca href=\\\"javascript:void(0)\\\" onclick=\\\"return objFilterAjax.ChangePriceRangeState(this, [FROM], [BY])\\\" class=\\\"[CSS-C"
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/AjaxFilter/ProductDetailsJSON",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*",
-    "content-type": "text/plain, application/x-www-form-urlencoded; charset=UTF-8"
-   },
-   "body": "[{\"FilterType\":5,\"Value1\":\"444\",\"Value2\":null,\"categoryId\":0}]",
-   "s": 200,
-   "res": "{\"success\":true,\"message\":null,\"data\":{\"StoreProductId\":444,\"CartProductDetailsModelJSON\":\"{\\\"cartId\\\":-1,\\\"storeProductId\\\":444,\\\"categoryName\\\":\\\"Produce\\\",\\\"defaultProductName\\\":\\\"Avocado\\\",\\\"IsSpecial\\\":false,\\\"productName\\\":\\\"Avocado\\\",\\\"unitRegularPrice\\\":2.2900,\\\"unitReguliarPrice\\\":2.2900,\\\"limitPerOrder\\\":0.0,\\\"specialsPriceLimit\\\":0,\\\"specialPackageSize\\\":4,\\\"unitSpecialPrice\\\":1.0000,\\\"IsDiscount\\\":false,\\\"quantity\\\":1,\\\"weightUnit\\\":\\\"\\\",\\\"byWeight\\\":false,\\\"weightRegularPrice\\\":2.29"
   }
  ],
  "cands": [
   {
    "i": 17,
    "t": "",
-   "c": "MuiButtonBase-root MuiButton-root jss365 MuiButton-contained add-to-cart-btn Mui",
+   "c": "MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn Mui",
    "oc": ""
   },
   {
    "i": 20,
    "t": "",
-   "c": "MuiButtonBase-root MuiButton-root jss365 MuiButton-contained add-to-cart-btn Mui",
+   "c": "MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn Mui",
    "oc": ""
   },
   {
    "i": 23,
    "t": "",
-   "c": "MuiButtonBase-root MuiButton-root jss365 MuiButton-contained add-to-cart-btn Mui",
+   "c": "MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn Mui",
    "oc": ""
   },
   {
@@ -213,19 +201,7 @@
    "oc": ""
   }
  ],
- "clicked": "<button class=\"MuiButtonBase-root MuiButton-root MuiButton-text product-item-container\" tabindex=\"0\" type=\"button\"><span class=\"MuiButton-label\"><a class=\"product-item-link\" href=\"/Lakewood-NJ/category/4892/avocado/444\"><span class=\"product-item-special-lbl\">Special</span><div class=\"product-item-image\"><div class=\"image-container\" style=\"background-color: rgb(255, 255, 255);\"><img alt=\"Avocado\" l",
- "after": [
-  "POST https://kosherwest.com/proxy-api/AjaxFilter/ProductDetailsJSON"
- ],
- "cookies": [
-  "_GRECAPTCHA (www.google.com)",
-  "_ga_GLR7NK2NF7 (.kosherwest.com)",
-  "_ga (.kosherwest.com)",
-  "MCG.customer (kosherwest.com)",
-  "MCG.RecentlyViewed (kosherwest.com)"
- ],
- "cartText": "",
- "globals": [
-  "mcgCartSyncRegistered"
- ]
+ "lsBefore": "{\"slides\":\"[{\\\"bannerHome\\\":null,\\\"imageBanners\\\":[{\\\"ImageUrl\\\":\\\"content/images/uploads/D2235944-E0D6-4A80-8980-63CE168B9E75.jpg\\\",\\\"TargetHref\\\":\\\"#\\\",\\\"AltText\\\":\\\"Fall at KosherWest\\\",\\\"StartDate\\\":\\\"/Date(1793160000000)/\\\",\\\"EndDate\\\":\\\"/Date(3371083200000)/\\\",\\\"Priority\\\":0,\\\"AdvertiserId\\\":1,\\\"Advertiser\\\":null,\\\"BannerGroupId\\\":14,\\\"\",\"responseCache\":\"{}\",\"responseCache:en;Common/HeaderLinksJSON\":\"{\\\"IsCustomerImpersonated\\\":false,\\\"IsEmployee\\\":false,\\\"DisplayHiddenProductLink\\\":false,\\\"DisplayApprovedProduct\\\":false,\\\"ShoppingCartEnabled\\\":false,\\\"ShoppingCartItems\\\":0,\\\"WishlistEnabled\\\":false,\\\"WishlistItems\\\":0,\\\"AllowPrivateMessages\\\":false,\\\"UnreadPrivateMessages\\\":\\\"\\\",\\\"AlertMessage\\\":\\\"\\\",\\\"StoreURL\\\":\\\"https:/\",\"TagManagerId\":\"GTM-PW4P9BLV\",\"substitutionBarCollapsed\":\"false\",\"responseCache:en;Common/FooterJSON;0\":\"{\\\"IosId\\\":\\\"6462881939\\\",\\\"AndroidId\\\":\\\"com.mycloudgrocer.kowe\\\",\\\"FooterDisclaimer\\\":\\\"\\\",\\\"FooterAdress\\\":\\\"136 Hillside Blvd, Lakewood, NJ 08701 \\\",\\\"FooterAdressPhone\\\":\\\"(732) 886-9378\\\",\\\"FacebookLink\\\":\\\"https://www.facebook.com/profile.php?id=100040905592988\\\",\\\"TwitterLink\\\":\\\"\\\",\\\"InstagramLink\\\":\\\"https://www.instagr\",\"showStorePopup\":\"false\",\"responseCache:en;Common/GetPdfFilesFromFolder\":\"[]\",\"responseCache:en;DeliMenu/MenuListJSON;v2;\":\"[]\",\"carouselDataResponse_en_ProductsListCarousel1_Lakewood-NJ_params={\\\"locationName\\\":\\\"ProductsListCarousel1\\\",\\\"isPassoverOnly\\\":false,\\\"currentProductId\\\":\\\"any\\\",\\\"categoryId\\\":\\\"any\\\"}\":\"{\\\"Carousels\\\":[{\\\"Title\\\":\\\"Quick Shop\\\",\\\"LocationName\\\":\\\"ProductsListCarousel1\\\",\\\"Data\\\":\\\"[{\\\\\\\"Id\\\\\\\":444,\\\\\\\"SPId\\\\\\\":444,\\\\\\\"N\\\\\\\":\\\\\\\"Avocado\\\\\\\",\\\\\\\"D\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"nU\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"iU\\\\\\\":\\\\\\\"0234940_avocado_300.jpeg\\\\\\\",\\\\\\\"riU\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"riD\\\\\\\":\\\\\\\"style=\\\\\\\\\\\\\\\"display:none;\\\\\\\\\\\\\\\"\\\\\\\",\\\\\\\"iS\\\\\\\":300,\\\\\\\"P\\\\\\\":\\\\\\\"$1.99 / each\\\\\\\",\\\\\\\"O\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"R\\\\\\\":0,\\\\\\\"iW\\\\\\\":f\",\"responseCache:en;Common/GetSiteConfigPublicValues\":\"{\\\"siteGeneral\\\":{\\\"CaptchaSettingsReCaptchaPublicKey\\\":\\\"6LcNTMcrAAAAALkotChSdwzFmDt3gRbUjthJuKWZ\\\",\\\"GoogleCloudProjectId\\\":\\\"decisive-post-459017-k5\\\",\\\"CheckoutPickupAddress\\\":\\\"Pickup Information\\\",\\\"CollectPhoneInsteadOfEmail\\\":null,\\\"CouponCodeExpiredByDeliveryDate\\\":\\\"This promo code expires before the chosen \",\"isLoggedIn\":\"false\",\"curbsideBarExpanded\":\"true\",\"hasSelectedStore\":\"true\",\"showMultistore\":\"false\",\"responseCache:en;AjaxFilter/GetCategoryTreeJSON;00000000;\":\"{\\\"data\\\":[{\\\"Id\\\":395,\\\"pId\\\":0,\\\"N\\\":\\\"Meat\\\",\\\"iU\\\":\\\"https://kosherwest.com/api/content/images/thumbs/0254004_300.jpeg\\\",\\\"List\\\":[{\\\"Id\\\":647,\\\"pId\\\":395,\\\"N\\\":\\\"Beef\\\",\\\"iU\\\":\\\"https://kosherwest.com/api/content/images/thumbs/0056000_300.jpeg\\\",\\\"List\\\":[{\\\"Id\\\":6002,\\\"pId\\\":647,\\\"N\\\":\\\"Imported Beef\\\",\\\"iU\\\":\\\"https://kosherwest.com\",\"responseCache:en;multistore/StoresDialogJSON\":\"{\\\"SelectedStoreId\\\":1,\\\"SelectedStoreIdNoDefault\\\":null,\\\"HasActivePickupAreasForSelectedStore\\\":true,\\\"StoresList\\\":[{\\\"StoreName\\\":\\\"Kosher West\\\",\\\"StoreSystemName\\\":\\\"Kosher West\\\",\\\"SeoLocation\\\":\\\"Lakewood-NJ\\\",\\\"IsClosed\\\":false,\\\"IsDiscontinued\\\":false,\\\"IsHidden\\\":false,\\\"IsPermanentlyClosed\\\":false,\\\"EnableStoreForRo\"}",
+ "clicked": "<button class=\"MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn MuiButton-containedSecondary\" tabindex=\"0\" type=\"button\" id=\"mcg-add-to-card-product-details\"><span class=\"MuiButton-label\"><span class=\"MuiButton-startIcon MuiButton-iconSizeMedium\"><svg class=\"MuiSvgIcon-root\" focusable=\"false\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 18c-1.1 0-1.99.9-1.99 2S5.9",
+ "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('.add-to-cart-btn').first()\n  -   locator resolved to <button tabindex=\"0\" type=\"button\" id=\"mcg-add-to-card-product-details\" class=\"MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn MuiButton-contai"
 }
