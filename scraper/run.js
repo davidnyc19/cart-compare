@@ -58,7 +58,7 @@ async function main() {
         L(`using ${ad.name} adapter`);
         const res = await ad.scrape(site.origin, { maxPages: Math.ceil(MAX / 250), maxProducts: MAX, deadline: Date.now() + PER_SITE_MIN * 60000, seo: site.seo, log: L });
         if (!res.items.length) throw new Error("Scrape finished but found 0 prices.");
-        fs.writeFileSync(path.join(RAW, fileOf(site.id)), JSON.stringify({ siteId: site.id, origin: site.origin, adapter: ad.name, checkout: res.checkout, checkedAt: new Date().toISOString(), items: res.items }));
+        fs.writeFileSync(path.join(RAW, fileOf(site.id)), JSON.stringify({ siteId: site.id, origin: site.origin, adapter: ad.name, checkout: res.checkout, storeId: res.storeId ?? null, checkedAt: new Date().toISOString(), items: res.items }));
         Object.assign(st, { ok: true, adapter: ad.name, items: res.items.length, checkedAt: new Date().toISOString(), error: null });
         L(`✓ ${res.items.length} prices`);
       } catch (e) {
@@ -74,7 +74,7 @@ async function main() {
   // merge everything saved (keeps yesterday's prices for a store that failed today)
   const raws = fs.readdirSync(RAW).filter(f => f.endsWith(".json")).map(f => JSON.parse(fs.readFileSync(path.join(RAW, f), "utf8")));
   const catalog = merge(raws);
-  const siteMeta = Object.fromEntries(raws.map(r => [r.siteId, { origin: r.origin, checkout: r.checkout, checkedAt: r.checkedAt, items: r.items.length }]));
+  const siteMeta = Object.fromEntries(raws.map(r => [r.siteId, { origin: r.origin, checkout: r.checkout, storeId: r.storeId ?? null, checkedAt: r.checkedAt, items: r.items.length }]));
   const stores = cfg.stores.map(s => ({ ...s, siteId: s.website ? siteIdOf(s.website, s.adapter === "mycloudgrocer" ? s.seo : null) : null }));
   fs.writeFileSync(path.join(OUT, "catalog.json"), JSON.stringify({ builtAt: new Date().toISOString(), products: catalog }));
   fs.writeFileSync(path.join(OUT, "stores.json"), JSON.stringify({ areas: cfg.areas, stores, sites: siteMeta }, null, 1));

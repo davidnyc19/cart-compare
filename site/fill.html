@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fill My Cart Button</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css?v=7">
+<style>
+.tabs{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.tabs button{border:0;border-radius:999px;padding:10px 16px;font-weight:700;background:var(--soft)}
+.tabs button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.how{margin:14px 0 0;padding-left:22px;display:grid;gap:12px}
+.how b{font-weight:700}
+.code{display:block;width:100%;margin-top:10px;font:12px/1.4 ui-monospace,Menlo,monospace;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);height:84px;resize:none}
+.drag{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:12px;background:var(--brand);color:var(--brand-ink);font-weight:800;text-decoration:none;cursor:grab}
+.ok{color:var(--good);font-weight:700;margin-left:8px}
+</style>
+</head>
+<body>
+<header class="top"><div class="logo"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><path d="M7 10h3l2.6 11h10.2L25.5 13H11.6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="25.5" r="2" fill="currentColor"/><circle cx="22" cy="25.5" r="2" fill="currentColor"/></svg>Cart Compare</div></header>
+<main class="page">
+  <section class="intro">
+    <h1>Set up your “Fill my cart” button</h1>
+    <p>Do this once on each phone or computer. After that, one tap on the store's website puts your whole Cart Compare list into that store's cart.</p>
+  </section>
+
+  <section class="card">
+    <h2>Works with</h2>
+    <p class="empty">Seasons (Lakewood and Toms River), Aisle 9, Nutmeg, Kosher West and Super Stop. You need to be signed in to your account on the store's website.</p>
+  </section>
+
+  <section class="card">
+    <h2>Which are you using?</h2>
+    <div class="tabs" role="group" aria-label="Your device">
+      <button type="button" data-t="iphone" aria-pressed="true">iPhone</button>
+      <button type="button" data-t="android" aria-pressed="false">Android</button>
+      <button type="button" data-t="computer" aria-pressed="false">Computer</button>
+    </div>
+
+    <div data-p="iphone">
+      <ol class="how">
+        <li><b>Copy the button code:</b> <button type="button" class="link" data-copy>Copy code</button><span class="ok" data-okmsg hidden>Copied ✓</span></li>
+        <li><b>Bookmark this page:</b> tap the Share icon <span aria-hidden="true">⬆︎</span>, then <b>Add Bookmark</b>. Name it <b>Fill my cart</b> and tap Save.</li>
+        <li><b>Edit the bookmark:</b> tap the Bookmarks icon <span aria-hidden="true">📖</span>, tap <b>Edit</b>, tap <b>Fill my cart</b>. Clear the address underneath the name and <b>paste</b> the code. Tap Done.</li>
+        <li><b>To use it:</b> on the store's website, tap the Bookmarks icon and tap <b>Fill my cart</b>.</li>
+      </ol>
+    </div>
+    <div data-p="android" hidden>
+      <ol class="how">
+        <li><b>Copy the button code:</b> <button type="button" class="link" data-copy>Copy code</button><span class="ok" data-okmsg hidden>Copied ✓</span></li>
+        <li><b>Bookmark this page:</b> in Chrome tap <b>⋮</b>, then the <b>☆ star</b>.</li>
+        <li><b>Edit the bookmark:</b> tap <b>Edit</b> at the bottom (or ⋮ → Bookmarks → this page → ✎). Change the name to <b>Fill my cart</b>, clear the URL and <b>paste</b> the code. Save.</li>
+        <li><b>To use it:</b> on the store's website, tap the address bar, type <b>Fill my cart</b>, and tap the bookmark that appears (the one with the ☆).</li>
+      </ol>
+    </div>
+    <div data-p="computer" hidden>
+      <ol class="how">
+        <li><b>Show your bookmarks bar</b> (Ctrl+Shift+B on Windows, Cmd+Shift+B on Mac).</li>
+        <li><b>Drag this button onto the bookmarks bar:</b><br><a class="drag" id="drag" href="#">Fill my cart</a></li>
+        <li><b>To use it:</b> on the store's website, click <b>Fill my cart</b> in your bookmarks bar.</li>
+      </ol>
+    </div>
+    <label for="code" class="compared" style="display:block;margin-top:18px">The button code (if copying doesn't work, select all of it and copy)</label>
+    <textarea id="code" class="code" readonly></textarea>
+  </section>
+
+  <p class="fine"><a href="./" style="color:inherit">← Back to Cart Compare</a><br>The button only adds items to your cart. It never checks out or pays; you do that yourself on the store's website.</p>
+</main>
+<script>
+(async function () {
+  const code = document.getElementById("code");
+  let src = "";
+  try { src = await (await fetch("fill.js?v=7")).text(); } catch (e) { code.value = "Couldn't load the button. Refresh the page."; return; }
+  const bm = "javascript:" + encodeURIComponent(src.replace(/^\/\/.*$/mg, "").replace(/\n\s*/g, " ").trim());
+  code.value = bm;
+  document.getElementById("drag").href = bm;
+  document.getElementById("drag").addEventListener("click", e => e.preventDefault());
+  document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", async () => {
+    const ok = b.parentNode.querySelector("[data-okmsg]");
+    try { await navigator.clipboard.writeText(bm); ok.hidden = false; }
+    catch { code.focus(); code.select(); code.setSelectionRange(0, bm.length); try { document.execCommand("copy"); ok.hidden = false; } catch {} }
+  }));
+  const tabs = document.querySelectorAll("[data-t]");
+  const pick = t => { tabs.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.t === t))); document.querySelectorAll("[data-p]").forEach(p => p.hidden = p.dataset.p !== t); };
+  tabs.forEach(b => b.addEventListener("click", () => pick(b.dataset.t)));
+  pick(/android/i.test(navigator.userAgent) ? "android" : /iphone|ipad/i.test(navigator.userAgent) ? "iphone" : "computer");
+})();
+</script>
+</body>
+</html>

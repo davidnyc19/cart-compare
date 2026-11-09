@@ -58,6 +58,7 @@ async function scrape(origin, { seo = "", deadline = Infinity, log = () => {} } 
         name: String(p.N).replace(/[,\s]+$/, ""),
         brand: "", size: "",
         gtin: p.SKU || "",
+        variantId: String(p.SPId ?? p.Id),
         price: Math.round(per * 100) / 100,
         inStock: p.Active !== "False",
         image: p.iU ? `${origin}/api/content/images/thumbs/${p.iU}` : "",
@@ -65,7 +66,7 @@ async function scrape(origin, { seo = "", deadline = Infinity, log = () => {} } 
         category: p.CN || cat.N || ""
       };
     }).filter(x => x.price > 0);
-    return { items, checkout: "product-links" };
+    return { items, checkout: "mcg-cart", storeId };
   } finally { await browser.close(); }
 }
 

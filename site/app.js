@@ -1,6 +1,6 @@
 (function () {
 "use strict";
-const VERSION = "6";
+const VERSION = "7";
 function showErr(msg) {
   let b = document.getElementById("errbox");
   if (!b) { b = document.createElement("div"); b.id = "errbox"; document.body.appendChild(b); }
@@ -206,8 +206,14 @@ document.addEventListener("click", e => {
   list.forEach(x => { const m = pick(s, x.k); m ? have.push({ p: m.p, q: x.q, o: m.o }) : miss.push(item(x.k)); });
   const oneClick = site.checkout === "shopify-cart" && have.length && have.every(h => h.o.variant);
   const url = oneClick ? `${site.origin}/cart/${have.map(h => h.o.variant + ":" + h.q).join(",")}` : site.origin;
+  const fill = site.checkout === "mcg-cart" && site.storeId != null && have.length && have.every(h => h.o.variant);
+  const fillUrl = fill ? `${site.origin}/${s.seo || ""}#cartcompare=${site.storeId},${have.map(h => h.o.variant + ":" + h.q).join(",")}` : "";
   $("sheet").innerHTML = `<button class="close" id="x" aria-label="Close">✕</button><h2>Shop at ${esc(s.name)}</h2>
-    ${oneClick ? `<p>Tap below. Your ${have.length} items go straight into ${esc(s.name)}'s cart, and you pay on their website.</p><a class="big solid" href="${esc(url)}" target="_blank" rel="noopener">Go to ${esc(s.name)} checkout</a>`
+    ${fill ? `<ol class="steps"><li><b>Tap “Open ${esc(s.name)}”</b> below.</li><li><b>Sign in</b> to your ${esc(s.name)} account there.</li><li><b>Tap your “Fill my cart” bookmark.</b> All ${have.length} items go into your ${esc(s.name)} cart, then you check out there.</li></ol>
+      <a class="big solid" href="${esc(fillUrl)}" target="_blank" rel="noopener">Open ${esc(s.name)}</a>
+      <p class="setup">First time? <a href="fill.html" target="_blank" rel="noopener">Set up the “Fill my cart” bookmark</a> (one minute, once per phone).</p>
+      <details class="manual"><summary>Or add items one by one</summary><div class="items">${have.map(h => `<a href="${esc(h.o.url || site.origin)}" target="_blank" rel="noopener"><span>${esc(h.p.n)}${h.q > 1 ? " ×" + h.q : ""}</span><span>Open →</span></a>`).join("")}</div></details>`
+    : oneClick ? `<p>Tap below. Your ${have.length} items go straight into ${esc(s.name)}'s cart, and you pay on their website.</p><a class="big solid" href="${esc(url)}" target="_blank" rel="noopener">Go to ${esc(s.name)} checkout</a>`
       : `<p>Tap each item to add it on ${esc(s.name)}'s website, then check out there.</p><div class="items">${have.map(h => `<a href="${esc(h.o.url || site.origin)}" target="_blank" rel="noopener"><span>${esc(h.p.n)}${h.q > 1 ? " ×" + h.q : ""}</span><span>Open →</span></a>`).join("")}</div><a class="big solid" href="${esc(site.origin)}" target="_blank" rel="noopener">Open ${esc(s.name)} website</a>`}
     ${miss.length ? `<p style="margin-top:16px">Not sold here: ${miss.map(p => esc(p.n)).join(", ")}</p>` : ""}`;
   $("modal").hidden = false; $("x").onclick = () => $("modal").hidden = true;
