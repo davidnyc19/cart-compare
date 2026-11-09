@@ -1,0 +1,231 @@
+{
+ "reqs": [
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/Customer/CardsJSON",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 401,
+   "res": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>401 - Unauthorized: Access is denied due to invalid credentials.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px 10px 15px;} \r\nh1{font-si"
+  },
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/Customer/InfoJSON",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 401,
+   "res": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>401 - Unauthorized: Access is denied due to invalid credentials.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px 10px 15px;} \r\nh1{font-si"
+  },
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=undefined",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 200,
+   "res": "[{\"Id\":395,\"pId\":0,\"N\":\"Meat\",\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0254004_300.jpeg\",\"List\":[{\"Id\":647,\"pId\":395,\"N\":\"Beef\",\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0056000_300.jpeg\",\"List\":[{\"Id\":6002,\"pId\":647,\"N\":\"Imported Beef\",\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0236481_300.jpeg\",\"List\":[],\"nU\":null,\"mPU\":null,\"mC\":null,\"CurrentCategoryDesc\":\"\\u003c!DOCTYPE html\\u003e\\u003chtml\\u003e\\u003chead\\u003e\\u003c/head\\u003e\\u003cbody\\u003e\\n\\n\\u003"
+  },
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/multistore/StoresDialogJSON",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 200,
+   "res": "{\"SelectedStoreId\":1,\"SelectedStoreIdNoDefault\":null,\"HasActivePickupAreasForSelectedStore\":true,\"StoresList\":[{\"StoreName\":\"Kosher West\",\"StoreSystemName\":\"Kosher West\",\"SeoLocation\":\"Lakewood-NJ\",\"IsClosed\":false,\"IsDiscontinued\":false,\"IsHidden\":false,\"IsPermanentlyClosed\":false,\"EnableStoreForRoleId\":0,\"PictureSrc\":null,\"AddressObj\":{\"FirstName\":\"Default Name\",\"LastName\":\"Default LastName\",\"Email\":\"orders@kosherwest.com\",\"Company\":\"MCG\",\"CountryEnabled\":false,\"CountryId\":1,\"CountryName\":\"Uni"
+  },
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/Common/GetPdfFilesFromFolder",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 200,
+   "res": "[]"
+  },
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=ReactHomeSlider",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 200,
+   "res": "{\"model\":{\"bannerHome\":null,\"imageBanners\":[{\"ImageUrl\":\"content/images/uploads/D2235944-E0D6-4A80-8980-63CE168B9E75.jpg\",\"TargetHref\":\"#\",\"AltText\":\"Fall at KosherWest\",\"StartDate\":\"\\/Date(1793160000000)\\/\",\"EndDate\":\"\\/Date(3371083200000)\\/\",\"Priority\":0,\"AdvertiserId\":1,\"Advertiser\":null,\"BannerGroupId\":14,\"IsActive\":true,\"StoreId\":1,\"FreezeFrom\":null,\"FreezeTo\":null,\"IsFrozen\":null,\"Id\":245},{\"ImageUrl\":\"content/images/uploads/FDDE6C49-09F0-4E06-A818-28E08A57970F.jpg\",\"TargetHref\":\"#\",\"AltTe"
+  },
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/DeliMenu/MenuListJSON",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 200,
+   "res": "{\"success\":true,\"message\":null,\"data\":[]}"
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/DeliveryTimeSlots/GetDeliveryOnStatus",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+   },
+   "body": "",
+   "s": 401,
+   "res": "<div>Not authenticated. Please log in on the main site.</div>"
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/session/reissue",
+   "h": {},
+   "body": "",
+   "s": 401,
+   "res": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-42223ae030074ec15008a1b8f5153e55-f45de85ff8904a88-00\"}"
+  },
+  {
+   "m": "GET",
+   "u": "https://kosherwest.com/proxy-api/Catalog/BannersJSON?bannerGroup=ReactBanners",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*"
+   },
+   "body": "",
+   "s": 200,
+   "res": "{\"bannerHome\":null,\"imageBanners\":[],\"bannerGroup\":null}"
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/CarouselData/ByLocations",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+   },
+   "body": "platform=0&carouselLocations[0][locationName]=ProductsListCarousel1",
+   "s": 200,
+   "res": "{\"Carousels\":[{\"Title\":\"Quick Shop\",\"LocationName\":\"ProductsListCarousel1\",\"Data\":\"[{\\\"Id\\\":444,\\\"SPId\\\":444,\\\"N\\\":\\\"Avocado\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0234940_avocado_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$1.99 / each\\\",\\\"O\\\":\\\"\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":0,\\\"PN\\\":1,\\\"SP\\\":false,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":true,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":1.99,\\\"CC\\\":48,\\\"CN\\\":\\\"Avocado\\\",\\\"StcQ\\\":55336,\\\"Cat\\\":\\\"c/364-0/c/366-364/c/4892-366\\\",\\\""
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/AjaxFilter/JsonProductsList?pageNumber=1&filterMode=00000000&storeId=1",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+   },
+   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"categoryId\":0},{\"FilterType\":0,\"Value1\":\"4892\",\"categoryId\":\"4892\"}]",
+   "s": 200,
+   "res": "{\"parentCategory\":{\"Id\":366,\"pId\":364,\"N\":\"Fresh Vegetables\",\"tI\":\"Kosher Fresh Vegetables\",\"aT\":\"Shop for Kosher Fresh Vegetables\",\"D\":\"\\u003c!DOCTYPE html\\u003e\\u003chtml\\u003e\\u003chead\\u003e\\u003c/head\\u003e\\u003cbody\\u003e\\n\\n\\u003c/body\\u003e\\u003c/html\\u003e\",\"nU\":null,\"cOT\":0,\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0050010_farm-fresh-vegetables_300.jpeg\",\"iS\":300,\"cM\":false},\"childMultiselect\":false,\"hasChild\":false,\"subCategories\":null,\"productsList\":null,\"productsCount\":"
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/AjaxFilter/SpecificationAttributesJSON?filterMode=00000000",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+   },
+   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"Value2\":null,\"categoryId\":\"0\"}]",
+   "s": 200,
+   "res": "{\"Model\":{\"List\":[],\"ScrollItemsNumber\":15},\"Templates\":{\"holder\":\"[CONTAINERS]\",\"container\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003e\\n        [NAME]\\n    \\u003c/h2\\u003e\\n    \\u003cul class=\\\"ajax-filter-items-list SPAList\\\"\\u003e\\n        [ITEMS]\\n    \\u003c/ul\\u003e\\n\\u003c/div\\u003e\\n\",\"item\":\"\\u003cli\\u003e\\u003ca href=\\\"[SPA-OPTION-URL]\\\" onclick=\\\"return objFilterAjax.ChangeSpAttributeState(this, [SPA-OPTION-ID]);\\\" class=\\\""
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/AjaxFilter/BrandsJSON?filterMode=00000000",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*",
+    "content-type": "text/plain, application/x-www-form-urlencoded; charset=UTF-8"
+   },
+   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"Value2\":null,\"categoryId\":\"0\"}]",
+   "s": 200,
+   "res": "{\"Model\":{\"ScrollItemsNumber\":15,\"List\":[{\"BrandId\":15330,\"Title\":\"Seasons\",\"IsSelected\":false,\"Count\":0,\"Url\":\"#!/hb/c/364-0/c/366-364/c/4892-366/b/15330/he/kosher-produce/kosher-fresh-vegetables/seasons\"}],\"Selected\":[]},\"Templates\":{\"holder\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003e\\n        Brands  \\n    \\u003c/h2\\u003e\\n    \\u003cdiv class=\\\"brandsClearAll\\\" style=\\\"display:none;\\\"\\u003e\\n        \\u003ca href=\\\"javascript:void("
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/AjaxFilter/PriceRangesJSON?filterMode=00000000",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+   },
+   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"Value2\":null,\"categoryId\":\"0\"}]",
+   "s": 200,
+   "res": "{\"Model\":{\"List\":[],\"Selected\":[],\"ScrollItemsNumber\":15},\"Templates\":{\"holder\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003ePrice\\u003c/h2\\u003e\\n    \\u003cul class=\\\"ajax-filter-items-list\\\" id=\\\"PriceList\\\"\\u003e\\n        [ITEMS]\\n    \\u003c/ul\\u003e\\n\\u003c/div\\u003e\\n\",\"item\":\"\\n\\u003cli class=\\\"pr-li\\\"\\u003e\\u003ca href=\\\"javascript:void(0)\\\" onclick=\\\"return objFilterAjax.ChangePriceRangeState(this, [FROM], [BY])\\\" class=\\\"[CSS-C"
+  },
+  {
+   "m": "POST",
+   "u": "https://kosherwest.com/proxy-api/AjaxFilter/ProductDetailsJSON",
+   "h": {
+    "x-requested-with": "XMLHttpRequest",
+    "accept": "*/*",
+    "content-type": "text/plain, application/x-www-form-urlencoded; charset=UTF-8"
+   },
+   "body": "[{\"FilterType\":5,\"Value1\":\"444\",\"Value2\":null,\"categoryId\":0}]",
+   "s": 200,
+   "res": "{\"success\":true,\"message\":null,\"data\":{\"StoreProductId\":444,\"CartProductDetailsModelJSON\":\"{\\\"cartId\\\":-1,\\\"storeProductId\\\":444,\\\"categoryName\\\":\\\"Produce\\\",\\\"defaultProductName\\\":\\\"Avocado\\\",\\\"IsSpecial\\\":false,\\\"productName\\\":\\\"Avocado\\\",\\\"unitRegularPrice\\\":2.2900,\\\"unitReguliarPrice\\\":2.2900,\\\"limitPerOrder\\\":0.0,\\\"specialsPriceLimit\\\":0,\\\"specialPackageSize\\\":4,\\\"unitSpecialPrice\\\":1.0000,\\\"IsDiscount\\\":false,\\\"quantity\\\":1,\\\"weightUnit\\\":\\\"\\\",\\\"byWeight\\\":false,\\\"weightRegularPrice\\\":2.29"
+  }
+ ],
+ "cands": [
+  {
+   "i": 17,
+   "t": "",
+   "c": "MuiButtonBase-root MuiButton-root jss365 MuiButton-contained add-to-cart-btn Mui",
+   "oc": ""
+  },
+  {
+   "i": 20,
+   "t": "",
+   "c": "MuiButtonBase-root MuiButton-root jss365 MuiButton-contained add-to-cart-btn Mui",
+   "oc": ""
+  },
+  {
+   "i": 23,
+   "t": "",
+   "c": "MuiButtonBase-root MuiButton-root jss365 MuiButton-contained add-to-cart-btn Mui",
+   "oc": ""
+  },
+  {
+   "i": 61,
+   "t": "SPECIAL\n\nZohar Salt Vinegar Cartwheels, ",
+   "c": "MuiButtonBase-root MuiButton-root MuiButton-text product-item-container",
+   "oc": ""
+  },
+  {
+   "i": 62,
+   "t": "SPECIAL\n\nZohar Salt Vinegar Cartwheels, ",
+   "c": "product-item-link",
+   "oc": ""
+  }
+ ],
+ "clicked": "<button class=\"MuiButtonBase-root MuiButton-root MuiButton-text product-item-container\" tabindex=\"0\" type=\"button\"><span class=\"MuiButton-label\"><a class=\"product-item-link\" href=\"/Lakewood-NJ/category/4892/avocado/444\"><span class=\"product-item-special-lbl\">Special</span><div class=\"product-item-image\"><div class=\"image-container\" style=\"background-color: rgb(255, 255, 255);\"><img alt=\"Avocado\" l",
+ "after": [
+  "POST https://kosherwest.com/proxy-api/AjaxFilter/ProductDetailsJSON"
+ ],
+ "cookies": [
+  "_GRECAPTCHA (www.google.com)",
+  "_ga_GLR7NK2NF7 (.kosherwest.com)",
+  "_ga (.kosherwest.com)",
+  "MCG.customer (kosherwest.com)",
+  "MCG.RecentlyViewed (kosherwest.com)"
+ ],
+ "cartText": "",
+ "globals": [
+  "mcgCartSyncRegistered"
+ ]
+}
