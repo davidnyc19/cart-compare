@@ -1,6 +1,6 @@
 (function () {
 "use strict";
-const VERSION = "7";
+const VERSION = "8";
 function showErr(msg) {
   let b = document.getElementById("errbox");
   if (!b) { b = document.createElement("div"); b.id = "errbox"; document.body.appendChild(b); }
@@ -209,14 +209,19 @@ document.addEventListener("click", e => {
   const fill = site.checkout === "mcg-cart" && site.storeId != null && have.length && have.every(h => h.o.variant);
   const fillUrl = fill ? `${site.origin}/${s.seo || ""}#cartcompare=${site.storeId},${have.map(h => h.o.variant + ":" + h.q).join(",")}` : "";
   $("sheet").innerHTML = `<button class="close" id="x" aria-label="Close">✕</button><h2>Shop at ${esc(s.name)}</h2>
-    ${fill ? `<ol class="steps"><li><b>Tap “Open ${esc(s.name)}”</b> below.</li><li><b>Sign in</b> to your ${esc(s.name)} account there.</li><li><b>Tap your “Fill my cart” bookmark.</b> All ${have.length} items go into your ${esc(s.name)} cart, then you check out there.</li></ol>
-      <a class="big solid" href="${esc(fillUrl)}" target="_blank" rel="noopener">Open ${esc(s.name)}</a>
-      <p class="setup">First time? <a href="fill.html" target="_blank" rel="noopener">Set up the “Fill my cart” bookmark</a> (one minute, once per phone).</p>
-      <details class="manual"><summary>Or add items one by one</summary><div class="items">${have.map(h => `<a href="${esc(h.o.url || site.origin)}" target="_blank" rel="noopener"><span>${esc(h.p.n)}${h.q > 1 ? " ×" + h.q : ""}</span><span>Open →</span></a>`).join("")}</div></details>`
+    ${!oneClick ? `<p>Tap each item. It opens on ${esc(s.name)}'s website. Tap “Add to cart” there, then come back for the next one.</p>
+      <p class="prog" id="prog"></p>
+      <div class="items check">${have.map((h, i) => `<a href="${esc(h.o.url || site.origin)}" target="_blank" rel="noopener" data-ci="${i}"><span class="box" aria-hidden="true"></span><span class="nm">${esc(h.p.n)}${h.q > 1 ? ` <b>×${h.q}</b>` : ""}<small class="num">${money(h.o.price * h.q)}</small></span><span class="go">Open →</span></a>`).join("")}</div>
+      <a class="big solid" href="${esc(site.origin + "/" + (s.seo || ""))}" target="_blank" rel="noopener">Go to ${esc(s.name)} checkout</a>`
     : oneClick ? `<p>Tap below. Your ${have.length} items go straight into ${esc(s.name)}'s cart, and you pay on their website.</p><a class="big solid" href="${esc(url)}" target="_blank" rel="noopener">Go to ${esc(s.name)} checkout</a>`
       : `<p>Tap each item to add it on ${esc(s.name)}'s website, then check out there.</p><div class="items">${have.map(h => `<a href="${esc(h.o.url || site.origin)}" target="_blank" rel="noopener"><span>${esc(h.p.n)}${h.q > 1 ? " ×" + h.q : ""}</span><span>Open →</span></a>`).join("")}</div><a class="big solid" href="${esc(site.origin)}" target="_blank" rel="noopener">Open ${esc(s.name)} website</a>`}
     ${miss.length ? `<p style="margin-top:16px">Not sold here: ${miss.map(p => esc(p.n)).join(", ")}</p>` : ""}`;
   $("modal").hidden = false; $("x").onclick = () => $("modal").hidden = true;
+  const doneKey = "cc-done-" + s.id, done = new Set(mem.get(doneKey, []));
+  const prog = () => { const p = $("prog"); if (!p) return; const n = have.filter(h => done.has(h.p.k)).length; p.textContent = n === have.length ? `All ${n} items opened ✓ Now check out on ${s.name}'s website.` : `${n} of ${have.length} items opened`; };
+  $("sheet").querySelectorAll("[data-ci]").forEach(a => { const h = have[+a.dataset.ci]; if (done.has(h.p.k)) a.classList.add("did");
+    a.addEventListener("click", () => { done.add(h.p.k); mem.set(doneKey, [...done]); a.classList.add("did"); prog(); }); });
+  prog();
 });
 $("modal").addEventListener("click", e => { if (e.target.id === "modal") $("modal").hidden = true; });
 document.addEventListener("keydown", e => { if (e.key === "Escape") $("modal").hidden = true; });

@@ -62,7 +62,7 @@ async function scrape(origin, { seo = "", deadline = Infinity, log = () => {} } 
         price: Math.round(per * 100) / 100,
         inStock: p.Active !== "False",
         image: p.iU ? `${origin}/api/content/images/thumbs/${p.iU}` : "",
-        url: p.nU ? new URL(p.nU, origin).href : `${origin}/${seo}/category/${cat.Id}/${encodeURIComponent((cat.N || "").toLowerCase().replace(/\s+/g, "-"))}`,
+        url: `${origin}/${seo}/category/${p.CatId || cat.Id}/${String(p.N).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}/${p.Id}`,
         category: p.CN || cat.N || ""
       };
     }).filter(x => x.price > 0);
