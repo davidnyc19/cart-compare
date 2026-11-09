@@ -1,207 +1,53 @@
 {
- "reqs": [
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/Customer/CardsJSON",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 401,
-   "res": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>401 - Unauthorized: Access is denied due to invalid credentials.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px 10px 15px;} \r\nh1{font-si"
-  },
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/Customer/InfoJSON",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 401,
-   "res": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/>\r\n<title>401 - Unauthorized: Access is denied due to invalid credentials.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px 10px 15px;} \r\nh1{font-si"
-  },
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/AjaxFilter/GetCategoryTreeJSON?filterMode=00000000&storeId=undefined",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 200,
-   "res": "[{\"Id\":395,\"pId\":0,\"N\":\"Meat\",\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0254004_300.jpeg\",\"List\":[{\"Id\":647,\"pId\":395,\"N\":\"Beef\",\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0056000_300.jpeg\",\"List\":[{\"Id\":6002,\"pId\":647,\"N\":\"Imported Beef\",\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0236481_300.jpeg\",\"List\":[],\"nU\":null,\"mPU\":null,\"mC\":null,\"CurrentCategoryDesc\":\"\\u003c!DOCTYPE html\\u003e\\u003chtml\\u003e\\u003chead\\u003e\\u003c/head\\u003e\\u003cbody\\u003e\\n\\n\\u003"
-  },
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/multistore/StoresDialogJSON",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 200,
-   "res": "{\"SelectedStoreId\":1,\"SelectedStoreIdNoDefault\":null,\"HasActivePickupAreasForSelectedStore\":true,\"StoresList\":[{\"StoreName\":\"Kosher West\",\"StoreSystemName\":\"Kosher West\",\"SeoLocation\":\"Lakewood-NJ\",\"IsClosed\":false,\"IsDiscontinued\":false,\"IsHidden\":false,\"IsPermanentlyClosed\":false,\"EnableStoreForRoleId\":0,\"PictureSrc\":null,\"AddressObj\":{\"FirstName\":\"Default Name\",\"LastName\":\"Default LastName\",\"Email\":\"orders@kosherwest.com\",\"Company\":\"MCG\",\"CountryEnabled\":false,\"CountryId\":1,\"CountryName\":\"Uni"
-  },
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/Common/GetPdfFilesFromFolder",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 200,
-   "res": "[]"
-  },
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/Catalog/GroupSliderImagesJSON?groupName=ReactHomeSlider",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 200,
-   "res": "{\"model\":{\"bannerHome\":null,\"imageBanners\":[{\"ImageUrl\":\"content/images/uploads/D2235944-E0D6-4A80-8980-63CE168B9E75.jpg\",\"TargetHref\":\"#\",\"AltText\":\"Fall at KosherWest\",\"StartDate\":\"\\/Date(1793160000000)\\/\",\"EndDate\":\"\\/Date(3371083200000)\\/\",\"Priority\":0,\"AdvertiserId\":1,\"Advertiser\":null,\"BannerGroupId\":14,\"IsActive\":true,\"StoreId\":1,\"FreezeFrom\":null,\"FreezeTo\":null,\"IsFrozen\":null,\"Id\":245},{\"ImageUrl\":\"content/images/uploads/FDDE6C49-09F0-4E06-A818-28E08A57970F.jpg\",\"TargetHref\":\"#\",\"AltTe"
-  },
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/DeliMenu/MenuListJSON",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 200,
-   "res": "{\"success\":true,\"message\":null,\"data\":[]}"
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/DeliveryTimeSlots/GetDeliveryOnStatus",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*",
-    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-   },
-   "body": "",
-   "s": 401,
-   "res": "<div>Not authenticated. Please log in on the main site.</div>"
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/session/reissue",
-   "h": {},
-   "body": "",
-   "s": 401,
-   "res": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.2\",\"title\":\"Unauthorized\",\"status\":401,\"traceId\":\"00-685b27d98f8ba720e7ff4c47f860352f-50a97d03e8605746-00\"}"
-  },
-  {
-   "m": "GET",
-   "u": "https://kosherwest.com/proxy-api/Catalog/BannersJSON?bannerGroup=ReactBanners",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*"
-   },
-   "body": "",
-   "s": 200,
-   "res": "{\"bannerHome\":null,\"imageBanners\":[],\"bannerGroup\":null}"
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/CarouselData/ByLocations",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*",
-    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-   },
-   "body": "platform=0&carouselLocations[0][locationName]=ProductsListCarousel1",
-   "s": 200,
-   "res": "{\"Carousels\":[{\"Title\":\"Quick Shop\",\"LocationName\":\"ProductsListCarousel1\",\"Data\":\"[{\\\"Id\\\":444,\\\"SPId\\\":444,\\\"N\\\":\\\"Avocado\\\",\\\"D\\\":\\\"\\\",\\\"nU\\\":\\\"\\\",\\\"iU\\\":\\\"0234940_avocado_300.jpeg\\\",\\\"riU\\\":\\\"\\\",\\\"riD\\\":\\\"style=\\\\\\\"display:none;\\\\\\\"\\\",\\\"iS\\\":300,\\\"P\\\":\\\"$1.99 / each\\\",\\\"O\\\":\\\"\\\",\\\"R\\\":0,\\\"iW\\\":false,\\\"PQ\\\":0,\\\"PN\\\":1,\\\"SP\\\":false,\\\"CQ\\\":\\\"\\\",\\\"iCS\\\":true,\\\"hPO\\\":false,\\\"SPR\\\":0,\\\"SPRDN\\\":\\\"\\\",\\\"P_v\\\":1.99,\\\"CC\\\":48,\\\"CN\\\":\\\"Avocado\\\",\\\"StcQ\\\":55336,\\\"Cat\\\":\\\"c/364-0/c/366-364/c/4892-366\\\",\\\""
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/AjaxFilter/JsonProductsList?pageNumber=1&filterMode=00000000&storeId=1",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*",
-    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-   },
-   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"categoryId\":0},{\"FilterType\":0,\"Value1\":\"4892\",\"categoryId\":\"4892\"}]",
-   "s": 200,
-   "res": "{\"parentCategory\":{\"Id\":366,\"pId\":364,\"N\":\"Fresh Vegetables\",\"tI\":\"Kosher Fresh Vegetables\",\"aT\":\"Shop for Kosher Fresh Vegetables\",\"D\":\"\\u003c!DOCTYPE html\\u003e\\u003chtml\\u003e\\u003chead\\u003e\\u003c/head\\u003e\\u003cbody\\u003e\\n\\n\\u003c/body\\u003e\\u003c/html\\u003e\",\"nU\":null,\"cOT\":0,\"iU\":\"https://kosherwest.com/api/content/images/thumbs/0050010_farm-fresh-vegetables_300.jpeg\",\"iS\":300,\"cM\":false},\"childMultiselect\":false,\"hasChild\":false,\"subCategories\":null,\"productsList\":null,\"productsCount\":"
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/AjaxFilter/SpecificationAttributesJSON?filterMode=00000000",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*",
-    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-   },
-   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"Value2\":null,\"categoryId\":\"0\"}]",
-   "s": 200,
-   "res": "{\"Model\":{\"List\":[],\"ScrollItemsNumber\":15},\"Templates\":{\"holder\":\"[CONTAINERS]\",\"container\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003e\\n        [NAME]\\n    \\u003c/h2\\u003e\\n    \\u003cul class=\\\"ajax-filter-items-list SPAList\\\"\\u003e\\n        [ITEMS]\\n    \\u003c/ul\\u003e\\n\\u003c/div\\u003e\\n\",\"item\":\"\\u003cli\\u003e\\u003ca href=\\\"[SPA-OPTION-URL]\\\" onclick=\\\"return objFilterAjax.ChangeSpAttributeState(this, [SPA-OPTION-ID]);\\\" class=\\\""
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/AjaxFilter/BrandsJSON?filterMode=00000000",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*",
-    "content-type": "text/plain, application/x-www-form-urlencoded; charset=UTF-8"
-   },
-   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"Value2\":null,\"categoryId\":\"0\"}]",
-   "s": 200,
-   "res": "{\"Model\":{\"ScrollItemsNumber\":15,\"List\":[{\"BrandId\":15330,\"Title\":\"Seasons\",\"IsSelected\":false,\"Count\":0,\"Url\":\"#!/hb/c/364-0/c/366-364/c/4892-366/b/15330/he/kosher-produce/kosher-fresh-vegetables/seasons\"}],\"Selected\":[]},\"Templates\":{\"holder\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003e\\n        Brands  \\n    \\u003c/h2\\u003e\\n    \\u003cdiv class=\\\"brandsClearAll\\\" style=\\\"display:none;\\\"\\u003e\\n        \\u003ca href=\\\"javascript:void("
-  },
-  {
-   "m": "POST",
-   "u": "https://kosherwest.com/proxy-api/AjaxFilter/PriceRangesJSON?filterMode=00000000",
-   "h": {
-    "x-requested-with": "XMLHttpRequest",
-    "accept": "*/*",
-    "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-   },
-   "body": "[{\"FilterType\":0,\"Value1\":\"4892\",\"Value2\":null,\"categoryId\":\"0\"}]",
-   "s": 200,
-   "res": "{\"Model\":{\"List\":[],\"Selected\":[],\"ScrollItemsNumber\":15},\"Templates\":{\"holder\":\"\\u003cdiv class=\\\"ajax-filter-holder ajax-filter-sub-filters\\\"\\u003e\\n    \\u003ch2 class=\\\"title\\\"\\u003ePrice\\u003c/h2\\u003e\\n    \\u003cul class=\\\"ajax-filter-items-list\\\" id=\\\"PriceList\\\"\\u003e\\n        [ITEMS]\\n    \\u003c/ul\\u003e\\n\\u003c/div\\u003e\\n\",\"item\":\"\\n\\u003cli class=\\\"pr-li\\\"\\u003e\\u003ca href=\\\"javascript:void(0)\\\" onclick=\\\"return objFilterAjax.ChangePriceRangeState(this, [FROM], [BY])\\\" class=\\\"[CSS-C"
-  }
- ],
- "cands": [
-  {
-   "i": 17,
-   "t": "",
-   "c": "MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn Mui",
-   "oc": ""
-  },
-  {
-   "i": 20,
-   "t": "",
-   "c": "MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn Mui",
-   "oc": ""
-  },
-  {
-   "i": 23,
-   "t": "",
-   "c": "MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn Mui",
-   "oc": ""
-  },
-  {
-   "i": 61,
-   "t": "SPECIAL\n\nZohar Salt Vinegar Cartwheels, ",
-   "c": "MuiButtonBase-root MuiButton-root MuiButton-text product-item-container",
-   "oc": ""
-  },
-  {
-   "i": 62,
-   "t": "SPECIAL\n\nZohar Salt Vinegar Cartwheels, ",
-   "c": "product-item-link",
-   "oc": ""
-  }
- ],
- "lsBefore": "{\"slides\":\"[{\\\"bannerHome\\\":null,\\\"imageBanners\\\":[{\\\"ImageUrl\\\":\\\"content/images/uploads/D2235944-E0D6-4A80-8980-63CE168B9E75.jpg\\\",\\\"TargetHref\\\":\\\"#\\\",\\\"AltText\\\":\\\"Fall at KosherWest\\\",\\\"StartDate\\\":\\\"/Date(1793160000000)/\\\",\\\"EndDate\\\":\\\"/Date(3371083200000)/\\\",\\\"Priority\\\":0,\\\"AdvertiserId\\\":1,\\\"Advertiser\\\":null,\\\"BannerGroupId\\\":14,\\\"\",\"responseCache\":\"{}\",\"responseCache:en;Common/HeaderLinksJSON\":\"{\\\"IsCustomerImpersonated\\\":false,\\\"IsEmployee\\\":false,\\\"DisplayHiddenProductLink\\\":false,\\\"DisplayApprovedProduct\\\":false,\\\"ShoppingCartEnabled\\\":false,\\\"ShoppingCartItems\\\":0,\\\"WishlistEnabled\\\":false,\\\"WishlistItems\\\":0,\\\"AllowPrivateMessages\\\":false,\\\"UnreadPrivateMessages\\\":\\\"\\\",\\\"AlertMessage\\\":\\\"\\\",\\\"StoreURL\\\":\\\"https:/\",\"TagManagerId\":\"GTM-PW4P9BLV\",\"substitutionBarCollapsed\":\"false\",\"responseCache:en;Common/FooterJSON;0\":\"{\\\"IosId\\\":\\\"6462881939\\\",\\\"AndroidId\\\":\\\"com.mycloudgrocer.kowe\\\",\\\"FooterDisclaimer\\\":\\\"\\\",\\\"FooterAdress\\\":\\\"136 Hillside Blvd, Lakewood, NJ 08701 \\\",\\\"FooterAdressPhone\\\":\\\"(732) 886-9378\\\",\\\"FacebookLink\\\":\\\"https://www.facebook.com/profile.php?id=100040905592988\\\",\\\"TwitterLink\\\":\\\"\\\",\\\"InstagramLink\\\":\\\"https://www.instagr\",\"showStorePopup\":\"false\",\"responseCache:en;Common/GetPdfFilesFromFolder\":\"[]\",\"responseCache:en;DeliMenu/MenuListJSON;v2;\":\"[]\",\"carouselDataResponse_en_ProductsListCarousel1_Lakewood-NJ_params={\\\"locationName\\\":\\\"ProductsListCarousel1\\\",\\\"isPassoverOnly\\\":false,\\\"currentProductId\\\":\\\"any\\\",\\\"categoryId\\\":\\\"any\\\"}\":\"{\\\"Carousels\\\":[{\\\"Title\\\":\\\"Quick Shop\\\",\\\"LocationName\\\":\\\"ProductsListCarousel1\\\",\\\"Data\\\":\\\"[{\\\\\\\"Id\\\\\\\":444,\\\\\\\"SPId\\\\\\\":444,\\\\\\\"N\\\\\\\":\\\\\\\"Avocado\\\\\\\",\\\\\\\"D\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"nU\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"iU\\\\\\\":\\\\\\\"0234940_avocado_300.jpeg\\\\\\\",\\\\\\\"riU\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"riD\\\\\\\":\\\\\\\"style=\\\\\\\\\\\\\\\"display:none;\\\\\\\\\\\\\\\"\\\\\\\",\\\\\\\"iS\\\\\\\":300,\\\\\\\"P\\\\\\\":\\\\\\\"$1.99 / each\\\\\\\",\\\\\\\"O\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"R\\\\\\\":0,\\\\\\\"iW\\\\\\\":f\",\"responseCache:en;Common/GetSiteConfigPublicValues\":\"{\\\"siteGeneral\\\":{\\\"CaptchaSettingsReCaptchaPublicKey\\\":\\\"6LcNTMcrAAAAALkotChSdwzFmDt3gRbUjthJuKWZ\\\",\\\"GoogleCloudProjectId\\\":\\\"decisive-post-459017-k5\\\",\\\"CheckoutPickupAddress\\\":\\\"Pickup Information\\\",\\\"CollectPhoneInsteadOfEmail\\\":null,\\\"CouponCodeExpiredByDeliveryDate\\\":\\\"This promo code expires before the chosen \",\"isLoggedIn\":\"false\",\"curbsideBarExpanded\":\"true\",\"hasSelectedStore\":\"true\",\"showMultistore\":\"false\",\"responseCache:en;AjaxFilter/GetCategoryTreeJSON;00000000;\":\"{\\\"data\\\":[{\\\"Id\\\":395,\\\"pId\\\":0,\\\"N\\\":\\\"Meat\\\",\\\"iU\\\":\\\"https://kosherwest.com/api/content/images/thumbs/0254004_300.jpeg\\\",\\\"List\\\":[{\\\"Id\\\":647,\\\"pId\\\":395,\\\"N\\\":\\\"Beef\\\",\\\"iU\\\":\\\"https://kosherwest.com/api/content/images/thumbs/0056000_300.jpeg\\\",\\\"List\\\":[{\\\"Id\\\":6002,\\\"pId\\\":647,\\\"N\\\":\\\"Imported Beef\\\",\\\"iU\\\":\\\"https://kosherwest.com\",\"responseCache:en;multistore/StoresDialogJSON\":\"{\\\"SelectedStoreId\\\":1,\\\"SelectedStoreIdNoDefault\\\":null,\\\"HasActivePickupAreasForSelectedStore\\\":true,\\\"StoresList\\\":[{\\\"StoreName\\\":\\\"Kosher West\\\",\\\"StoreSystemName\\\":\\\"Kosher West\\\",\\\"SeoLocation\\\":\\\"Lakewood-NJ\\\",\\\"IsClosed\\\":false,\\\"IsDiscontinued\\\":false,\\\"IsHidden\\\":false,\\\"IsPermanentlyClosed\\\":false,\\\"EnableStoreForRo\"}",
- "clicked": "<button class=\"MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn MuiButton-containedSecondary\" tabindex=\"0\" type=\"button\" id=\"mcg-add-to-card-product-details\"><span class=\"MuiButton-label\"><span class=\"MuiButton-startIcon MuiButton-iconSizeMedium\"><svg class=\"MuiSvgIcon-root\" focusable=\"false\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 18c-1.1 0-1.99.9-1.99 2S5.9",
- "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('.add-to-cart-btn').first()\n  -   locator resolved to <button tabindex=\"0\" type=\"button\" id=\"mcg-add-to-card-product-details\" class=\"MuiButtonBase-root MuiButton-root jss351 MuiButton-contained add-to-cart-btn MuiButton-contai"
+ "hits": {
+  "https://kosherwest.com/dist/main-client.js?v=c1C-r2JsvSD1ch1MoG4c08UZRNi9ycUrXbRZoK_BD4E": [
+   "ClientShoppingCart/UpdateQty",
+   "ClientShoppingCart/DeleteCartItem",
+   "ClientShoppingCart/AddStoreProductToCart",
+   "ClientShoppingCart/DeleteAllCartItems",
+   "ShoppingCart/SetNote",
+   ")},[r]),(0,Z.useEffect)(()=>{if(e){if(n&&x&&e?.cartId){let n=d[r+JSON.stringify(t)+(o?",
+   "ShoppingCart/ApplyDiscountCouponJSON",
+   "ShoppingCart/RemoveDiscountCouponJSON?DiscountCouponCode=${e}",
+   "ShoppingCart/AddMoreProductsToLastOrder",
+   "ShoppingCart/LastMinuteOrderCancelUpdate",
+   "ShoppingCart/CheckDiscountChanges",
+   "ShoppingCart/LastMinuteUpdateOrder",
+   "ClientShoppingCart/AddStoreProductsToCart",
+   "CTX: y5:u,price:i,quantity:t&&e.StcQ>=0?e.StcQ:1,discount:i-e.P_v,index:r}})},productDetailsToEcommerceItems:e=>{let t=v(`shoppingCart`).TrackInventory||!1,[n,r,i,o,s]=a(v(`categoryTree`),e.CategoryId),{ProductVariantPrice:c,AddToCart:l}=e.ProductVariantModels[0];return[{item_id:e.Id.toString(),item_name:e.Name,item_category:n,item_category2:r,item_category3:i,item_category4:o,item_category5:s,price:c.OldPriceValue||c.PriceValue,discount:c.OldPriceValue-c.PriceValue,quantity:t&&l.",
+   "CTX: dex:n}})}};return{isAnalyticsEnabled:e,events:(0,Z.useMemo)(()=>({viewCart:e=>{t(`view_cart`,{currency:Qu,value:e.reduce((e,t)=>e+(t.byWeight?t.weightRegularPrice:t.unitRegularPrice),0)},n.cartItemsToEcommerceItems(e))},addToCart:e=>{let r=n.cartItemsToEcommerceItems([e]),i=typeof window<`u`?Zu(window.location.pathname):void 0;i&&r.forEach(e=>{e.item_list_id=i.item_list_id,e.item_list_name=i.item_list_name,Ju(e.item_id,i)}),t(`add_to_cart`,{currency:Qu,value:e.unitRegularPric",
+   "CTX: or(let e of t.cart.cartItems??[]){let t=rd(e.ProductId,e.isCaseMode,e.Attr),r=n.get(t)??[];r.push({cartId:e.cartId,qty:e.quantity}),n.set(t,r)}let r=v(`storesDialogJSONResponse`)?.SelectedStoreId,o=(e,t)=>a({path:`ClientShoppingCart/UpdateQty`,query:{shoppingCartId:e,qty:t}}),s=e=>a({path:`ClientShoppingCart/DeleteCartItem`,query:{shoppingCartId:e}}),c=(e,t,n,i)=>a({path:`ClientShoppingCart/AddStoreProductToCart`,method:`POST`,body:{storeProductId:e,storeId:r,qty:t,byCase:n,a",
+   "CTX: })},[]),d=(0,Z.useCallback)(async(e,n)=>{if(e<0)return null;un.recordRequestSent(),s(`shoppingCartUpdatingStatusOnServer`,t=>[...t.filter(t=>t.cartId!==e),{cartId:e,updateStatus:!0}]);let r=await Cn.track(a({path:`ClientShoppingCart/UpdateQty`,query:{shoppingCartId:e,qty:n}}));return r&&!r.status&&(t(e=>{let t=e.cartItems.map(e=>e?.cartId===r.cartId?{...e,quantity:r.qty}:e).filter(e=>e.quantity);return{...e,cartItems:t||[]}}),Vr.error(r.message)),s(`shoppingCartUpdatingStatus",
+   "CTX: rn u(e,i,o,s??``),p.cartId>=0&&await d(p.cartId,e),{CCIModel:p}}un.recordInteraction();let m=null;l&&(m=Nn(l,c,o,f),t(e=>({...e,cartItems:[...e.cartItems,m]}))),un.recordRequestSent();let h=await Cn.track(a({path:`ClientShoppingCart/AddStoreProductToCart`,method:`POST`,body:{storeProductId:e,storeId:n,qty:c,byCase:o,attr:f}}));if(!h)throw m&&t(e=>({...e,cartItems:zn(e.cartItems,m.cartId)})),h;if(!h.success)return m&&t(e=>({...e,cartItems:zn(e.cartItems,m.cartId)})),Vr.error([",
+   "CTX: Item(`notes`,JSON.stringify(e));let a={...y,customerNote:i||y.customerNote};return n.cartItems=m?Zt(n.cartItems,m.cartId,a):[...n.cartItems,a],n}),un.onResponseArrived(),un.startSafetyWindow(()=>{Wt.load({force:!0})}),r.addToCart(y)}return g},[u,d]),m=(0,Z.useCallback)((e,t,n,r,i,a=1,o)=>{let s=i&&typeof i!=`string`?ed(i):typeof i==`string`?i:``,c=rd(n,r,s),l=(nd.get(c)??Promise.resolve()).catch(()=>void 0).then(()=>p(e,t,n,r,i,a,o,s));return nd.set(c,l),l.finally(()=>{nd.get",
+   "CTX: Interaction();let n=null;t(t=>{n=t;let i=t.cartItems.filter(t=>t.cartId!==e),a=t.cartItems.find(t=>t.cartId===e);return r.removeFromCart(a),{...t,cartItems:i}}),un.recordRequestSent();let i=await Cn.track(a({path:`ClientShoppingCart/DeleteCartItem`,query:{shoppingCartId:e}}));return i&&!i.status&&(t(e=>n||(Vr.error(`Failure to restore item`),e)),Vr.error(i.message)),un.onResponseArrived(),un.startSafetyWindow(()=>{Wt.load({force:!0})}),i},[]),g=(0,Z.useCallback)(async()=>{un.",
+   "CTX: tion();let e=null;t(t=>(e=t,r.removeAllFromCart(t.cartItems),{...t,cartItems:[]})),un.recordRequestSent();let n=await Cn.track(a({path:`ClientShoppingCart/DeleteAllCartItems`}));return n&&!n.status&&(t(t=>e||(Vr.error(`Failure to restore cart`),t)),Vr.error(n.message)),un.onResponseArrived(),un.startSafetyWindow(()=>{Wt.load({force:!0})}),n},[]),_=(0,Z.useCallback)((e,n)=>{e&&(t(t=>({...t,cartItems:t.cartItems.m",
+   "CTX: ap(t=>t.cartId===e?{...t,customerNote:n}:t)})),a({path:`ShoppingCart/SetNote`,method:`POST`,body:{scId:e,note:n}}))},[]);return{loadShoppingCart:o,syncCartToServer:c,updateItemQuantity:u,getItemFromCart:l,addItemToCart:m,removeItemFromCart:h,removeAllItemsFromCart:g,updateItemQuantityOnServer:d,saveProductNote:_,getProductQuant",
+   "CTX: ity(o,x.ProductId,!0,x.Attr),n===0&&i?(re.cancel(),await e.removeItemFromCartById?.(i)):(e.updateItemQuantity(n,x.ProductId,x.isCaseMode,x.Attr),ie(n)),a?e.updateItemQuantityOnServer(a.cartId,o,a.storeProductId):await e.addToCart(r,!0,t)});(0,Z.useEffect)(()=>{let t=+localStorage.getItem(`storeProductId`);e.storeProductId===t&&m({value:t!==0,storeProductId:+localStorage.getItem(`storeProductId`)})},[]),(0,Z.useEffect)(()=>{p.value&&(async()=>{let t=+localStorage.getItem(`stor",
+   "CTX: d`)===p.storeProductId;r&&p.storeProductId&&e.addToCart&&e.storeProductId&&p.storeProductId===e.storeProductId&&t?(localStorage.setItem(`storeProductId`,`0`),localStorage.removeItem(`storeProductAttributes`),await e.addToCart(p.storeProductId),m({value:!1,storeProductId:0})):p.value&&!t&&m({value:!1,storeProductId:0})})()},[r,p.value]);let L=t=>{t.preventDefault(),un.recordInteraction();let n=C+1;e.updateItemQuantity(n,x.ProductId,x.isCaseMode,x.Attr),ie(n),I(n)},ee=t=>{if(t.",
+   "CTX: ``){T(String(C||0)),D.current=C;return}let t=Number.parseInt(w,10);if(Number.isNaN(t)||t<0){T(String(C||0)),D.current=C;return}if(t!==C){if(un.recordInteraction(),e.calculateOutOfStock(x,e.productId,t-1||1)){Vr.error(c(`AddToCartButton.WrongAmount`)),T(String(C||0)),D.current=C;return}t===0&&x?.cartId?(re.cancel(),e.removeItemFromCartById?.(x.cartId)):(e.updateItemQuantity(t,x.ProductId,x.isCaseMode,x.Attr),ie(t),I(t))}T(String(t)),D.current=t},B=(0,Z.useRef)(e.updateInCart);",
+   "CTX: ty(M,x.ProductId,x.isCaseMode,x.Attr),I(M),re(M,e.attributes);return}re(t,e.attributes)},ae=async()=>{if(!e.storeProductId)return;let t=x?.isCaseMode??!1,n=x?.Attr??``;e.updateItemQuantity(1,e.productId,t,n);try{await e.addToCart(e.storeProductId)}catch{e.updateItemQuantity(0,e.productId,t,n),Vr.error(`Failed to add item to cart. Please try again.`)}},V=()=>{n(!0)},H=A?.toString().length>25?{fontSize:`11.5px`}:A?.toString().length>18?{fontSize:`12.8px`}:A?.toString().length>1",
+   "CTX: fooderie`?``:`8px 0`}},style:w&&w.toString().length>3?{width:w.toString().length*14}:{width:44}}):(0,Q.jsx)(jd,{className:`qty-value-label`,children:C}),(0,Q.jsx)(je,{title:j?(0,Q.jsx)(X,{variant:`subtitle2`,children:c(`AddToCartButton.NoMoreInStockMessage`)}):N?(0,Q.jsx)(X,{variant:`subtitle2`,children:c(`AddToCartButton.MaxLimitCases`).toString().replace(`{0}`,M.toString())}):``,placement:`top`,children:(0,Q.jsx)(`span`,{style:{width:kd.width},className:`qty-btn-wrapper`,on",
+   "CTX: sabled:j||N,children:(0,Q.jsx)(wd.default,{})})})})]}),!!x.byWeight&&A&&(0,Q.jsx)(G,{className:`weight-info`,display:`none`,style:H,children:A})]}):y(e.CutoffTimeEnough)?(0,Q.jsx)(je,{title:_&&j?(0,Q.jsx)(X,{children:c(`AddToCartButton.MakeSelectionMessage`)}):(j||e.isCaseOutOfStock)&&P?(0,Q.jsx)(X,{children:c(`AddToCartButton.NoMoreInStockMessage`)}):``,\"aria-label\":`add`,children:(0,Q.jsx)(`span`,{className:`btn-add-to-cart-wrp`,children:(0,Q.jsx)(Nd,{onClick:R,variant:`con",
+   "CTX: Q.jsx)(Od.default,{}),id:`mcg-add-to-card-product-details`,children:(0,Q.jsx)(`span`,{className:Sn(`add-to-cart-btn-text`,{\"is-plus-icon\":f}),children:f?(0,Q.jsx)(Td.default,{}):i===`houseofglatt`&&!e.isDeliMenuModal?c(`AddToCartButton.AddToCart`):c(`AddToCartButton.Add`)})})})}):(0,Q.jsx)(Nd,{onClick:V,variant:`contained`,color:`secondary`,disabled:h||j||e.isCaseOutOfStock,className:`add-to-cart-btn add-to-cart-btn-change-delivery ${f&&`plus-icon`}`,style:{wordWrap:`normal`}",
+   "CTX: :f?(0,Q.jsx)(Ed.default,{}):c(`AddToCartButton.ChangeTime`)})})}),Fd=br(e=>{let t=e.isProductDisabled,n=e.selectedStoreId,r=e?.byCase??!1,i=(0,Z.useCallback)(t=>{e.location.pathname&&s(`recentlyAddedProduct`,t)},[e.location.pathname]),a=(0,Z.useCallback)(async(t,r,a)=>{let o=e?.attributes??null;try{",
+   "CTX: .removeItemFromCart]),c=(0,Z.useCallback)(()=>{let t=e.cartItem;return t?.cartId?e.removeItemFromCart(t.cartId):null},[e.cartItem,e.removeItemFromCart]);return(0,Q.jsx)(Pd,{...e,cartItem:e.cartItem,productId:e.productId,addToCart:a,updateInCart:o,removeFromCart:c,removeItemFromCartById:e.removeItemFromCart,isValid:e.isValid,isProductDisabled:t,isCase:r,attributes:e.attributes,mobileWithAttributes:e.mobileWithAttributes,isDeliverySelected:e.isDeliverySelected,isCaseOutOfStock:",
+   "CTX: l,byWeight:U}),!!l.PackageDepositPerUnit&&(0,Q.jsxs)(`p`,{className:`package-deposit`,children:[`Deposit: +$`,cn(l.PackageDepositPerUnit)]}),ce&&(!o||!o.quantity)&&(0,Q.jsx)($f,{weightValue:l?.ProductVariantModels?.[0]?.AddToCart?.WeightValue,weightPriceValue:N,isMetricSystem:le,byWeight:M?.IsLoose,attributesWeight:p,attributesPrice:c}),ce&&o?.quantity>0&&(0,Q.jsx)(Qf,{estimatedInCart:pe,t:ae})]}),(0,Q.jsx)(ip,{IsSpecial:l.IsSpecial,LimitPerOrder:R,SpecialPakBulk:ne}),(0,Q.js",
+   "CTX: ,{className:`product-details-quantity-box`,children:[z&&(0,Q.jsxs)(`p`,{className:`product-details-subTitle mb-15`,children:[ae(`ProductPrice.QuantityOf`),` `,he,`:`]}),!y&&(!re.TrackInventory||l.ProductVariantModels[0].AddToCart.StockQty!==0)&&(0,Q.jsx)(Fd,{showCase:O,cartItem:o,productId:t,storeProductId:n,editable:!0,isProductDisabled:h,attributes:i,isValid:s,selectedStoreId:u,isLoggedIn:d,isDeliverySelected:f,CutoffTimeEnough:V,isNoShipping:_e,allowAlwaysCaseSpecials:g,tr",
+   "CTX: Cart:E,calculateOutOfStock:D,source:Ie.ProductDetails,isDeliMenuModal:ce}),(0,Q.jsx)(np,{ShowOutOfStockProducts:P,StockQty:L,t:ae})]}):null,!ce&&(!o||!o.quantity)&&(0,Q.jsx)($f,{weightValue:l?.ProductVariantModels?.[0]?.AddToCart?.WeightValue,weightPriceValue:N,isMetricSystem:le,byWeight:M?.IsLoose,attributesWeight:p,attributesPrice:c}),!ce&&o?.quantity>0&&(0,Q.jsx)(Qf,{estimatedInCart:pe,t:ae}),o?.quantity>0&&(0,Q.jsx)(ep,{youSave:me,t:ae}),v&&!a&&!y&&(0,Q.jsx)(Zf,{isValid:s",
+   "CTX: .jsxs)(G,{mt:3,className:`case-item-qty-cases`,children:[(0,Q.jsxs)(`p`,{className:`product-details-subTitle mb-15`,children:[L(`ProductPrice.QuantityOfCases`),`:`]}),!y&&!p?(!I.TrackInventory||f.ProductVariantModels[0].AddToCart.StockQty!==0)&&(0,Q.jsx)(Fd,{cartItem:o,productId:t,storeProductId:n,editable:!0,attributes:i,isValid:s,byCase:!0,selectedStoreId:l,isLoggedIn:u,isDeliverySelected:d,CutoffTimeEnough:ee??!0,isCaseOutOfStock:M&&M<D,isNoShipping:re,isProductDisabled:v,",
+   "CTX: ren:[D&&(k||(l?Ep:c?Tp:null)),E&&(0,Q.jsx)(Cp.default,{style:wp})]})]})}),Op=(0,Z.memo)(e=>{let{item:t,hideTotal:n,showYouSave:r,showOldPrice:i,hideQty:a,showActions:o,enoughNonSpecials:s,allowAlwaysCaseSpecials:c,handleAddToCart:l,handleRemoveFromCart:d,updateItemQuantity:f,saveProductNote:p,updateItemQuantityOnServer:m,addItemToCart:h,getItemFromCart:g,calculateOutOfStock:_,bogoResult:v,bogoOffers:y}=e,[x,S]=b(`shoppingCartVisibility`),[C]=b(`storesDialogJSONResponse`),[w]=",
+   "CTX: return}let e=Number.parseInt(ne,10);if(Number.isNaN(e)||e<0){B(String(te||0)),ie.current=te;return}if(e!==te){un.recordInteraction();let n=H(e);if(n===0){V.cancel(),oe();return}if(_&&_(t,t.ProductId,n-1||1)){Vr.error(k(`AddToCartButton.WrongAmount`)),B(String(te||0)),ie.current=te;return}f(n,t.ProductId,t.isCaseMode,t.Attr),V(n),R(n)}B(String(e)),ie.current=e},[ne,te,t,H,_,k,f,V,R,oe]),de=(0,Z.useCallback)(e=>{e.key===`Enter`&&e.target.blur()},[]),fe=(0,Z.useCallback)(e=>{e.p",
+   "CTX: {type:`text`,className:`qty-value`,inputMode:`numeric`,pattern:`[0-9]*`,value:ne,onFocus:le,onChange:U,onBlur:ue,onKeyDown:de,\"aria-label\":`Quantity`}),(0,Q.jsx)(je,{title:_e?(0,Q.jsx)(X,{variant:`subtitle2`,children:k(`AddToCartButton.NoMoreInStockMessage`)}):``,placement:`top`,children:(0,Q.jsx)(`span`,{children:(0,Q.jsx)(at,{className:`qty-button`,onClick:se,\"aria-label\":`Add`,disabled:_e||I,children:(0,Q.jsx)(wd.default,{})})})})]})]}),i&&(0,Q.jsxs)(J,{item:!0,sm:Ae()?6:4",
+   "CTX: CouponCode?t.CustomerCouponCode.split(`|`):[];(0,Z.useEffect)(()=>{i(``)},[n]);let m=async e=>{if(!e)return;if(o(!0),i(``),p.includes(e)){i(l(`DiscountsSection.DiscountAlreadyApplied`)),o(!1);return}let t=await f({path:`ShoppingCart/ApplyDiscountCouponJSON`,query:{DiscountCouponCode:e}});if(!t||t.isError){i(t?.message??``),o(!1),d.current.value=``;return}await u(!0),o(!1),d.current.value=``},h=e=>{e.key===`Enter`&&(m(e.currentTarget.value),e.currentTarget.value=``,e.currentTa",
+   "CTX: },g=async e=>{c(t=>[...t,e]);let t=await f({path:`ShoppingCart/RemoveDiscountCouponJSON?DiscountCouponCode=${e}`});if(!t||t.isError){i(t?.message??``),c(t=>t.filter(t=>t!==e));return}await u(!0),c(t=>t.filter(t=>t!==e))};return(0,Q.jsxs)(`div`,{className:`discounts-section`,children:[!t.IsOrderUpdateMode&&t.IsDiscountsAva"
+  ],
+  "https://kosherwest.com/dist/chunks/useSelectedStore-B08lxxAm.js": [
+   "ShoppingCart/OrderTotalsJSon",
+   "ClientShoppingCart/LoadShoppingCartModelReact",
+   "CTX: g();return`${o}/${a}${a.includes(`?`)?`&`:`?`}${e}`}return`${o}/${a}`},Sn=e=>{try{return e.toLowerCase()===`true`||e.toLowerCase()===`false`?JSON.parse(e.toLowerCase()):JSON.parse(e)}catch{return null}},Cn=()=>bn({path:`ShoppingCart/OrderTotalsJSon`}),J=0,wn=0,Y=null,Tn=[],X=!1,En=3e3,Z={recordInteraction:()=>{J=Date.now(),Y&&Z.armSafetyWindow()},recordRequestSent:()=>{wn=Date.now()},onResponseArrived:()=>J>wn?(X=!0,{shouldApply:!1,shouldScheduleSync:!1}):{shouldApply:!1,shou",
+   "CTX: n]))return!1;return!0}if(Array.isArray(e)||Array.isArray(t)||Object.keys(e).length!==Object.keys(t).length)return!1;for(let[n,r]of Object.entries(e))if(!(n in t)||!Hn(r,t[n]))return!1;return!0}var Un=1e3,Wn={path:`ClientShoppingCart/LoadShoppingCartModelReact`,query:{ts:1613406338887}},Gn=0,Kn=()=>(Gn+=1,qn.invalidate(),Gn),qn=Vn(async()=>{let e=Gn;try{let t=await q(Wn);t.statusCode===401&&await Rn()===`reissued`&&(t=await q(Wn));let{data:n,error:i}=t;return!n||i||n.Message||"
+  ]
+ },
+ "scriptCount": 29
 }
