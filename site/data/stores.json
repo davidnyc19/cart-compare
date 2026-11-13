@@ -355,50 +355,50 @@
    "origin": "https://aisle9market.com",
    "checkout": "mcg-cart",
    "storeId": 1,
-   "checkedAt": "2026-11-12T08:39:39.824Z",
-   "items": 6668
+   "checkedAt": "2026-11-13T08:34:56.338Z",
+   "items": 6712
   },
   "koshervillage.com": {
    "origin": "https://www.koshervillage.com",
    "checkout": "product-links",
    "storeId": null,
-   "checkedAt": "2026-11-12T08:32:07.767Z",
+   "checkedAt": "2026-11-13T08:30:46.496Z",
    "items": 10000
   },
   "kosherwest.com/lakewood-nj": {
    "origin": "https://www.kosherwest.com",
    "checkout": "mcg-cart",
    "storeId": 1,
-   "checkedAt": "2026-11-12T09:03:44.574Z",
-   "items": 10446
+   "checkedAt": "2026-11-13T08:54:19.897Z",
+   "items": 10458
   },
   "nutmegkoshermarket.com/lakewood-nj": {
    "origin": "https://www.nutmegkoshermarket.com",
    "checkout": "mcg-cart",
    "storeId": 1,
-   "checkedAt": "2026-11-12T09:08:22.773Z",
-   "items": 9333
+   "checkedAt": "2026-11-13T08:39:08.258Z",
+   "items": 9375
   },
   "seasonskosher.com/lakewood": {
    "origin": "https://seasonskosher.com",
    "checkout": "mcg-cart",
    "storeId": 4,
-   "checkedAt": "2026-11-12T08:37:51.955Z",
-   "items": 10817
+   "checkedAt": "2026-11-13T08:34:55.478Z",
+   "items": 10762
   },
   "seasonskosher.com/toms-river": {
    "origin": "https://seasonskosher.com",
    "checkout": "mcg-cart",
    "storeId": 9,
-   "checkedAt": "2026-11-12T08:44:38.588Z",
-   "items": 8122
+   "checkedAt": "2026-11-13T08:42:14.714Z",
+   "items": 8162
   },
   "superstopnj.com/lakewood": {
    "origin": "https://superstopnj.com",
    "checkout": "mcg-cart",
    "storeId": 1,
-   "checkedAt": "2026-11-12T08:37:30.948Z",
-   "items": 6425
+   "checkedAt": "2026-11-13T08:36:46.639Z",
+   "items": 6439
   }
  }
 }
