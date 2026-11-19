@@ -8,12 +8,12 @@
     "checkedAt": "2026-11-06T08:34:11.158Z"
   },
   "koshervillage.com": {
-    "lastAttempt": "2026-11-18T08:32:27.802Z",
+    "lastAttempt": "2026-11-19T08:35:16.044Z",
     "ok": true,
     "error": null,
     "adapter": "koshervillage",
     "items": 10000,
-    "checkedAt": "2026-11-18T08:34:29.187Z"
+    "checkedAt": "2026-11-19T08:37:17.420Z"
   },
   "gourmetglatt.com": {
     "lastAttempt": "2026-11-05T21:11:17.379Z",
@@ -65,51 +65,51 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "seasonskosher.com/lakewood": {
-    "lastAttempt": "2026-11-18T08:32:27.802Z",
+    "lastAttempt": "2026-11-19T08:35:16.044Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 10785,
-    "checkedAt": "2026-11-18T08:41:43.272Z",
+    "items": 10866,
+    "checkedAt": "2026-11-19T08:42:58.692Z",
     "error": null
   },
   "aisle9market.com/lakewood": {
-    "lastAttempt": "2026-11-18T08:32:27.802Z",
+    "lastAttempt": "2026-11-19T08:35:16.044Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 6731,
-    "checkedAt": "2026-11-18T08:39:23.226Z",
+    "items": 6735,
+    "checkedAt": "2026-11-19T08:41:58.603Z",
     "error": null
   },
   "nutmegkoshermarket.com/lakewood-nj": {
-    "lastAttempt": "2026-11-18T08:32:27.802Z",
+    "lastAttempt": "2026-11-19T08:35:16.044Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 9409,
-    "checkedAt": "2026-11-18T08:42:47.174Z",
+    "items": 9498,
+    "checkedAt": "2026-11-19T08:44:40.139Z",
     "error": null
   },
   "kosherwest.com/lakewood-nj": {
-    "lastAttempt": "2026-11-18T08:32:27.802Z",
+    "lastAttempt": "2026-11-19T08:35:16.044Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 10597,
-    "checkedAt": "2026-11-18T08:39:51.310Z",
+    "items": 10586,
+    "checkedAt": "2026-11-19T08:42:48.138Z",
     "error": null
   },
   "superstopnj.com/lakewood": {
-    "lastAttempt": "2026-11-18T08:34:29.187Z",
+    "lastAttempt": "2026-11-19T08:37:17.420Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 6439,
-    "checkedAt": "2026-11-18T08:40:14.522Z",
+    "items": 6470,
+    "checkedAt": "2026-11-19T08:42:35.483Z",
     "error": null
   },
   "seasonskosher.com/toms-river": {
-    "lastAttempt": "2026-11-18T08:39:23.226Z",
+    "lastAttempt": "2026-11-19T08:41:58.603Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 8183,
-    "checkedAt": "2026-11-18T08:46:50.837Z",
+    "items": 8195,
+    "checkedAt": "2026-11-19T08:49:04.452Z",
     "error": null
   }
 }
