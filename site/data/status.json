@@ -8,12 +8,12 @@
     "checkedAt": "2026-11-06T08:34:11.158Z"
   },
   "koshervillage.com": {
-    "lastAttempt": "2026-11-25T08:42:33.845Z",
+    "lastAttempt": "2026-11-26T08:40:22.918Z",
     "ok": true,
     "error": null,
     "adapter": "koshervillage",
     "items": 10000,
-    "checkedAt": "2026-11-25T08:44:35.198Z"
+    "checkedAt": "2026-11-26T08:42:24.212Z"
   },
   "gourmetglatt.com": {
     "lastAttempt": "2026-11-05T21:11:17.379Z",
@@ -65,51 +65,51 @@
     "error": "No public product catalog found (no Shopify feed, no product sitemap). Needs a custom adapter or the store sells through an app only."
   },
   "seasonskosher.com/lakewood": {
-    "lastAttempt": "2026-11-25T08:42:33.845Z",
+    "lastAttempt": "2026-11-26T08:40:22.918Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 10793,
-    "checkedAt": "2026-11-25T08:52:27.405Z",
+    "items": 10726,
+    "checkedAt": "2026-11-26T08:49:34.195Z",
     "error": null
   },
   "aisle9market.com/lakewood": {
-    "lastAttempt": "2026-11-25T08:42:33.845Z",
+    "lastAttempt": "2026-11-26T08:40:22.918Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 6808,
-    "checkedAt": "2026-11-25T08:49:16.508Z",
+    "items": 6786,
+    "checkedAt": "2026-11-26T08:46:49.045Z",
     "error": null
   },
   "nutmegkoshermarket.com/lakewood-nj": {
-    "lastAttempt": "2026-11-25T08:42:33.845Z",
+    "lastAttempt": "2026-11-26T08:40:22.918Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 9424,
-    "checkedAt": "2026-11-25T08:51:40.714Z",
+    "items": 9529,
+    "checkedAt": "2026-11-26T08:49:05.425Z",
     "error": null
   },
   "kosherwest.com/lakewood-nj": {
-    "lastAttempt": "2026-11-25T08:42:33.845Z",
-    "ok": false,
-    "adapter": "mycloudgrocer",
-    "items": 10529,
-    "checkedAt": "2026-11-24T08:46:14.082Z",
-    "error": "Scrape finished but found 0 prices."
-  },
-  "superstopnj.com/lakewood": {
-    "lastAttempt": "2026-11-25T08:42:51.165Z",
+    "lastAttempt": "2026-11-26T08:40:22.918Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 6455,
-    "checkedAt": "2026-11-25T08:49:09.162Z",
+    "items": 10526,
+    "checkedAt": "2026-11-26T08:47:34.741Z",
+    "error": null
+  },
+  "superstopnj.com/lakewood": {
+    "lastAttempt": "2026-11-26T08:42:24.212Z",
+    "ok": true,
+    "adapter": "mycloudgrocer",
+    "items": 6446,
+    "checkedAt": "2026-11-26T08:48:28.031Z",
     "error": null
   },
   "seasonskosher.com/toms-river": {
-    "lastAttempt": "2026-11-25T08:44:35.198Z",
+    "lastAttempt": "2026-11-26T08:46:49.045Z",
     "ok": true,
     "adapter": "mycloudgrocer",
-    "items": 8196,
-    "checkedAt": "2026-11-25T08:53:59.264Z",
+    "items": 8218,
+    "checkedAt": "2026-11-26T08:56:02.661Z",
     "error": null
   }
 }
